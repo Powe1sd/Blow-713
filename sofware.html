@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos de software</title>
+    <link rel="icon" href="logo/logo-color.png" type="image/x-icon" />
+    <link rel="stylesheet" href="estilos-proyectos/sofware.css" />
+  </head>
+  <body>
+    
+<!-- Agrega este bloque de código para el campo de búsqueda -->
+<div class="search-container">
+  <input type="text"  id="searchInput" autofocus placeholder="Buscar..." oninput="handleInput()">
+  <button onclick="search()">Buscar</button>
+  <span class="clear-search" onclick="clearSearch()">X</span>
+</div><br><br><br><br>
+
+    
+
+    <h1>Introducción</h1><br>
+
+    <div class="video-section"><!--  -->
+      <video controls autoplay >
+        <source src="video/introduccion1.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+      <ul>
+      <li><a href="#que-es-la-programacion">Qué es la programación</a></li>
+      <br />
+      <li><a href="#empezar">Por dónde empezar  </a></li
+      <br /><br />
+      <li><a href="#lenguaje">¿Por que lenguaje empezar?</a></li>
+      <br />
+      <li><a href="#intro">Introducción a JavaScript: El Lenguaje de la Web</a></li>
+      <br />
+      <li ><a href="#empecemos">Empecemos </a></li>
+      <br/>
+      <li><a href="#estructura">Estuctura de  HTML</a></li>
+      <br />
+      <li><a href="#entorno">Descargar visual studio code</a></li>
+      <br />
+      <li><a href="#hola">Hola mundo </a></li>
+      <br />
+      <li><a href="#varia">¿Que es una variables? </a></li>
+      <br />
+      <li><a href="#funci">¿Que es una función? </a></li>
+      <br />
+      <li><a href="#con">Condicionales </a></li>
+      <br />
+      <li><a href="#ci">Ciclos</a></li>
+      <br />
+      <li><a href="#array">Arrays</a></li>
+      <br />
+      <li><a href="#ob">Objetos </a></li>
+      <br />
+      <li><a href="#progra">Suma resta división multiplicación</a></li>
+      <br />
+      <li><a href="#bases">Que son las  bases de datos</a></li>
+      <br />
+      <li><a href="#crea">Crear bases de datos en php msql</a></li>
+      <br />
+      <li><a href=""></a></li>
+      <br />
+      <li><a href="#mensaje">.Envia un mensaje</a></li>
+      <h2 id="que-es-la-programacion">Que es la programación</h2>
+    </ul>
+    <p>
+      La programación es el proceso de diseñar, escribir y probar instrucciones
+      específicas (código) que una computadora o sistema informático puede
+      entender y ejecutar. Estas instrucciones están escritas en lenguajes de
+      programación y se utilizan para crear software, aplicaciones y sistemas
+      informáticos. Aquí hay algunos conceptos clave sobre la programación:
+      Lenguajes de Programación: Los lenguajes de programación son conjuntos de
+      reglas y símbolos que permiten a los programadores comunicarse con las
+      computadoras. Ejemplos de lenguajes incluyen Python, Java, C++,
+      JavaScript, y muchos otros. Algoritmos: Un algoritmo es un conjunto de
+      pasos bien definidos que resuelven un problema o realizan una tarea
+      específica. Los programadores diseñan algoritmos para lograr un objetivo.
+      Desarrollo de Software: La programación es fundamental en el desarrollo de
+      software. Los programadores escriben código para crear aplicaciones de
+      software, sistemas operativos, sitios web y más. Resolución de Problemas:
+      La programación implica la resolución de problemas. Los programadores
+      identifican desafíos, diseñan soluciones y escriben código para
+      implementar esas soluciones. Programación Orientada a Objetos (POO): La
+      POO es un enfoque de programación que organiza el código en objetos, que
+      son instancias de clases que contienen datos y funciones relacionados.
+      Aplicaciones Prácticas: La programación se utiliza en una amplia gama de
+      campos, incluyendo desarrollo de videojuegos, análisis de datos,
+      desarrollo web, inteligencia artificial, automatización industrial y más.
+      Aprender programación te permite crear soluciones tecnológicas y es una
+      habilidad valiosa en la era digital. Puedes comenzar a aprender
+      programación eligiendo un lenguaje de programación, tomando tutoriales en
+      línea y prácticando con proyectos pequeños.
+    </p>
+
+    <h2 id="empezar">por dónde empezar</h2>
+
+    <p>
+      En mi poco conocimiento, y aplicando diferentes metodologías diría que
+      empezar por el pseudocódigo y diagramas de flujo, para empezar a
+      desarrollar la lógica de programación y así poder tener buenas bases para
+      cuando se empiece a programar.
+    </p>
+
+    <img
+      class="pse"
+      src="imajenes2/pseudocodigo.jpg"
+      alt="Texto alternativo"
+      width="ancho"
+      height="alto"
+    />
+
+    <h2 id="lenguaje">¿Por que lenguaje empezar?</h2>
+
+    <p>
+      Elegir el lenguaje de programación con el que comenzar es una decisión
+      importante. La elección depende de tus objetivos, preferencias y el tipo
+      de desarrollo que te interese. Aquí tienes un texto que te ayudará a tomar
+      una decisión informada: "Elegir el Lenguaje de Programación Ideal para
+      Comenzar" La programación es un mundo fascinante lleno de posibilidades,
+      pero al inicio, la variedad de lenguajes puede resultar abrumadora. Para
+      tomar la decisión correcta, es fundamental considerar tus metas y
+      preferencias. Python: Simplicidad y Versatilidad Si eres nuevo en la
+      programación, Python es una excelente opción. Su sintaxis es legible y se
+      utiliza en campos como desarrollo web, análisis de datos e inteligencia
+      artificial. JavaScript: Dominio del Desarrollo Web Si tu interés se centra
+      en la creación de sitios web interactivos, JavaScript es esencial.
+      Complementa HTML y CSS para hacer que las páginas web cobren vida. Java:
+      Robustez y Portabilidad Java es un lenguaje popular en desarrollo de
+      aplicaciones empresariales y móviles. Su enfoque en la portabilidad lo
+      hace valioso. C++: Programación de Bajo Nivel Si deseas adentrarte en
+      programación de sistemas o desarrollo de videojuegos, C++ es una opción
+      sólida. Ofrece un control más profundo sobre el hardware. Ruby:
+      Productividad y Comunidad Activa Ruby es conocido por su elegante sintaxis
+      y es ideal para desarrolladores que valoran la productividad y pertenecer
+      a una comunidad activa. C#: Desarrollo en el Ecosistema de Microsoft C# es
+      esencial si deseas crear aplicaciones para Windows o juegos con Unity.
+      Tiene un sólido respaldo de Microsoft. En última instancia, la elección
+      del lenguaje depende de tus intereses y metas. Comienza por definir qué
+      tipo de desarrollo te atrae, investiga los lenguajes asociados y, lo más
+      importante, ¡comienza a programar! El proceso de aprendizaje es valioso,
+      independientemente del lenguaje que elijas, en este curso empezaremos por
+      JavaScript.
+
+      <h2 id="intro">Introducción a JavaScript: El Lenguaje de la Web</h2>  
+
+      <p>JavaScript es un lenguaje de programación fundamental en el desarrollo web. Se utiliza para crear interactividad en sitios web y aplicaciones. Aquí hay algunos conceptos clave para comprender:
+
+        Lenguaje Versátil: JavaScript es un lenguaje versátil que se ejecuta en el navegador web del usuario. Esto significa que no necesitas instalar nada especial para usarlo.
+        
+        Interacción en Tiempo Real: JavaScript permite crear experiencias interactivas en tiempo real en una página web. Puedes validar formularios, cargar contenido dinámicamente y responder a acciones del usuario.
+        
+        DOM (Document Object Model): JavaScript se utiliza para interactuar con el DOM, que es la representación de una página web en la memoria del navegador. Puedes cambiar el contenido, estilos y estructura de una página web con JavaScript.
+        
+        Eventos y Funciones: JavaScript se basa en eventos y funciones. Puedes escuchar eventos como clics de botón y ejecutar funciones específicas en respuesta. Esto permite controlar el flujo de tu aplicación.
+        
+        Librerías y Frameworks: Existen librerías y frameworks populares como jQuery, React, y Angular que simplifican el desarrollo con JavaScript. Estas herramientas facilitan la creación de aplicaciones web complejas.
+        
+        Aprendizaje Continuo: JavaScript es un lenguaje en constante evolución. A medida que nuevos estándares y características se introducen, aprender y mantenerse actualizado es esencial.
+        
+        Comunidad Activa: JavaScript tiene una comunidad activa y una abundancia de recursos en línea, lo que hace que sea accesible para aprender.
+        
+        En resumen, JavaScript es una herramienta esencial para cualquier desarrollador web. Te permite crear experiencias dinámicas y atractivas en la web. Si estás interesado en el desarrollo web, aprender JavaScript es un paso crucial en tu viaje.
+            
+        </p>
+
+        <img class="java"
+        src="imajenes2/javascript.jpg"
+        alt="Texto alternativo"
+       
+      />
+    </p>
+
+    <h2 id="empecemos">Por dónde empezar </h2>  
+
+    <p>Comenzar con HTML(un lenguaje de marcado) y CSS (estilos) es un gran punto de partida para desarrollar habilidades en diseño,
+         1. HTML:
+        Aprender la estructura básica: Comienza con las etiquetas fundamentales de HTML, como html, head, y body. Comprende la estructura de un documento HTML.
+        Etiquetas esenciales: Estudia etiquetas como h1, p, a, img, y ul, que son esenciales para crear contenido web.
+        Formularios: Familiarízate con las etiquetas de formulario, como form, input, y button, para recopilar información del usuario.
+        Práctica: Crea una página web simple utilizando lo que has aprendido. Agrega texto, imágenes y enlaces.
+        2. CSS:
+        Seletores y propiedades: Aprende cómo seleccionar elementos HTML y aplicar estilos a través de propiedades como color, tamaño de fuente y margen.
+        Diseño responsivo: Comprende cómo crear diseños que se adapten a diferentes tamaños de pantalla utilizando reglas de medios.
+        Transiciones y animaciones: Explora cómo agregar efectos de transición y animaciones para hacer tu sitio más atractivo.
+        Flexbox y Grid: Estudia técnicas de diseño más avanzadas como Flexbox y Grid para controlar la disposición de elementos en la página.
+        Práctica continua: Aplica tus conocimientos a proyectos personales, como crear una página de perfil o un portafolio.
+        3. Recursos adicionales:
+        Tutoriales en línea: Utiliza tutoriales en línea, como videos de YouTube y cursos en sitios web de programación, para aprender más.
+        Documentación: Consulta la documentación oficial de HTML y CSS para obtener información detallada sobre etiquetas y propiedades.
+        Comunidad: Únete a comunidades en línea y foros de desarrollo web para hacer preguntas y recibir retroalimentación.
+        Con dedicación y práctica constante, estarás en el camino correcto para convertirte en un desarrollador web competente. ¡Disfruta del proceso de aprendizaje!
+        <h4>Nota: Para empezar a programar es necesario tener un editor de código en este caso estoy utilizando visual studio code. </h4>
+        </p><br><br>
+
+
+        <h3 id="estructura">Estructura del html</h3>
+
+
+        <img class="java"
+        src="imajenes2/Estructura.jpg"
+        alt="Texto alternativo"
+      />
+
+
+      <h2 id="entorno">Entorno de desarrollo (editor de código).</h2><br>
+
+      <p>Como descargar visual studio code:
+        Puedes descargar Visual Studio Code (VS Code) siguiendo estos pasos:
+        
+        Visita el sitio web oficial de Visual Studio Code: Visual Studio Code Download.
+        
+        En la página de descarga, verás opciones para descargar Visual Studio Code en diferentes plataformas, como Windows, macOS y Linux. Haz clic en el botón de descarga correspondiente a tu sistema operativo.
+        
+        La descarga comenzará automáticamente. Una vez que se complete la descarga, abre el archivo de instalación.
+        
+        Sigue las instrucciones del instalador para completar la instalación de Visual Studio Code en tu computadora.</p>
+        
+
+        <div class="video-section"><!--  -->
+          <video controls >
+            <source src="video/visual-studio-code.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+
+
+        
+      <h2 id="hola">Hola mundo</h2>  
+        
+      <p>En este primer paso estoy haciendo un hola mundo con la estructura de html, para que empiecen a familiarizarse con la estructura.</p>  
+
+
+      <div class="video-section"><!--  -->
+        <video controls >
+          <source src="video/hola-mundo.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+  
+
+              
+      <h2 id="varia">Variables</h2>  
+
+      <p id="varia">En programación, una variable es un contenedor para almacenar datos que pueden cambiar. Tienen un nombre único, un tipo de datos y se utilizan para realizar cálculos y almacenar información en programas. Las variables son fundamentales en la programación y se rigen por convenciones de nomenclatura. Las letras 'i' y 'j' son comunes para nombres de variables en bucles debido a su simplicidad. Las variables pueden ser de longitud fija o variable. En resumen, las variables son esenciales para el desarrollo de software y se utilizan para almacenar y manipular datos en programas.</p>
+
+      <div class="video-section">
+        <video controls >
+          <source src="video/variables.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+
+
+
+      <h2 id="funci">¿Que es una función?</h2>  
+
+      <p>Las funciones en programación son una forma de organizar y reutilizar código al dividirlo en bloques que realizan tareas específicas. Esto mejora la legibilidad, el mantenimiento y la eficiencia del código.</p>
+      <div class="video-section">
+        <video controls >
+          <source src="video/FUNCIONES.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+      
+
+      <h2 id="con">Condicionales
+      </h2>  
+
+      <p>Una condicional en programación es una estructura que permite tomar decisiones basadas en ciertas condiciones o criterios. Las condicionales se utilizan para controlar el flujo de un programa, ejecutando diferentes bloques de código según si una condición es verdadera o falsa.</p>
+      <div class="video-section">
+        <video controls >
+          <source src="video/Condicionales.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+      
+
+      <h2 id="ci">Ciclos</h2>  
+
+      <p>Los ciclos, también conocidos como bucles en programación, son estructuras que permiten la repetición de un conjunto de instrucciones un número determinado de veces o hasta que se cumpla una condición específica.</p>
+      <div class="video-section">
+        <video controls >
+          <source src="video/ciclos.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+
+
+      <h2 id="array">Arrays</h2>  
+
+      <p>Los arrays (también conocidos como arreglos o listas) son estructuras de datos en programación que permiten almacenar una colección de elementos del mismo tipo bajo un solo nombre. Los elementos en un array se almacenan en posiciones numeradas llamadas índices. </p>
+      <div class="video-section">
+        <video controls >
+          <source src="video/array.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+
+      <h2 id="ob">Objetos</h2>  
+
+      <p>Los objetos, en programación, son elementos fundamentales en el paradigma de Programación Orientada a Objetos (POO). Un objeto es una instancia de una clase, y se utiliza para modelar y representar conceptos del mundo real en un programa de software.</p>
+      <div class="video-section">
+        <video controls >
+          <source src="video/objetos.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+        
+      <h2 id="progra">Programación suma resta división multiplicación</h2>  
+
+      <p>En este video estamos haciendo una calculadora de suma resta multiplicación y división. </p>
+
+      <div class="video-section">
+        <video controls >
+          <source src="video/Calculadora.mp4" type="video/mp4" />
+          Tu navegador no soporta el video p.
+        </video>
+      </div>
+        
+        
+      <h2 id="bases">¿ Que son las bases de datos ?</h2>  
+
+      <p>Las bases de datos son sistemas organizados para almacenar, gestionar y recuperar datos de manera eficiente. Aquí hay un resumen corto de las bases de datos:
+
+        Definición: Una base de datos es un conjunto estructurado de datos que se organiza y se almacena de manera que sea fácil de acceder, gestionar y actualizar.
+        
+        Sistema de Gestión de Bases de Datos (DBMS): Es un software que facilita la creación, gestión y manipulación de bases de datos. Ejemplos incluyen MySQL, PostgreSQL, Oracle, y MongoDB.
+        
+        Tabla: En un modelo relacional, la información se organiza en tablas. Cada tabla tiene filas y columnas, donde cada fila representa una entrada y cada columna representa un atributo.
+        
+        SQL (Structured Query Language): Es un lenguaje estándar para interactuar con bases de datos relacionales. Se utiliza para realizar consultas, actualizaciones, inserciones y eliminaciones de datos.
+        
+        Clave Primaria: Es un campo o conjunto de campos que identifica de manera única cada fila en una tabla. Garantiza la integridad y la relación entre las tablas.
+        
+        Índice: Mejora la velocidad de búsqueda en una base de datos al proporcionar una estructura optimizada para acceder a datos específicos de manera más rápida.
+        
+        Normalización: Es el proceso de organizar datos en una base de datos para reducir la redundancia y mejorar la integridad, evitando problemas como la pérdida de información.
+        
+        NoSQL: Son bases de datos que no siguen el modelo relacional tradicional y permiten la flexibilidad en la estructura de los datos. Ejemplos incluyen MongoDB y Cassandra.
+        
+        Backup y Recuperación: Los sistemas de bases de datos deben tener procedimientos de copia de seguridad para proteger los datos contra pérdidas o daños, y la capacidad de recuperación en caso de fallos.
+        
+        Integridad de Datos: Garantizar que los datos en la base de datos sean precisos y consistentes. Esto se logra mediante restricciones, como las claves primarias y foráneas. </p>
+
+      <div class="video-section">
+        <video controls >
+          <source src="video/bases-datos.mp4" type="video/mp4" />
+          Tu navegador no soporta el video p.
+        </video>
+      </div>
+
+
+
+      <h2 id="crea">Crear una base de datos en php MSQL</h2>  
+
+      <p>Este es un ejemplo de cómo crear una base de datos  en php msql y la tabla.</p>
+      <div class="video-section">
+        <video controls >
+          <source src="video/bases2.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+
+
+      <br><br>
+                 <!-- Formulario con envio en linea  -->
+        <div class="container">      
+          <h2 class="form2" id="mensaje" >Envía un mensaje</h2>
+                <form  action="https://formsubmit.co/brayan324554@gmail.com" method="post">
+            <label class="lab" for="nombre">Nombre:</label>
+            <input class="lab" type="text" id="nombre" placeholder="Nombre" name="nombre" required><br>
+            <br>
+            <label class="lab" for="correo">Correo:</label>
+            <input class="lab" type="email" id="correo" placeholder="Correo" name="correo" required><br>
+            <br>
+            <label class="lab" for="mensaje">Mensaje:</label><br>
+            <textarea class="lab" id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+            <br>
+            <input type="submit" value="Enviar">
+          </form>
+
+          <br><br>
+          <br><br>
+     
+            
+          <!-- Seccion de contacto -->
+        <div class="contact-section">
+        <h3>CONTACTO</h3>
+        <p class="centrarcon">ARMENIA QUINDIO</p>
+        <p class="centrarcon">TELEFONO: 3052076713</p>
+        <p class="centrarcon">POLÍTICA DE SEGURIDAD</p>
+        <p class="centrarcon">ACERCA</p>
+        <p class="centrarcon">EMAIL: brayan324554@gmail.com</p>
+        <p class="centrarcon" id="fecha">@2023</p>
+      </div>
+
+     
+
+
+
+      <a href="index.html">
+        <button class="inicio">INICIO</button>
+      </a>
+<script src="script.js"></script>
+<!-- Agrega este enlace a fuse.js -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
+    </body>
+</html>

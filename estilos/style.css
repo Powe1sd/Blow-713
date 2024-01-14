@@ -1,0 +1,179 @@
+body {
+  background-color: #641e16;
+}
+
+.cafe {
+  text-align: center;
+  font-size: 30px;
+  background-color: gold;
+  color: white;
+}
+
+.inicio2 {
+  position: fixed;
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+  left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+  cursor: pointer;
+}
+
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.prese {
+  color: green;
+}
+
+/* Estilos del modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.modal-content {
+  background-color: #8a4200;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 50px;
+  color: red;
+}
+
+/* Estilo para la imagen a pantalla completa */
+#imagenProductoModal {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+/* Estilos para la disposición de los productos de sección inicio */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #641e16;
+}
+
+.producto {
+  width: 30%;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+}
+
+.producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid green;
+}
+/* Resto de tus estilos... */
+
+.nombre-precio {
+  position: absolute;
+  bottom: -10px; /* Ajusta el valor según sea necesario para dispositivos normales */
+  left: 0;
+  right: 0;
+  background-color: #1c0d02;
+  color: yellow;
+  text-align: center;
+  padding: 5px;
+  opacity: 0.8;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Estilos para dispositivos pequeños y normales */
+@media screen and (max-width: 768px) {
+  .nombre-precio {
+    width: 100%;
+    border-radius: 0;
+    bottom: -25px; /* Ajusta el valor según sea necesario para dispositivos pequeños */
+  }
+}
+
+/* Resto de tus estilos... */
+
+#modal.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .productos {
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan en dispositivos móviles */
+  }
+
+  .producto {
+    width: calc(
+      33.33% - 20px
+    ); /* 33.33% del ancho del contenedor con un margen de 10px a cada lado */
+    margin: 3px;
+    padding: 4px;
+  }
+}
+
+/* Contacto */
+.contacto-section {
+  margin: 0;
+  text-align: center;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.contacto-section h2 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.contacto-section p {
+  color: #555;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.armenia {
+  font-weight: bold;
+  color: #e44d26; /* Color naranja, puedes cambiarlo según tus preferencias */
+}
+
+/* Añadir algunos estilos adicionales si es necesario */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: green;
+  font-size: 1.2em; /* Puedes ajustar el tamaño de fuente según tus preferencias */
+  padding: 10px 20px; /* Puedes ajustar el relleno (padding) según tus preferencias */
+  border: 1px solid yellow;
+}

@@ -1,0 +1,291 @@
+body {
+  max-width: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: #641e16;
+  margin: 0;
+  padding: 0;
+  color: #fff; /* Texto en color blanco */
+}
+
+/* Adaptando a dispositivos moviles */
+/* Aumenta el tamaño del botón de WhatsApp para móviles */
+@media (max-width: 576px) {
+  .whatsapp-btn {
+    padding: 20px 30px;
+  }
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajusta el tamaño de la fuente para dispositivos móviles */
+@media (max-width: 576px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+.logo {
+  position: fixed;
+  bottom: 570px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  border-radius: 10px;
+}
+
+.textocoy {
+  background-color: gold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.product-item {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product-name {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.product-price {
+  margin-top: 5px;
+  color: gold;
+}
+
+.textouno {
+  background-color: #ddd;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.textocafe {
+  background-color: gold;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.contacto-section,
+.privacidad-section,
+.about-section {
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+  color: #ddd;
+  text-align: center;
+}
+
+.cecion {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ddd;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.producto {
+  color: gold;
+  width: 20%;
+  height: 60px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.producto:hover {
+  background-color: darkred; /* Cambio de color al pasar el ratón */
+}
+
+.precio {
+  background-color: darkgreen;
+  color: gold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.precio2 {
+  color: #ddd;
+}
+
+.info {
+  color: gold;
+}
+
+#whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#whatsapp-icon img {
+  width: 99px;
+  height: 80px;
+}
+
+#whatsapp-icon span {
+  margin-top: 5px;
+  font-size: 12px;
+  color: black;
+}
+
+.precio3 {
+  color: darkgreen;
+  font-size: 30px;
+}
+
+.producto {
+  width: 40%;
+  background-color: black;
+  color: gold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.producto:hover {
+  background-color: #333; /* Cambio de color al pasar el ratón */
+}
+
+.inicio {
+  position: fixed;
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+  left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+  cursor: pointer;
+}
+
+.inicio:hover {
+  background-color: #333; /* Cambio de color al pasar el ratón */
+}
+
+.armenia {
+  color: green;
+  background-color: yellow;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .nicho {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nicho {
+    font-size: 12px;
+  }
+}
+
+.video3 {
+  width: 80%;
+  height: 30%;
+  background-color: black;
+  margin: 0 auto;
+  display: block;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#cafe-molido-section {
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.precio-container {
+  display: inline-block;
+  text-align: left; /* Alinea el contenido de precios a la izquierda */
+}
+
+#cafe-en-grano-section {
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.precio-container {
+  display: inline-block;
+  text-align: left; /* Alinea el contenido de precios a la izquierda */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-item {
+  width: calc(
+    33.33% - 20px
+  ); /* 33.33% para tres columnas, -20px para el espacio entre ellas */
+  margin: 10px; /* Espacio entre las imágenes */
+  text-align: center; /* Alinea el contenido al centro */
+  box-sizing: border-box; /* Evita que los márgenes afecten el tamaño total */
+}
+
+.image-item img {
+  max-width: 100%; /* Asegura que las imágenes se ajusten al ancho del contenedor */
+  height: auto; /* Mantiene la proporción de aspecto */
+}

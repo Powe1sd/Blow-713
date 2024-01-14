@@ -1,0 +1,203 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #154360;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.left-column {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.right-column {
+  flex: 4;
+}
+
+.hoja {
+  text-align: center;
+  color: gold;
+  font-family: "Times New Roman", Times, serif;
+  background-color: white;
+}
+
+.titular {
+  color: white;
+}
+
+.parrafo {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+
+.estudios {
+  text-align: center;
+  color: gold;
+  background: white;
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.lista {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista2 {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  list-style-type: disc;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.profile-picture {
+  width: 250px;
+  /*Ajustaelanchodelaimagensegúntupreferencia*/
+  height: auto;
+  /*Manténlarelacióndeaspectooriginal*/
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  position: fixed;
+
+  /*Hacequelaimagentengaunaposiciónfija*/
+  top: 20px;
+  /*Ajustalaposiciónverticaldesdelapartesuperior*/
+  left: 20px;
+}
+
+.video3 {
+  width: 80%;
+  height: 30%;
+  background-color: black;
+  margin: 0 auto;
+  display: block;
+}
+
+
+.inicio {
+  position: fixed;
+  font-size: 40px;
+  color: red;
+  background-color: black;
+  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+  left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  -webkit-transition: transform 0.2s, box-shadow 0.2s;
+  -moz-transition: transform 0.2s, box-shadow 0.2s;
+  -ms-transition: transform 0.2s, box-shadow 0.2s;
+  -o-transition: transform 0.2s, box-shadow 0.2s;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.desarrollo {
+  color: gold;
+}
+
+/* Estilos para formulario de contacto */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form2 {
+  text-align: center;
+  font-size: 40px;
+  color: gold;
+}
+
+/* Estilo de etiquetas y campos de entrada */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Estilo del botón de envío */
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo al pasar el cursor sobre el botón */
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.mensaje {
+  text-align: center;
+  color: gold;
+}
+
+.inicio {
+  position: fixed;
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+  left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+}

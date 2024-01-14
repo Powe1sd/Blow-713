@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+}
+
+/* Boton de inicio */
+.inicio {
+  position: fixed;
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+  left: 10px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+  cursor: pointer;
+}
+
+h1 {
+  color: red;
+  text-align: center;
+}
+
+ul {
+  color: blue;
+}
+
+h2 {
+  color: red;
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+}
+
+h3 {
+  text-align: center;
+}
+
+/* Estilos generales para todos los tamaños de pantalla */
+.pse {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh;
+}
+
+.java {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 65vh;
+}
+
+/* Media query para adaptar a dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .pse {
+    /* Estilos específicos para dispositivos móviles */
+    /* Puedes ajustar el contenido de esta sección según tus necesidades */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 40vh; /* Altura adaptada para móviles */
+  }
+
+  .java {
+    /* Estilos específicos para dispositivos móviles */
+    /* Puedes ajustar el contenido de esta sección según tus necesidades */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 14vh; /* Altura adaptada para móviles */
+  }
+}
+
+.contact-section {
+  background-color: black;
+  color: white;
+  padding: 0px;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.centrarcon {
+  text-align: center;
+}
+
+#fecha {
+  font-size: 12px; /* Tamaño de fuente para la fecha */
+  color: #999; /* Color del texto de la fecha */
+}
+
+video {
+  display: block; /* Hace que el video sea un elemento de bloque */
+  margin: 0 auto;
+  border: 1px solid black; /* Centra horizontalmente el video */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  display: block; /* Hace que el video sea un elemento de bloque */
+  margin: 0 auto;
+  border: 1px solid black; /* Centra horizontalmente el video */
+  width: 80%;
+  height: 20%;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Estilos para formulario de contacto */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form2 {
+  text-align: center;
+  font-size: 40px;
+  color: black;
+}
+
+/* Estilo de etiquetas y campos de entrada */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Estilo del botón de envío */
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Estilo al pasar el cursor sobre el botón */
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Otroo */
+
+/* Agrega este bloque de CSS en tu archivo de estilos */
+/* Agrega este bloque de CSS en tu archivo de estilos */
+.search-container {
+  width: 90%;
+  position: fixed;
+}
+
+#searchInput {
+  border: none;
+  padding-right: 20px;
+  color: black !important; /* Agrega !important */
+}
+
+.clear-search {
+  position: absolute;
+  right: -15px;
+  top: 30%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-weight: bold;
+  color: red;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+#searchInput::placeholder {
+  text-align: center;
+  color: black;
+}
+
+#searchInput {
+  border: 1px solid black; /* Borde negro */
+  text-align: center; /* Centrar el texto */
+}

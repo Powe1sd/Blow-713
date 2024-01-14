@@ -1,0 +1,69 @@
+body {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden; /* Para ocultar elementos que salen de la vista */
+}
+
+h1 {
+  padding: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 50px;
+}
+
+ul.creditos {
+  list-style-type: none;
+  padding: 0;
+}
+
+.creditos {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.creditos li {
+  font-size: 18px;
+  margin: 10px 0;
+  opacity: 0;
+  /*Elementosinicialmenteinvisibles*/
+  transform: translateY(-100%);
+  /*Desplazadoshaciaarriba*/
+  animation: mostrar 5s linear infinite;
+  /*Animacióninfinita*/
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  -webkit-animation: mostrar 15s linear infinite;
+}
+
+@keyframes mostrar {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  25%,
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inicio {
+  position: fixed;
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+  left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+}

@@ -1,0 +1,69 @@
+body {
+  background-color: whitesmoke;
+}
+
+.proyec,
+.proyecto2,
+.regis {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  width: 100%;
+  border: 1px solid red;
+}
+
+video {
+  display: block; /* Hace que el video sea un elemento de bloque */
+  margin: 0 auto;
+  border: 1px solid black; /* Centra horizontalmente el video */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  display: block; /* Hace que el video sea un elemento de bloque */
+  margin: 0 auto;
+  border: 1px solid black; /* Centra horizontalmente el video */
+  width: 80%;
+  height: 20%;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  /* Estilos para pantallas más pequeñas */
+  body {
+    font-size: 20px;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  .inicio {
+    width: 100%;
+  }
+}
+
+/* Boton de inicio */
+.inicio2 {
+  position: fixed;
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+  bottom: 10px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+  left: 5px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+  cursor: pointer;
+}
+
+/* Contacto seccion */
+.contact-section {
+  background-color: black;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  bottom: 0;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
