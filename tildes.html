@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corrector de Tildes</title>
+    <script>
+      function corregirTildes() {
+        var textoOriginal = document.getElementById("textoInput").value;
+
+        // Lista de palabras comunes en español que llevan tilde
+        var palabrasConTilde = [
+          "á",
+          "é",
+          "í",
+          "ó",
+          "ú",
+          "Á",
+          "É",
+          "Í",
+          "Ó",
+          "Ú",
+        ];
+
+        // Realiza la corrección palabra por palabra
+        var textoCorregido = textoOriginal.replace(
+          /\b[aeiouáéíóúÁÉÍÓÚ]+\b/g,
+          function (match) {
+            if (palabrasConTilde.indexOf(match.toLowerCase()) !== -1) {
+              return match.toLowerCase(); // Conserva la palabra tal como está si ya lleva tilde
+            } else {
+              // Agrega tilde a la primera vocal
+              return match.replace(/[aeiou]/i, function (vocal) {
+                return (
+                  palabrasConTilde.find(
+                    (tilde) => tilde.toLowerCase() === vocal.toLowerCase()
+                  ) || vocal
+                );
+              });
+            }
+          }
+        );
+
+        // Muestra el resultado
+        if (textoOriginal.toLowerCase() === textoCorregido.toLowerCase()) {
+          alert("No necesita corrección.");
+        } else {
+          alert(
+            "Texto original: " +
+              textoOriginal +
+              "\nTexto corregido: " +
+              textoCorregido
+          );
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Corrector de Tildes</h1>
+    <label for="textoInput">Introduce un texto:</label>
+    <input type="text" id="textoInput" />
+    <button onclick="corregirTildes()">Corregir Tildes</button>
+  </body>
+</html>
