@@ -236,6 +236,17 @@ details[open] {
   -ms-transition: transform 0.2s, box-shadow 0.2s;
   -o-transition: transform 0.2s, box-shadow 0.2s;
 }
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Botón de WhatsApp en dispositivos móviles */
 
