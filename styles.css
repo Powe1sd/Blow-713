@@ -104,6 +104,10 @@ details[open] {
   -moz-transition: transform 0.1s;
   -ms-transition: transform 0.1s;
   -o-transition: transform 0.1s;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
 }
 
 .sidebar {
@@ -140,6 +144,8 @@ details[open] {
   bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
   left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
 }
+
+/* Clase de la foto  */
 .profile-picture {
   width: 200px;
   /*Ajustaelanchodelaimagensegúntupreferencia*/
@@ -147,12 +153,16 @@ details[open] {
   /*Manténlarelacióndeaspectooriginal*/
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid white;
+  border: 2px solid red;
   position: fixed;
   /*Hacequelaimagentengaunaposiciónfija*/
   top: 5px;
   /*Ajustalaposiciónverticaldesdelapartesuperior*/
   right: 1px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .inicio3 {
@@ -446,5 +456,3 @@ ul li::after {
 .des {
   background-color: blue;
 }
-
-
