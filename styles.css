@@ -147,7 +147,7 @@ details[open] {
 
 /* Clase de la foto  */
 .profile-picture {
-  width: 200px;
+  width: 100px;
   /*Ajustaelanchodelaimagensegúntupreferencia*/
   height: auto;
   /*Manténlarelacióndeaspectooriginal*/
@@ -253,6 +253,10 @@ video {
 .whatsapp-btn:hover {
   transform: scale(1.1);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 
 /* SECCION DE CONTACTO */
