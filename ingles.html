@@ -27,6 +27,15 @@
       .audio {
         margin-left: 5px; /* Ajuste de margen izquierdo */
       }
+
+      .question-container {
+        margin-bottom: 20px;
+      }
+
+      .options-container label {
+        display: block;
+        margin-bottom: 10px;
+      }
     </style>
 
     <a href="index.html">
@@ -186,5 +195,80 @@
         <li>Where do you work? (¿Dónde trabajas?)</li>
       </ul>
     </div>
+
+    <!-- Quiz de preguntas -->
+    <div class="section" id="questions-section">
+      <h2>Preguntas de Práctica:</h2>
+      <ul>
+        <li class="question-container">
+          <p>1. What is the meaning of "Hello"?</p>
+          <div class="options-container">
+            <label><input type="radio" name="q1" value="a" /> a) Goodbye</label>
+            <label><input type="radio" name="q1" value="b" /> b) Hi</label>
+            <label
+              ><input type="radio" name="q1" value="c" /> c) Thank you</label
+            >
+            <label
+              ><input type="radio" name="q1" value="d" /> d) Excuse me</label
+            >
+          </div>
+          <!-- Respuesta Correcta: b -->
+        </li>
+        <li class="question-container">
+          <p>2. How would you respond to "How are you?"</p>
+          <div class="options-container">
+            <label
+              ><input type="radio" name="q2" value="a" /> a) Good night</label
+            >
+            <label
+              ><input type="radio" name="q2" value="b" /> b) I'm sorry</label
+            >
+            <label
+              ><input type="radio" name="q2" value="c" /> c) I'm good</label
+            >
+            <label><input type="radio" name="q2" value="d" /> d) Yes</label>
+          </div>
+          <!-- Respuesta Correcta: c -->
+        </li>
+        <!-- Agrega más preguntas aquí -->
+      </ul>
+      <button id="validateBtn">Validar Respuestas</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("validateBtn")
+        .addEventListener("click", function () {
+          const answers = {
+            q1: "b",
+            q2: "c",
+            // Agrega más respuestas aquí
+          };
+
+          let score = 0;
+          let correctAnswers = "";
+
+          Object.keys(answers).forEach((question) => {
+            const selectedAnswer = document.querySelector(
+              `input[name="${question}"]:checked`
+            );
+            if (selectedAnswer) {
+              const userAnswer = selectedAnswer.value;
+              if (userAnswer === answers[question]) {
+                score++;
+                correctAnswers += `\nRespuesta correcta para la pregunta ${question}: ${userAnswer}`;
+              } else {
+                correctAnswers += `\nRespuesta incorrecta para la pregunta ${question}. La respuesta correcta es ${answers[question]}`;
+              }
+            }
+          });
+
+          alert(
+            `Tu puntuación es: ${score}/${
+              Object.keys(answers).length
+            }${correctAnswers}`
+          );
+        });
+    </script>
   </body>
 </html>
