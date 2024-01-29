@@ -2,3 +2,4 @@ papeleria.mp4 filter=lfs diff=lfs merge=lfs -text
 logo/papeleria.mp4 filter=lfs diff=lfs merge=lfs -text
 SISTEMA-LOGING.rar filter=lfs diff=lfs merge=lfs -text
 SUPERNOVAS.mp4 filter=lfs diff=lfs merge=lfs -text
+*.cdr filter=lfs diff=lfs merge=lfs -text
