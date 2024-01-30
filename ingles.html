@@ -25,7 +25,8 @@
       }
 
       .audio {
-        margin-left: 5px; /* Ajuste de margen izquierdo */
+        margin-left: auto; /* Ajuste de margen izquierdo para que estén en la esquina */
+        margin-right: 5px; /* Ajuste de margen derecho */
       }
 
       .question-container {
@@ -84,6 +85,7 @@
             Tu navegador no soporta el elemento de audio.
           </audio>
         </li>
+
         <li class="pronoun">
           <span class="text">You (tú, usted)</span>
           <div class="divider"></div>
@@ -97,12 +99,44 @@
 
     <div class="section">
       <h2>Saludos Básicos:</h2>
+      <!-- empieza -->
       <ul>
-        <li>Hello! (¡Hola!)</li>
-        <li>Hi! (¡Hola!) [informal]</li>
-        <li>Good morning! (¡Buenos días!)</li>
-        <li>Good afternoon! (¡Buenas tardes!)</li>
-        <li>Good evening! (¡Buenas noches!)</li>
+        <li class="pronoun">
+          <span class="text">Hello (Hola)</span>
+          <div class="divider"></div>
+          <audio controls class="audio">
+            <source src="audios-ingles/hello.mp3" type="audio/mp3" />
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+        </li>
+        <!-- Termina -->
+
+        <li class="pronoun">
+          Good morning! ((¡Buenos días!))
+          <div class="divider"></div>
+          <audio controls class="audio">
+            <source src="audios-ingles/good-morning.mp3" type="audio/mp3" />
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+        </li>
+
+        <li class="pronoun">
+          Good afternoon! (¡Buenas tardes!)
+          <div class="divider"></div>
+          <audio controls class="audio">
+            <source src="audios-ingles/good-afternog.mp3" type="audio/mp3" />
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+        </li>
+
+        <li class="pronoun">
+          Good evening! (¡Buenas noches!)
+          <div class="divider"></div>
+          <audio controls class="audio">
+            <source src="audios-ingles/good-evering.mp3" type="audio/mp3" />
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+        </li>
       </ul>
     </div>
 
