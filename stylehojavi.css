@@ -5,9 +5,28 @@ body {
   padding: 0;
 }
 
+.numero-esquina {
+  position: absolute;
+  top: 10px;
+  /*ajustalaposiciónverticalmentesegúnlonecesites*/
+  right: 10px;
+  /*ajustalaposiciónhorizontalmentesegúnlonecesites*/
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  position: fixed;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
 /* Estilos para cambiar el color del texto de los enlaces dentro de las listas */
 ul li a {
-  color: white; /* Cambia el color del texto de los enlaces */
+  color: gray; /* Cambia el color del texto de los enlaces */
   text-decoration: none; /* Quita el subrayado de los enlaces */
 }
 
@@ -17,6 +36,7 @@ ul li a:hover {
 
 .des {
   color: black;
+  background-color: white;
   font-family: "Times New Roman", Times, serif;
   font-size: 25px;
 }
