@@ -67,13 +67,14 @@ ul li a:hover {
 
 .hoja {
   text-align: center;
-  color: gold;
+  color: black;
   font-family: "Times New Roman", Times, serif;
-  background-color: white;
+  background-color: #f4f4f4;
 }
 
 .titular {
   color: white;
+  font-size: 20px;
 }
 
 .parrafo {
@@ -108,7 +109,7 @@ ul li a:hover {
 }
 
 .profile-picture {
-  width: 250px;
+  width: 180px;
   /*Ajustaelanchodelaimagensegúntupreferencia*/
   height: auto;
   /*Manténlarelacióndeaspectooriginal*/
