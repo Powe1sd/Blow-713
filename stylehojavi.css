@@ -68,6 +68,7 @@ ul li a:hover {
 .hoja {
   text-align: center;
   color: black;
+  font-size: 35px;
   font-family: "Times New Roman", Times, serif;
   background-color: #f4f4f4;
 }
@@ -75,12 +76,14 @@ ul li a:hover {
 .titular {
   color: white;
   font-size: 20px;
+  text-align: justify;
 }
 
 .parrafo {
   color: white;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
+  text-align: justify;
 }
 
 .estudios {
@@ -89,6 +92,7 @@ ul li a:hover {
   background: white;
   font-size: 22px;
   font-family: "Times New Roman", Times, serif;
+  text-align: justify;
 }
 
 .lista {
