@@ -53,3 +53,23 @@ a:hover {
   left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
   cursor: pointer;
 }
+
+.videos {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.video3 {
+  width: 80%;
+  height: 30%;
+  background-color: black;
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
