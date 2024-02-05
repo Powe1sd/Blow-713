@@ -6,6 +6,31 @@
   color: black;
   text-align: justify;
 }
+.boton-venta-cafe {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  font-size: 40px;
+  width: 40%;
+  cursor: pointer;
+  background-color: gold;
+  color: white;
+  animation: luciernaga 2s ease-in-out infinite; /* Animación de luciérnaga */
+}
+
+/* Definir la animación de luciérnaga */
+@keyframes luciernaga {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
 
 .text {
   flex: 1;
@@ -54,6 +79,7 @@ video {
   text-align: center;
   background-color: black;
   color: white;
+  position: fixed;
 }
 
 .corner-text {

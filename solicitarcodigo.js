@@ -1,7 +1,7 @@
 function solicitarCodigo(event) {
   swal({
     title: "Seguro que quieres continuar",
-    text: "La venta de café estará pronto disponible",
+    text: "Odisea estelar",
     buttons: {
       cancel: true,
       confirm: {
@@ -65,6 +65,44 @@ function solicitarCodigo3(event) {
           icon: "success",
         }).then(() => {
           window.location.replace("index2.html");
+        });
+      } else {
+        // Si es incorrecto, muestra un mensaje de error
+        swal("Código incorrecto", "No tienes acceso a esta página.", "error");
+      }
+    }
+  });
+  event.preventDefault(); // Evita que el enlace realice su acción predeterminada
+}
+
+function solicitarCodigo4(event) {
+  swal({
+    title: "Súper descuento",
+    text: "Solicita tu código de ingreso para poder tener el curso completo",
+    buttons: {
+      cancel: true,
+      confirm: {
+        text: "Continuar",
+        value: true,
+        visible: true,
+        className: "btn-primary",
+        closeModal: true,
+      },
+    },
+    closeOnClickOutside: false,
+    closeOnEsc: false,
+  }).then((confirm) => {
+    if (confirm) {
+      var codigoIngresado = prompt("Ingresa el código:");
+      var codigosPermitidos = ["713"]; // Array con los códigos permitidos
+
+      // Verifica si el código ingresado está en el array de códigos permitidos
+      if (codigosPermitidos.includes(codigoIngresado)) {
+        // Si es correcto, redirige al usuario a universo.html
+        swal("Código correcto. ¡Bienvenido al curso de ingles!", {
+          icon: "success",
+        }).then(() => {
+          window.location.replace("ingles.html");
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
