@@ -1,3 +1,68 @@
+.pronoun {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.divider {
+  flex: 1;
+  border-top: 1px solid #ccc;
+  margin: 0 5px; /* Ajuste de margen izquierdo y derecho */
+}
+
+.audio {
+  margin-left: auto; /* Ajuste de margen izquierdo para que estén en la esquina */
+  margin-right: 5px; /* Ajuste de margen derecho */
+}
+
+.question-container {
+  margin-bottom: 20px;
+}
+
+.options-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+video {
+  display: block; /* Hace que el video sea un elemento de bloque */
+  margin: 0 auto;
+  border: 1px solid black; /* Centra horizontalmente el video */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  display: block; /* Hace que el video sea un elemento de bloque */
+  margin: 0 auto;
+  border: 1px solid black; /* Centra horizontalmente el video */
+  width: 80%;
+  height: 20%;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.curso {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.corner-text {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: transparent; /* Fondo transparente */
+  color: red; /* Color de texto rojo */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+}
+
 body {
   font-family: "Arial", sans-serif;
   background-color: #f5f5f5;
@@ -76,15 +141,23 @@ p {
 
 .category-section {
   text-align: center;
+  position: fixed; /* Fijar la posición */
+  top: 0; /* Posición superior */
+  left: 0; /* Posición izquierda */
+  background-color: black; /* Color de fondo */
+  width: 100%; /* Ancho al 100% */
+  padding: 10px 0; /* Espaciado interno */
+  z-index: 999; /* Índice z para asegurar que esté por encima de otros elementos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .category-dropdown {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 
 .dropbtn {
-  background-color: #3498db;
+  background-color: blue;
   color: white;
   padding: 10px;
   font-size: 16px;
@@ -95,20 +168,23 @@ p {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: black;
   min-width: 160px;
+  max-height: 200px; /* Altura máxima */
+  overflow-y: auto; /* Agregar barra de desplazamiento vertical */
   z-index: 1;
+  font-size: 15px;
 }
 
 .dropdown-content a {
-  color: black;
+  color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: blue;
 }
 
 .category-dropdown:hover .dropdown-content {

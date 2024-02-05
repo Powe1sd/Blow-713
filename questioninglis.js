@@ -102,6 +102,7 @@ document.getElementById("validateBtn").addEventListener("click", function () {
   alert(`Tu puntuación es: ${score}/${questions.length}`);
 });
 
+
 // Función para descargar las respuestas
 function downloadAnswers() {
   let answersText = "Respuestas:\n\n";
