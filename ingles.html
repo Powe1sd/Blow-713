@@ -3703,83 +3703,17 @@
 
 
     <!-- Quiz de preguntas ********************************************************************++ -->
+
     <div class="section" id="questions-section">
-      <h2>Preguntas de Práctica:</h2>
-      <ul>
-        <li class="question-container">
-          <p>1. What is the meaning of "Hello"?</p>
-          <div class="options-container">
-            <label><input type="radio" name="q1" value="a" /> a) Goodbye</label>
-            <label><input type="radio" name="q1" value="b" /> b) Hi</label>
-            <label
-              ><input type="radio" name="q1" value="c" /> c) Thank you</label
-            >
-            <label
-              ><input type="radio" name="q1" value="d" /> d) Excuse me</label
-            >
-          </div>
-          <br /><br />
-          <td></td>
-        </li>
-
-        <li class="question-container">
-          <p>2. How would you respond to "How are you?"</p>
-          <div class="options-container">
-            <label
-              ><input type="radio" name="q2" value="a" /> a) Good night</label
-            >
-            <label
-              ><input type="radio" name="q2" value="b" /> b) I'm sorry</label
-            >
-            <label
-              ><input type="radio" name="q2" value="c" /> c) I'm good</label
-            >
-            <label><input type="radio" name="q2" value="d" /> d) Yes</label>
-          </div>
-          <!-- Respuesta Correcta: c -->
-        </li>
-        <!-- Agrega más preguntas aquí -->
+      <h2>Practice Questions:</h2>
+      <p id="question-counter"></p>
+      <ul id="questions-list">
+        <!-- Preguntas aparecerán aquí -->
       </ul>
-      <button id="validateBtn">Validar Respuestas</button>
-    </div>
-
-    <script>
-      document
-        .getElementById("validateBtn")
-        .addEventListener("click", function () {
-          const answers = {
-            q1: "b",
-            q2: "c",
-            // Agrega más respuestas aquí
-          };
-
-          let score = 0;
-          let correctAnswers = "";
-
-          Object.keys(answers).forEach((question) => {
-            const selectedAnswer = document.querySelector(
-              `input[name="${question}"]:checked`
-            );
-            if (selectedAnswer) {
-              const userAnswer = selectedAnswer.value;
-              if (userAnswer === answers[question]) {
-                score++;
-                correctAnswers += `\nRespuesta correcta para la pregunta ${question}: ${userAnswer}`;
-              } else {
-                correctAnswers += `\nRespuesta incorrecta para la pregunta ${question}. La respuesta correcta es ${answers[question]}`;
-              }
-            }
-          });
-
-          alert(
-            `Tu puntuación es: ${score}/${
-              Object.keys(answers).length
-            }${correctAnswers}`
-          );
-        });
-    </script>
-
-
+      <button id="nextBtn">Siguiente</button>
+      <button id="validateBtn" style="display:none;">Validar Respuestas</button>
+      <button id="downloadBtn" style="display:none;">Descargar Respuestas</button>
+    </div>      
 
 <h1 class="videos">Ejercicios de videos en ingles</h1>
 
@@ -3808,112 +3742,15 @@
     In conclusion, technological advances have the power to shape our future in profound ways, unlocking new opportunities and addressing some of the most pressing challenges facing humanity. By embracing innovation while also prioritizing ethical considerations, we can harness the full potential of technology to create a more prosperous, sustainable, and equitable world 
     for generations to come.</p>
     
-    
-    <div class="section" id="questions-section">
-      <h2>Preguntas de Práctica:</h2>
-      <ul>
-        <li class="question-container">
-          <p>1. What is the meaning of "Hello"?</p>
-          <div class="options-container">
-            <label><input type="radio" name="q1" value="a" /> a) Goodbye</label>
-            <label><input type="radio" name="q1" value="b" /> b) Hi</label>
-            <label><input type="radio" name="q1" value="c" /> c) Thank you</label>
-            <label><input type="radio" name="q1" value="d" /> d) Excuse me</label>
-          </div>
-          <br /><br />
-        </li>
-    
-        <li class="question-container">
-          <p>2. How would you respond to "How are you?"</p>
-          <div class="options-container">
-            <label><input type="radio" name="q2" value="a" /> a) Good night</label>
-            <label><input type="radio" name="q2" value="b" /> b) I'm sorry</label>
-            <label><input type="radio" name="q2" value="c" /> c) I'm good</label>
-            <label><input type="radio" name="q2" value="d" /> d) Yes</label>
-          </div>
-          <!-- Respuesta Correcta: c -->
-        </li>
-    
-        <!-- Add more questions here -->
-        <li class="question-container">
-          <p>3. What is the capital of Spain?</p>
-          <div class="options-container">
-            <label><input type="radio" name="q3" value="a" /> a) Madrid</label>
-            <label><input type="radio" name="q3" value="b" /> b) Paris</label>
-            <label><input type="radio" name="q3" value="c" /> c) London</label>
-            <label><input type="radio" name="q3" value="d" /> d) Rome</label>
-          </div>
-          <!-- Correct Answer: a -->
-        </li>
-    
-        <li class="question-container">
-          <p>4. Who wrote the novel "1984"?</p>
-          <div class="options-container">
-            <label><input type="radio" name="q4" value="a" /> a) George Orwell</label>
-            <label><input type="radio" name="q4" value="b" /> b) J.K. Rowling</label>
-            <label><input type="radio" name="q4" value="c" /> c) Charles Dickens</label>
-            <label><input type="radio" name="q4" value="d" /> d) Mark Twain</label>
-          </div>
-          <!-- Correct Answer: a -->
-        </li>
-    
-        <li class="question-container">
-          <p>5. What is the chemical symbol for gold?</p>
-          <div class="options-container">
-            <label><input type="radio" name="q5" value="a" /> a) Ag</label>
-            <label><input type="radio" name="q5" value="b" /> b) Au</label>
-            <label><input type="radio" name="q5" value="c" /> c) Fe</label>
-            <label><input type="radio" name="q5" value="d" /> d) Cu</label>
-          </div>
-          <!-- Correct Answer: b -->
-        </li>
-      </ul>
-      <button id="validateBtn">Validar Respuestas</button>
-    </div>
-
-    <script>
-      document.getElementById("validateBtn").addEventListener("click", function () {
-        const answers = {
-          q1: "b",
-          q2: "c",
-          q3: "a",
-          q4: "a",
-          q5: "b"
-        };
-    
-        let score = 0;
-        let correctAnswers = "";
-    
-        Object.keys(answers).forEach((question) => {
-          const selectedAnswer = document.querySelector(
-            `input[name="${question}"]:checked`
-          );
-          if (selectedAnswer) {
-            const userAnswer = selectedAnswer.value;
-            if (userAnswer === answers[question]) {
-              score++;
-              correctAnswers += `\nRespuesta correcta para la pregunta ${question}: ${userAnswer}`;
-            } else {
-              correctAnswers += `\nRespuesta incorrecta para la pregunta ${question}. La respuesta correcta es ${answers[question]}`;
-            }
-          }
-        });
-    
-        alert(
-          `Tu puntuación es: ${score}/${Object.keys(answers).length}${correctAnswers}`
-        );
-      });
-    </script>
-    
 
 
 
-  
 
 
+
+
+
+<!-- FIN DE CODIGO SCRIPT Y DEMAS ELEMENTOS*************************************************************************************** -->
 <script src="questioninglis.js"></script>
 </body>
-
-
-
 </html>
