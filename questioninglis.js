@@ -102,7 +102,6 @@ document.getElementById("validateBtn").addEventListener("click", function () {
   alert(`Tu puntuación es: ${score}/${questions.length}`);
 });
 
-
 // Función para descargar las respuestas
 function downloadAnswers() {
   let answersText = "Respuestas:\n\n";
@@ -135,3 +134,31 @@ document
 // Barajar preguntas al cargar la página
 shuffleQuestions(questions);
 displayQuestion();
+
+/* *************************************************************************** */
+function checkCode() {
+  var code = document.getElementById("code").value;
+  if (code === "tu_codigo_secreto") {
+    document.getElementById("hiddenContent").style.display = "block";
+    document.getElementById("unlock").style.display = "none";
+    window.removeEventListener("scroll", noscroll); // Elimina el evento de desplazamiento
+  } else {
+    alert("Código incorrecto. Por favor, inténtelo de nuevo.");
+  }
+}
+
+window.onload = function () {
+  var windowHeight = window.innerHeight;
+  var hiddenContentPosition =
+    document.getElementById("hiddenContent").offsetTop - windowHeight * 0.33;
+
+  window.addEventListener("scroll", function (e) {
+    if (window.pageYOffset >= hiddenContentPosition) {
+      noscroll();
+    }
+  });
+};
+
+function noscroll() {
+  window.scrollTo(0, hiddenContentPosition);
+}
