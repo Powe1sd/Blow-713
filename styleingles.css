@@ -49,9 +49,9 @@
     bottom: 15px;
     right: 5px;
     z-index: 9999;
-    font-size: 20px; /* Disminuir el tamaño de la fuente para dispositivos móviles */
+    font-size: 30px; /* Disminuir el tamaño de la fuente para dispositivos móviles */
     width: 60%;
-    height: 50px; /* Ajustar el ancho del botón para dispositivos móviles */
+    height: 80px; /* Ajustar el ancho del botón para dispositivos móviles */
   }
 
   .whatsapp-btn {
@@ -156,8 +156,8 @@ body {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
+  padding: 0px;
+  margin: 1px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
