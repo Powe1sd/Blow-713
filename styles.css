@@ -475,3 +475,18 @@ ul li::after {
 .des {
   background-color: blue;
 }
+
+.swal-content__input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.swal-content__input:focus {
+  outline: none;
+  border-color: #007bff; /* Cambiar el color del borde cuando el campo está enfocado */
+}
