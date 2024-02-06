@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .pronoun {
   display: flex;
   align-items: center;
@@ -153,16 +158,23 @@ body {
 }
 
 .section {
-  background-color: #fff;
+  background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 0px;
-  margin: 1px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+  .section {
+    padding: 0px; /* Ajusta el relleno para dispositivos móviles */
+    margin: 0px; /* Ajusta el margen para dispositivos móviles */
+  }
+}
+
+
 
 h2 {
   color: #3498db;
