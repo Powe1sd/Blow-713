@@ -1,3 +1,5 @@
+const { default: swal } = require("sweetalert");
+
 function solicitarCodigo(event) {
   swal({
     title: "Seguro que quieres continuar",
@@ -94,6 +96,7 @@ function solicitarCodigo3(event) {
 }
 
 /* ingles */
+
 function solicitarCodigo4(event) {
   swal({
     title: "Súper descuento",
