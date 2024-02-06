@@ -109,7 +109,12 @@ video {
   text-align: center;
   background-color: black;
   color: white;
+}
+
+.free {
   position: fixed;
+  background-color: blue;
+  color: white;
 }
 
 .corner-text {
