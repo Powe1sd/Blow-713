@@ -12,12 +12,12 @@
   right: 5px;
   z-index: 9999;
   font-size: 40px;
-  width: 30%;
+  width: 35%;
+  height: 8%;
   cursor: pointer;
   background-color: gold;
   color: white;
   animation: luciernaga 2s ease-in-out infinite;
-
   -webkit-animation: luciernaga 2s ease-in-out infinite;
 }
 
