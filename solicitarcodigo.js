@@ -94,11 +94,10 @@ function solicitarCodigo3(event) {
 }
 
 /* ingles */
-
 function solicitarCodigo4(event) {
   swal({
     title: "Súper descuento",
-    text: "Solicita tu código de ingreso para poder tener el curso completo",
+    text: "Solicita tu código de ingreso para poder tener el curso completo, o escribe al número 3052076713 ",
     content: {
       element: "input",
       attributes: {
@@ -118,6 +117,7 @@ function solicitarCodigo4(event) {
     },
     closeOnClickOutside: false,
     closeOnEsc: false,
+    textColor: "black", // Cambia el color del texto a rojo
   }).then((confirm) => {
     if (confirm) {
       var codigoIngresado = document.querySelector(
