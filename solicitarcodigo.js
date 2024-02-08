@@ -94,7 +94,15 @@ function solicitarCodigo3(event) {
 }
 
 /* ingles */
+
 function solicitarCodigo4(event) {
+  swal({
+    title: "Bienvenido",
+    text: "Gracias por visitar nuestro sitio web",
+    icon: "success",
+    button: "Entendido",
+  });
+
   swal({
     title: "Súper descuento",
     text: "Solicita tu código de ingreso para poder tener el curso completo, o escribe al número 3052076713 ",
