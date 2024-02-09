@@ -139,7 +139,9 @@ function solicitarCodigo4(event) {
         swal("Código correcto. ¡Bienvenido al curso de inglés!", {
           icon: "success",
         }).then(() => {
-          window.location.replace("ingles.html");
+          window.location.replace(
+            "https://tempssll.github.io/videos-blow-713/"
+          );
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
