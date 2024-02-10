@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   swal({
-    title: "Bienvenido",
-    text: "Gracias por visitar mi sitio web. Hay un súper descuento para el curso de inglés antes $85.000, ahora lo puedes obtener por tan solo $68.000",
+    title: "Hola",
+    text: "Hay un súper descuento para el curso de inglés antes $85.000, ahora lo puedes obtener por tan solo $68.000",
     icon: "success",
     button: "Entendido",
   });
