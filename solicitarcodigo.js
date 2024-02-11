@@ -1,5 +1,3 @@
-
-
 function solicitarCodigo(event) {
   swal({
     title: "Seguro que quieres continuar",
@@ -189,6 +187,53 @@ function solicitarCodigo6(event) {
         // Si es correcto, redirige al usuario a la página correspondiente
         swal("Código correcto", "¡Bienvenido al libro!", "success").then(() => {
           window.location.replace("libro.html");
+        });
+      } else {
+        // Si es incorrecto, muestra un mensaje de error
+        swal("Código incorrecto", "No tienes acceso a esta página.", "error");
+      }
+    }
+  });
+  event.preventDefault(); // Evita que el enlace realice su acción predeterminada
+}
+
+//Videos codigo
+function solicitarCodigo8(event) {
+  swal({
+    title: "Súper descuento",
+    text: "Ingresa el código para acceder al curso",
+    content: {
+      element: "input",
+      attributes: {
+        placeholder: "Ingresa el código",
+        type: "password",
+        id: "codigo-ingreso",
+      },
+    },
+    buttons: {
+      cancel: true,
+      confirm: {
+        text: "Ingresar",
+        value: true,
+        visible: true,
+        className: "btn-primary",
+        closeModal: true,
+      },
+    },
+    closeOnClickOutside: false,
+    closeOnEsc: false,
+  }).then((confirm) => {
+    if (confirm) {
+      var codigoIngresado = document.getElementById("codigo-ingreso").value;
+      var codigosPermitidos = ["713"]; // Array con los códigos permitidos
+
+      // Verifica si el código ingresado está en el array de códigos permitidos
+      if (codigosPermitidos.includes(codigoIngresado)) {
+        // Si es correcto, redirige al usuario a la página correspondiente
+        swal("Código correcto", "¡Bienvenido al libro!", "success").then(() => {
+          window.location.replace(
+            "https://tempssll.github.io/videos-blow-713/"
+          );
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
