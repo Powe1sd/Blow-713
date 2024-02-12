@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fill in the Blanks Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f6ff; /* Fondo azul claro */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        max-width: 600px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #007bff; /* Azul */
+        margin-bottom: 20px;
+      }
+      #sentence {
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      .options-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .option {
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .option:hover {
+        background-color: #d3d3d3;
+      }
+      .option.selected {
+        background-color: #ccc;
+      }
+      #result {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      #score {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      #timer {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      .warning {
+        color: #dc3545; /* Rojo */
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      button {
+        background-color: #007bff; /* Azul */
+        color: #fff; /* Blanco */
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #0056b3; /* Azul más oscuro */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fill in the Blanks Game</h1>
+      <p id="sentence">
+        I like to
+        <span id="blank" ondrop="drop(event)" ondragover="allowDrop(event)"
+          >____</span
+        >
+        in the park.
+      </p>
+      <div class="options-container">
+        <div class="option" draggable="true" ondragstart="drag(event)">
+          dance
+        </div>
+        <div class="option" draggable="true" ondragstart="drag(event)">run</div>
+        <div class="option" draggable="true" ondragstart="drag(event)">
+          sing
+        </div>
+        <div class="option" draggable="true" ondragstart="drag(event)">
+          swim
+        </div>
+      </div>
+      <p id="result"></p>
+      <p id="score">Correctas: 0 | Incorrectas: 0</p>
+      <p id="timer">Tiempo restante: 30 segundos</p>
+      <p id="warning" class="warning">
+        ¡Arrastra la palabra para completar la oración!
+      </p>
+      <button onclick="startGame()">Comenzar</button>
+      <button onclick="resetGame()">Reiniciar</button>
+    </div>
+
+    <script>
+      let questions = [
+        {
+          question:
+            "I like to <span id='blank' ondrop='drop(event)' ondragover='allowDrop(event)'>____</span> in the park.",
+          answer: "run",
+        },
+        {
+          question:
+            "She enjoys <span id='blank' ondrop='drop(event)' ondragover='allowDrop(event)'>____</span> to music.",
+          answer: "dance",
+        },
+        {
+          question:
+            "He often <span id='blank' ondrop='drop(event)' ondragover='allowDrop(event)'>____</span> in the river.",
+          answer: "swims",
+        },
+        {
+          question:
+            "We like to <span id='blank' ondrop='drop(event)' ondragover='allowDrop(event)'>____</span> in the ocean.",
+          answer: "swim",
+        },
+        {
+          question:
+            "They <span id='blank' ondrop='drop(event)' ondragover='allowDrop(event)'>____</span> every morning.",
+          answer: "run",
+        },
+      ];
+
+      let currentQuestionIndex = 0;
+      let correctAnswers = 0;
+      let incorrectAnswers = 0;
+      let timer;
+
+      function startTimer() {
+        let timeLeft = 30;
+        timer = setInterval(function () {
+          document.getElementById(
+            "timer"
+          ).textContent = `Tiempo restante: ${timeLeft} segundos`;
+          timeLeft--;
+          if (timeLeft < 0) {
+            stopTimer();
+            checkAnswer("");
+          }
+        }, 1000);
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+        document.getElementById("timer").textContent = "";
+      }
+
+      function checkAnswer(answer) {
+        stopTimer();
+        let question = questions[currentQuestionIndex];
+        let blank = document.getElementById("blank");
+        let sentence = document.getElementById("sentence");
+        let warning = document.getElementById("warning");
+        warning.style.display = "none";
+        if (answer === question.answer) {
+          correctAnswers++;
+        } else {
+          incorrectAnswers++;
+        }
+        document.getElementById(
+          "score"
+        ).textContent = `Correctas: ${correctAnswers} | Incorrectas: ${incorrectAnswers}`;
+        document.getElementById("result").textContent =
+          answer === question.answer ? "¡Correcto!" : "¡Incorrecto!";
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          sentence.innerHTML = questions[currentQuestionIndex].question;
+          startTimer();
+        } else {
+          sentence.textContent = "Juego terminado.";
+        }
+      }
+
+      function startGame() {
+        currentQuestionIndex = 0;
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        document.getElementById(
+          "score"
+        ).textContent = `Correctas: ${correctAnswers} | Incorrectas: ${incorrectAnswers}`;
+        document.getElementById("result").textContent = "";
+        document.getElementById("sentence").innerHTML =
+          questions[currentQuestionIndex].question;
+        document.getElementById("warning").style.display = "block";
+        startTimer();
+      }
+
+      function resetGame() {
+        currentQuestionIndex = 0;
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        document.getElementById(
+          "score"
+        ).textContent = `Correctas: ${correctAnswers} | Incorrectas: ${incorrectAnswers}`;
+        document.getElementById("result").textContent = "";
+        document.getElementById("sentence").innerHTML =
+          questions[currentQuestionIndex].question;
+        document.getElementById("warning").style.display = "block";
+        startTimer();
+      }
+
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.textContent);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        let data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.createTextNode(data));
+        ev.target.removeChild(ev.target.childNodes[0]);
+        ev.target.classList.add("selected");
+        checkAnswer(data.trim());
+      }
+    </script>
+  </body>
+</html>
