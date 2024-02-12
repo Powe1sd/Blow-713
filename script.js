@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
 
     // Verificar si el clic proviene del botón VER o la barra lateral
     if (event.target !== toggleButton && event.target !== sidebar) {
-      sidebar.style.left = "-250px";
+      sidebar.style.left = "-380px";
     }
   });
 });
@@ -120,4 +120,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
