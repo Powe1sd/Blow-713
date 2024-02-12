@@ -69,21 +69,36 @@ details[open] {
   position: fixed;
   margin-top: -60px;
   color: white;
-  width: 45%;
+  width: 20%;
+  font-size: 13px;
   height: 8%;
-  /*Anchoautomáticoparaadaptarsealcontenido*/ /*Espaciadointernoparahacerlomásgrandeenpantallaspequeñas*/
-  font-size: 20px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   perspective: 1000px;
-  /*Definelaperspectivaparaelefecto3D*/
   transform-style: preserve-3d;
-  /*Conservaelefecto3Denloselementoshijos*/
-  transition: transform 0.3s;
-  -webkit-transition: transform 0.3s;
-  -moz-transition: transform 0.3s;
-  -ms-transition: transform 0.3s;
-  -o-transition: transform 0.3s;
+  transition: transform 0.3s, color 0.3s; /* Agregamos transición para el color */
+  -webkit-transition: transform 0.3s, color 0.3s;
+  -moz-transition: transform 0.3s, color 0.3s;
+  -ms-transition: transform 0.3s, color 0.3s;
+  -o-transition: transform 0.3s, color 0.3s;
+  animation: background-change 2s infinite; /* Aplica la animación automáticamente */
+}
+
+#toggleButton:hover {
+  color: #ff0000; /* Cambia el color del texto al pasar el mouse sobre el botón */
+}
+
+/* Animación para cambiar el color del texto */
+@keyframes background-change {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #00ff00;
+  }
+  100% {
+    color: white;
+  }
 }
 
 #toggleButton:hover {
