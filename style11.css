@@ -152,7 +152,7 @@ details[open] {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -150px;
+  left: -300px;
   /*Labarraestaráocultafueradelladoizquierdo*/
   width: 250px;
   height: 200%;
