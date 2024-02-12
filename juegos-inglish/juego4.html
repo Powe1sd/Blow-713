@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f6ff; /* Light blue background */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      color: #007bff; /* Blue */
+    }
+    input[type="text"] {
+      padding: 10px;
+      margin-top: 20px;
+      width: 80%;
+      max-width: 300px; /* Limit input width for smaller screens */
+    }
+    button {
+      background-color: #007bff; /* Blue */
+      color: #fff; /* White */
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #0056b3; /* Darker blue */
+    }
+    #wordList {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: left;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Word Guessing Game</h1><br><br>
+    <p>Intentos restantes: <span id="attempts">5</span></p>
+    <p>Adivina la palabra:</p>
+    <input type="text" id="guessInput" placeholder="Ingresa tu respuesta">
+    <button onclick="checkGuess()">Verificar</button>
+    <div id="wordList"></div>
+    <h2>Frutas</h2>
+    <table id="fruitsTable">
+      <tr>
+        <th>Fruta</th>
+        <th>Traducción</th>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    const fruits = [
+      { word: "apple", hint: "Manzana" },
+      { word: "banana", hint: "Plátano" },
+      { word: "orange", hint: "Naranja" },
+      { word: "grape", hint: "Uva" },
+      { word: "melon", hint: "Melón" },
+      { word: "kiwi", hint: "Kiwi" },
+      { word: "pineapple", hint: "Piña" },
+      { word: "Coconut", hint: "Coco" },
+      { word: "Guava", hint: "Guayaba" }
+    ];
+
+    let attemptsLeft = 5;
+    let currentWordIndex;
+
+    function setupGame() {
+      currentWordIndex = Math.floor(Math.random() * fruits.length);
+      attemptsLeft = 5;
+      document.getElementById("attempts").textContent = attemptsLeft;
+      document.getElementById("guessInput").value = "";
+      document.getElementById("wordList").textContent = ""; // Clear word list
+      displayFruitsTable();
+    }
+
+    function displayFruitsTable() {
+      const fruitsTable = document.getElementById("fruitsTable");
+      fruitsTable.innerHTML = "<tr><th>Fruta</th><th>Traducción</th></tr>";
+      fruits.forEach(fruit => {
+        const row = fruitsTable.insertRow();
+        row.insertCell(0).textContent = fruit.word;
+        row.insertCell(1).textContent = fruit.hint;
+      });
+    }
+
+    function checkGuess() {
+      const guess = document.getElementById("guessInput").value.trim().toLowerCase();
+      const currentWord = fruits[currentWordIndex].word;
+
+      if (guess === currentWord) {
+        alert("¡Ganaste! La palabra era: " + currentWord);
+        setupGame();
+      } else {
+        attemptsLeft--;
+        document.getElementById("attempts").textContent = attemptsLeft;
+        if (attemptsLeft === 0) {
+          alert("¡Perdiste! La palabra correcta era: " + currentWord);
+          setupGame();
+        } else {
+          alert("¡Incorrecto! Sigue intentando.");
+        }
+      }
+    }
+
+    window.onload = setupGame;
+  </script>
+</body>
+</html>
