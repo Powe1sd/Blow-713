@@ -153,15 +153,26 @@ details[open] {
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0; /* Ajustamos el valor de left para que la barra esté fija en el lado izquierdo */
+  left: -450px; /* Ajustamos el valor de left para que la barra esté fija en el lado izquierdo */
   /* Ancho de la barra lateral */
   /* Altura de la barra lateral que ocupa toda la pantalla */
+  width: 400px;
+  height: 200%;
+
   background-color: black;
-  padding: -330px; /* Agregamos un relleno para dar espacio al contenido */
+  padding: -0px; /* Agregamos un relleno para dar espacio al contenido */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif "Lucida Sans",
     Arial, sans-serif;
   z-index: 2000; /* Aseguramos que la barra lateral esté sobre otros elementos */
   overflow-y: auto; /* Agregamos desplazamiento vertical si el contenido es más largo que la altura de la barra */
+}
+
+@media only screen and (max-width: 768px) {
+  /* Aplicar estilos diferentes para pantallas con un ancho máximo de 768px (típicamente dispositivos móviles) */
+  .sidebar {
+    width: 230px; /* Reducir el ancho para dispositivos móviles */
+    left: -230px; /* Ocultar la barra lateral en dispositivos móviles al cargar la página */
+  }
 }
 
 .sidebar a {

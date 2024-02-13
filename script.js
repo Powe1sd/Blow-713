@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
 
     // Verificar si el clic proviene del botón VER o la barra lateral
     if (event.target !== toggleButton && event.target !== sidebar) {
-      sidebar.style.left = "-380px";
+      sidebar.style.left = "-390px";
     }
   });
 });
@@ -28,14 +28,10 @@ window.addEventListener("load", function () {
 // Función para mostrar/ocultar el menú al hacer clic en el botón VER
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
-  sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+  sidebar.style.left = sidebar.style.left === "10px" ? "-200px" : "0px";
 }
 
 // Función para mostrar el contenido del menú seleccionado
-function showMenuContent(menuItem) {
-  const menuContent = document.getElementById("menu-content");
-  menuContent.innerHTML = `Has seleccionado ${menuItem}. Aquí se mostraría el contenido correspondiente al menú.`;
-}
 
 /* ACTUALIZAR LA FECHA CADA AÑO */
 function actualizarFecha() {
