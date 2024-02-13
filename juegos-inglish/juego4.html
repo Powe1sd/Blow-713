@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Word Guessing Game</title>
     <style>
       body {
@@ -85,14 +86,16 @@
       <h1>Word Guessing Game</h1>
       <br /><br />
       <p>Intentos restantes: <span id="attempts">5</span></p>
+      <p id="sectionLabel">Sección actual: Frutas</p>
       <p>Adivina la palabra:</p>
       <input type="text" id="guessInput" placeholder="Ingresa tu respuesta" />
       <button onclick="checkGuess()">Verificar</button>
+      <button onclick="clearInput()">Borrar</button>
       <div id="wordList"></div>
       <h2>Frutas</h2>
-      <table id="fruitsTable">
+      <table id="wordTable">
         <tr>
-          <th>Fruta</th>
+          <th>Palabra</th>
           <th>Traducción</th>
         </tr>
       </table>
@@ -100,36 +103,80 @@
 
     <script>
       const fruits = [
-        { word: "apple", hint: "Manzana" },
-        { word: "banana", hint: "Plátano" },
-        { word: "orange", hint: "Naranja" },
-        { word: "grape", hint: "Uva" },
-        { word: "melon", hint: "Melón" },
-        { word: "kiwi", hint: "Kiwi" },
-        { word: "pineapple", hint: "Piña" },
-        { word: "Coconut", hint: "Coco" },
-        { word: "Guava", hint: "Guayaba" },
+        { word: "apple", translation: "Manzana" },
+        { word: "banana", translation: "Plátano" },
+        { word: "orange", translation: "Naranja" },
+        { word: "grape", translation: "Uva" },
+        { word: "melon", translation: "Melón" },
+        { word: "kiwi", translation: "Kiwi" },
+        { word: "pineapple", translation: "Piña" },
+        { word: "Coconut", translation: "Coco" },
+        { word: "Guava", translation: "Guayaba" },
+      ];
+
+      const phoneBrands = [
+        { word: "Sansung", translation: "Teléfono" },
+        { word: "Apple", translation: "Teléfono" },
+        { word: "Huawei", translation: "Teléfono" },
+        { word: "Xiaomi", translation: "Teléfono" },
+        { word: "Oppo", translation: "Teléfono" },
+        { word: "Vivo", translation: "Teléfono" },
+        { word: "Sony", translation: "Teléfono" },
+        { word: "LG", translation: "Teléfono" },
+        { word: "Motorola", translation: "Teléfono" },
+      ];
+
+      const colors = [
+        { word: "Red", translation: "Rojo" },
+        { word: "Blue", translation: "Azul" },
+        { word: "Green", translation: "Verde" },
+        { word: "Yellow", translation: "Amarillo" },
+        { word: "Orange", translation: "Naranja" },
+        { word: "Purple", translation: "Morado" },
+        { word: "Pink", translation: "Rosado" },
+        { word: "Black", translation: "Negro" },
+        { word: "White", translation: "Blanco" },
+        { word: "Brown", translation: "Marrón" },
       ];
 
       let attemptsLeft = 5;
       let currentWordIndex;
+      let currentGame;
 
       function setupGame() {
-        currentWordIndex = Math.floor(Math.random() * fruits.length);
+        const games = ["fruits", "phoneBrands", "colors"];
+        currentGame = games[Math.floor(Math.random() * games.length)];
+
+        if (currentGame === "fruits") {
+          currentWordIndex = Math.floor(Math.random() * fruits.length);
+          displayWords(fruits);
+          document.getElementById("sectionLabel").textContent =
+            "Sección actual: Frutas";
+        } else if (currentGame === "phoneBrands") {
+          currentWordIndex = Math.floor(Math.random() * phoneBrands.length);
+          displayWords(phoneBrands);
+          document.getElementById("sectionLabel").textContent =
+            "Sección actual: Marcas de teléfonos celulares";
+        } else if (currentGame === "colors") {
+          currentWordIndex = Math.floor(Math.random() * colors.length);
+          displayWords(colors);
+          document.getElementById("sectionLabel").textContent =
+            "Sección actual: Colores";
+        }
+
         attemptsLeft = 5;
         document.getElementById("attempts").textContent = attemptsLeft;
         document.getElementById("guessInput").value = "";
         document.getElementById("wordList").textContent = ""; // Clear word list
-        displayFruitsTable();
       }
 
-      function displayFruitsTable() {
-        const fruitsTable = document.getElementById("fruitsTable");
-        fruitsTable.innerHTML = "<tr><th>Fruta</th><th>Traducción</th></tr>";
-        fruits.forEach((fruit) => {
-          const row = fruitsTable.insertRow();
-          row.insertCell(0).textContent = fruit.word;
-          row.insertCell(1).textContent = fruit.hint;
+      function displayWords(words) {
+        const wordTable = document.getElementById("wordTable");
+        wordTable.innerHTML = "<tr><th>Palabra</th><th>Traducción</th></tr>";
+        words.forEach((item) => {
+          const row = wordTable.insertRow();
+          row.insertCell(0).textContent = item.word;
+          row.insertCell(1).textContent = item.translation;
         });
       }
 
@@ -138,21 +185,70 @@
           .getElementById("guessInput")
           .value.trim()
           .toLowerCase();
-        const currentWord = fruits[currentWordIndex].word;
+        let currentWord;
+
+        if (currentGame === "fruits") {
+          currentWord = fruits[currentWordIndex].word;
+        } else if (currentGame === "phoneBrands") {
+          currentWord = phoneBrands[currentWordIndex].word.toLowerCase();
+        } else if (currentGame === "colors") {
+          currentWord = colors[currentWordIndex].word.toLowerCase();
+        }
 
         if (guess === currentWord) {
-          alert("¡Ganaste! La palabra era: " + currentWord);
-          setupGame();
+          Swal.fire({
+            icon: "success",
+            title: "¡Ganaste!",
+            text: `La palabra era: ${currentWord}`,
+            confirmButtonText: "OK",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              moveToNextGame();
+            }
+          });
         } else {
           attemptsLeft--;
           document.getElementById("attempts").textContent = attemptsLeft;
           if (attemptsLeft === 0) {
-            alert("¡Perdiste! La palabra correcta era: " + currentWord);
-            setupGame();
+            Swal.fire({
+              icon: "error",
+              title: "¡Perdiste!",
+              text: `La palabra correcta era: ${currentWord}`,
+              confirmButtonText: "OK",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                setupGame();
+              }
+            });
           } else {
-            alert("¡Incorrecto! Sigue intentando.");
+            Swal.fire({
+              icon: "error",
+              title: "¡Incorrecto!",
+              text: "Sigue intentando.",
+              confirmButtonText: "OK",
+            });
           }
         }
+      }
+
+      function moveToNextGame() {
+        if (currentGame === "fruits") {
+          currentGame = "phoneBrands";
+          alert(
+            "¡Felicidades! Pasaste al juego de marcas de teléfonos celulares."
+          );
+        } else if (currentGame === "phoneBrands") {
+          currentGame = "colors";
+          alert("¡Felicidades! Pasaste al juego de colores.");
+        } else if (currentGame === "colors") {
+          alert("¡Felicidades! Has completado todos los juegos.");
+          return;
+        }
+        setupGame();
+      }
+
+      function clearInput() {
+        document.getElementById("guessInput").value = "";
       }
 
       window.onload = setupGame;
