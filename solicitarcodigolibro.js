@@ -5,12 +5,16 @@ function solicitarCodigo6(event) {
   swal({
     text: "Introduce el código:",
     content: "input",
-    button: {
-      text: "Aceptar",
-      closeModal: false,
-    },
+    buttons: ["Cancelar", "Aceptar"], // Array de botones con "Cancelar" y "Aceptar"
+    closeOnClickOutside: false, // Evita que se cierre al hacer clic fuera del cuadro de diálogo
   }).then((value) => {
-    if (value === "713") {
+    if (value === null) {
+      // Si se hace clic en "Cancelar"
+      swal("Operación cancelada", {
+        icon: "warning",
+      });
+    } else if (value === "713") {
+      // Si se introduce el código correcto
       swal("¡Código correcto!", {
         icon: "success",
       }).then(() => {
@@ -21,11 +25,10 @@ function solicitarCodigo6(event) {
         );
       });
     } else {
+      // Si se introduce un código incorrecto
       swal("Código incorrecto. Intenta de nuevo.", {
         icon: "error",
       });
     }
   });
 }
-
-
