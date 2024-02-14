@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Question Game</title>
+    <title>Juego de Programación</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"
@@ -67,113 +67,108 @@
         font-size: 20px;
         color: red;
         background-color: black;
-        /* Ajusta esta cantidad para cambiar la distancia desde abajo */
-        bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
-        left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
-        cursor: pointer;
-      }
-
-      .inicio {
-        position: fixed;
-        font-size: 20px;
-        color: red;
-        background-color: black;
-        /* Ajusta esta cantidad para cambiar la distancia desde abajo */
-        bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
-        left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+        bottom: 20px;
+        left: 20px;
         cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <a href="../Inglish-free.html">
+    <a href="../sofware.html">
       <button class="inicio">INICIO</button>
     </a>
     <div class="container">
-      <h1>Question Game</h1>
+      <h1>Juego de Preguntas</h1>
       <div id="question"></div>
       <div class="options" id="options"></div>
     </div>
     <a id="downloadLink" download="questions_and_answers.txt" href="#"
-      >Download Questions and Answers</a
+      >Descargar Preguntas y Respuestas</a
     >
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blob.js/2.1.2/Blob.js"></script>
     <script>
       const questions = [
         {
-          question: "What is the capital of France?",
-          options: ["Paris", "London", "Berlin", "Rome"],
-          answer: "Paris",
-        },
-        {
-          question: "What is the largest mammal?",
-          options: ["Elephant", "Blue whale", "Giraffe", "Lion"],
-          answer: "Blue whale",
-        },
-        {
-          question: "How many continents are there?",
-          options: ["Five", "Six", "Seven", "Eight"],
-          answer: "Seven",
-        },
-        {
-          question: "Who wrote 'Romeo and Juliet'?",
+          question: "¿Qué significa HTML?",
           options: [
-            "William Shakespeare",
-            "Charles Dickens",
-            "Jane Austen",
-            "Mark Twain",
+            "Lenguaje de Marcado de Hipertexto",
+            "Aprendizaje Automático de Alta Tecnología",
+            "Lenguaje de Marcado de Hiperenlaces y Texto",
           ],
-          answer: "William Shakespeare",
+          answer: "Lenguaje de Marcado de Hipertexto",
         },
         {
-          question: "What is the chemical symbol for water?",
-          options: ["H2O", "CO2", "NaCl", "O2"],
-          answer: "H2O",
+          question:
+            "¿Qué lenguaje de programación se utiliza para hacer páginas web interactivas?",
+          options: ["JavaScript", "Python", "C++", "HTML"],
+          answer: "JavaScript",
         },
         {
-          question: "What is the largest ocean?",
+          question:
+            "¿Cuál es la palabra clave para declarar una variable en JavaScript?",
+          options: ["var", "let", "const", "variable"],
+          answer: "var",
+        },
+        {
+          question:
+            "¿Cómo se llama la función que se ejecuta cuando se carga una página web en JavaScript?",
+          options: ["onLoad", "onStart", "onReady", "initialize"],
+          answer: "onLoad",
+        },
+        {
+          question:
+            "¿Qué método se utiliza para añadir un elemento al final de un array en JavaScript?",
+          options: [".push()", ".pop()", ".add()", ".insert()"],
+          answer: ".push()",
+        },
+        {
+          question: "¿Cuál es el operador de igualdad estricta en JavaScript?",
+          options: ["===", "==", "=", "!="],
+          answer: "===",
+        },
+        {
+          question:
+            "¿Cómo se llama la función que se utiliza para imprimir mensajes en la consola en JavaScript?",
+          options: ["console.log()", "print()", "log()", "println()"],
+          answer: "console.log()",
+        },
+        // Agrega más preguntas aquí...
+        {
+          question: "¿Qué significa CSS?",
           options: [
-            "Atlantic Ocean",
-            "Arctic Ocean",
-            "Indian Ocean",
-            "Pacific Ocean",
+            "Hojas de Estilo en Cascada",
+            "Hojas de Estilo Geniales",
+            "Hojas de Estilo Creativas",
+            "Hojas de Estilo Bonitas",
           ],
-          answer: "Pacific Ocean",
+          answer: "Hojas de Estilo en Cascada",
         },
         {
-          question: "Who painted the Mona Lisa?",
+          question: "¿Qué significa API en el contexto de programación?",
           options: [
-            "Leonardo da Vinci",
-            "Pablo Picasso",
-            "Vincent van Gogh",
-            "Michelangelo",
+            "Interfaz de Programación de Aplicaciones",
+            "Interfaz de Programación Avanzada",
+            "Interfaz de Programación Automatizada",
+            "Integración de Protocolo de Aplicación",
           ],
-          answer: "Leonardo da Vinci",
+          answer: "Interfaz de Programación de Aplicaciones",
         },
         {
-          question: "What is the chemical symbol for gold?",
-          options: ["Au", "Ag", "Fe", "Hg"],
-          answer: "Au",
-        },
-        // New questions
-        {
-          question: "What is the capital of Italy?",
-          options: ["Paris", "London", "Berlin", "Rome"],
-          answer: "Rome",
-        },
-        {
-          question: "Who wrote 'To Kill a Mockingbird'?",
-          options: [
-            "Harper Lee",
-            "Mark Twain",
-            "Charles Dickens",
-            "Jane Austen",
-          ],
-          answer: "Harper Lee",
+          question:
+            "¿Cuál de los siguientes es un lenguaje de programación orientado a objetos?",
+          options: ["Java", "HTML", "CSS", "SQL"],
+          answer: "Java",
         },
       ];
+
+      // Función para seleccionar aleatoriamente las preguntas
+      function shuffleQuestions() {
+        for (let i = questions.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [questions[i], questions[j]] = [questions[j], questions[i]];
+        }
+      }
 
       let currentQuestionIndex = 0;
       let correctAnswers = 0;
@@ -218,21 +213,21 @@
         const totalQuestions = questions.length;
         const correctPercentage = (correctAnswers / totalQuestions) * 100;
 
-        if (correctPercentage > 70) {
-          swal("Congratulations!", "You passed the game!", "success");
+        if (correctPercentage > 60) {
+          swal("¡Felicidades!", "¡Ganaste!", "success");
         } else {
-          swal("Sorry!", "You lost the game!", "error");
+          swal("¡Lo siento!", "¡Perdiste!", "error");
         }
 
-        container.innerHTML += `<h2>Correct Answers: ${correctAnswers}</h2>`;
-        container.innerHTML += `<h2>Incorrect Answers: ${incorrectAnswers}</h2>`;
-        container.innerHTML += `<h2>Correct Percentage: ${correctPercentage.toFixed(
+        container.innerHTML += `<h2>Respuestas correctas: ${correctAnswers}</h2>`;
+        container.innerHTML += `<h2>Respuestas incorrectas: ${incorrectAnswers}</h2>`;
+        container.innerHTML += `<h2>Porcentaje de respuestas correctas: ${correctPercentage.toFixed(
           2
         )}%</h2>`;
       }
 
       function downloadQuestionsAndAnswers() {
-        let qaContent = "Question\tAnswer\n";
+        let qaContent = "Pregunta\tRespuesta\n";
         questions.forEach((question, index) => {
           qaContent += `${question.question}\t${question.answer}\n`;
         });
@@ -244,7 +239,10 @@
         downloadLink.href = url;
       }
 
-      window.onload = displayQuestion;
+      window.onload = () => {
+        shuffleQuestions(); // Baraja las preguntas al cargar la página
+        displayQuestion(); // Muestra la primera pregunta
+      };
       document
         .getElementById("downloadLink")
         .addEventListener("click", downloadQuestionsAndAnswers);
