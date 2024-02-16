@@ -26,7 +26,7 @@ function solicitarCodigo(event) {
       var codigoIngresado = document.querySelector(
         ".swal-content__input"
       ).value; // Obtener el valor del input
-      var codigosPermitidos = ["713"]; // Array con los códigos permitidos
+      var codigosPermitidos = ["8020w"]; // Array con los códigos permitidos
 
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
@@ -74,7 +74,7 @@ function solicitarCodigo3(event) {
       var codigoIngresado = document.querySelector(
         ".swal-content__input"
       ).value; // Obtener el valor del input
-      var codigosPermitidos = ["713"]; // Array con los códigos permitidos
+      var codigosPermitidos = ["8020w"]; // Array con los códigos permitidos
 
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
@@ -131,7 +131,7 @@ function solicitarCodigo4(event) {
       var codigoIngresado = document.querySelector(
         ".swal-content__input"
       ).value; // Obtener el valor del input
-      var codigosPermitidos = ["713"]; // Array con los códigos permitidos
+      var codigosPermitidos = ["8020w"]; // Array con los códigos permitidos
 
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
@@ -180,7 +180,7 @@ function solicitarCodigo6(event) {
   }).then((confirm) => {
     if (confirm) {
       var codigoIngresado = document.getElementById("codigo-ingreso").value;
-      var codigosPermitidos = ["713"]; // Array con los códigos permitidos
+      var codigosPermitidos = ["8020w"]; // Array con los códigos permitidos
 
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
@@ -225,7 +225,7 @@ function solicitarCodigo8(event) {
   }).then((confirm) => {
     if (confirm) {
       var codigoIngresado = document.getElementById("codigo-ingreso").value;
-      var codigosPermitidos = ["713"]; // Array con los códigos permitidos
+      var codigosPermitidos = ["8020w"]; // Array con los códigos permitidos
 
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
