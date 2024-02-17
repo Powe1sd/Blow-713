@@ -21,6 +21,7 @@ body {
   top: 0; /* La fijamos en la parte superior de la ventana */
   width: 100%; /* Hacemos que la barra de navegación ocupe el ancho completo de la ventana */
   display: flex;
+  height: 55px;
   justify-content: center; /* Para centrar los elementos horizontalmente */
   background-color: #333;
 }
@@ -33,21 +34,21 @@ body {
 .dropdown-content {
   display: none; /* Por defecto, ocultamos los submenús */
   position: absolute; /* Para posicionar los submenús de forma absoluta */
-  background-color: #f9f9f9; /* Color de fondo de los submenús */
-  min-width: 160px; /* Ancho mínimo de los submenús */
+  background-color: white; /* Color de fondo de los submenús */
+  min-width: 260px; /* Ancho mínimo de los submenús */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra para los submenús */
   z-index: 1; /* Para asegurarnos de que los submenús estén sobre los otros elementos */
 }
 
 .dropdown-content a {
   color: black; /* Color del texto de los enlaces */
-  padding: 12px 16px; /* Espaciado interno de los enlaces */
+  padding: 15px 18px; /* Espaciado interno de los enlaces */
   text-decoration: none; /* Quitamos el subrayado de los enlaces */
   display: block; /* Hacemos que los enlaces sean bloques completos */
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd; /* Cambiamos el color de fondo al pasar el mouse sobre los enlaces */
+  background-color: #999; /* Cambiamos el color de fondo al pasar el mouse sobre los enlaces */
 }
 
 .dropdown:hover .dropdown-content {
@@ -55,7 +56,8 @@ body {
 }
 
 .dropbtn {
-  font-size: 16px; /* Tamaño de fuente del botón principal */
+  margin-top: 10px;
+  font-size: 28px; /* Tamaño de fuente del botón principal */
   border: none; /* Quitamos el borde del botón principal */
   outline: none; /* Quitamos el contorno al hacer clic en el botón */
   color: white; /* Color del texto del botón */
@@ -64,7 +66,7 @@ body {
 }
 
 .dropbtn:hover {
-  background-color: #555; /* Cambiamos el color de fondo al pasar el mouse sobre el botón principal */
+  background-color: black; /* Cambiamos el color de fondo al pasar el mouse sobre el botón principal */
 }
 
 h1 {
@@ -232,7 +234,7 @@ input[type="submit"]:hover {
 .search-container {
   width: 90%;
   position: fixed;
-  margin-top: 40px;
+  margin-top: 66px;
 }
 
 #searchInput {
