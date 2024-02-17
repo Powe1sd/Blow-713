@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Preguntas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 30px;
+      }
+      #question {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      #answer {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      #submit,
+      #showAnswer {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #submit:hover,
+      #showAnswer:hover {
+        background-color: #0056b3;
+      }
+
+      .inicio {
+        position: fixed;
+        font-size: 20px;
+        color: red;
+        background-color: black;
+        /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+        bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+        left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../sofware.html">
+      <button class="inicio">Atras</button>
+    </a>
+    <div class="container">
+      <h1>Juego de Preguntas sobre JavaScript</h1>
+      <div id="question"></div>
+      <input type="text" id="answer" placeholder="Completar" />
+      <button id="submit">Enviar</button>
+      <button id="showAnswer">Mostrar Respuesta</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script>
+      const preguntas = [
+        {
+          pregunta:
+            "El tipo de datos que representa una colección ordenada de elementos se llama _____",
+          respuesta: "Array",
+        },
+        {
+          pregunta:
+            "El método utilizado para agregar un elemento al final de un array es _____()",
+          respuesta: "push",
+        },
+        {
+          pregunta:
+            "¿Cuál de las siguientes NO es una estructura de control de flujo en JavaScript? _____",
+          respuesta: "case",
+        },
+        {
+          pregunta:
+            "La función utilizada para imprimir mensajes en la consola en JavaScript es _____()",
+          respuesta: "console.log",
+        },
+        {
+          pregunta:
+            "El operador de comparación estricta en JavaScript es _____",
+          respuesta: "===",
+        },
+      ];
+
+      let indicePreguntaActual = 0;
+
+      const questionElement = document.getElementById("question");
+      const answerInput = document.getElementById("answer");
+      const submitButton = document.getElementById("submit");
+      const showAnswerButton = document.getElementById("showAnswer");
+
+      function mostrarPregunta() {
+        const preguntaActual = preguntas[indicePreguntaActual];
+        questionElement.textContent = preguntaActual.pregunta;
+        answerInput.value = ""; // Limpiar el campo de respuesta
+      }
+
+      function verificarRespuesta() {
+        const respuestaUsuario = answerInput.value.trim();
+        const preguntaActual = preguntas[indicePreguntaActual];
+
+        if (
+          respuestaUsuario.toLowerCase() ===
+          preguntaActual.respuesta.toLowerCase()
+        ) {
+          swal("¡Correcto!", "¡Respuesta correcta!", "success").then(() => {
+            indicePreguntaActual++;
+            if (indicePreguntaActual < preguntas.length) {
+              mostrarPregunta(); // Mostrar la siguiente pregunta
+            } else {
+              terminarJuego();
+            }
+          });
+        } else {
+          swal("¡Incorrecto!", "Vuelve a intentarlo", "error");
+        }
+      }
+
+      function mostrarRespuesta() {
+        const preguntaActual = preguntas[indicePreguntaActual];
+        swal("Respuesta", preguntaActual.respuesta, "info");
+      }
+
+      function terminarJuego() {
+        swal(
+          "¡Felicidades!",
+          "Has respondido todas las preguntas correctamente",
+          "success"
+        );
+        // Aquí podrías agregar más acciones al finalizar el juego, como mostrar puntajes, etc.
+      }
+
+      submitButton.addEventListener("click", verificarRespuesta);
+      showAnswerButton.addEventListener("click", mostrarRespuesta);
+      mostrarPregunta(); // Mostrar la primera pregunta al cargar la página
+    </script>
+  </body>
+</html>

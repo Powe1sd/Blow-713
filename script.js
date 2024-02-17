@@ -116,3 +116,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+/* DESPLIEGUE DEL MENU JUEGOS O CATEGORIAS */
+document.addEventListener("DOMContentLoaded", function () {
+  const juegosDropdown = document.getElementById("juegosDropdown");
+  const juegosContent = juegosDropdown.querySelector(".dropdown-content");
+
+  juegosDropdown.addEventListener("mouseenter", function () {
+    juegosContent.style.display = "block";
+  });
+
+  juegosDropdown.addEventListener("mouseleave", function () {
+    juegosContent.style.display = "none";
+  });
+});

@@ -14,6 +14,59 @@ body {
   cursor: pointer;
 }
 
+/* Barra de navegacion */
+
+.navbar {
+  position: fixed; /* Hacemos que la barra de navegación tenga una posición fija */
+  top: 0; /* La fijamos en la parte superior de la ventana */
+  width: 100%; /* Hacemos que la barra de navegación ocupe el ancho completo de la ventana */
+  display: flex;
+  justify-content: center; /* Para centrar los elementos horizontalmente */
+  background-color: #333;
+}
+
+.dropdown {
+  position: relative; /* Para posicionar correctamente los submenús */
+  display: inline-block; /* Para que cada elemento de la barra sea un bloque en línea */
+}
+
+.dropdown-content {
+  display: none; /* Por defecto, ocultamos los submenús */
+  position: absolute; /* Para posicionar los submenús de forma absoluta */
+  background-color: #f9f9f9; /* Color de fondo de los submenús */
+  min-width: 160px; /* Ancho mínimo de los submenús */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra para los submenús */
+  z-index: 1; /* Para asegurarnos de que los submenús estén sobre los otros elementos */
+}
+
+.dropdown-content a {
+  color: black; /* Color del texto de los enlaces */
+  padding: 12px 16px; /* Espaciado interno de los enlaces */
+  text-decoration: none; /* Quitamos el subrayado de los enlaces */
+  display: block; /* Hacemos que los enlaces sean bloques completos */
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd; /* Cambiamos el color de fondo al pasar el mouse sobre los enlaces */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Mostramos el submenú cuando pasamos el mouse sobre el botón principal */
+}
+
+.dropbtn {
+  font-size: 16px; /* Tamaño de fuente del botón principal */
+  border: none; /* Quitamos el borde del botón principal */
+  outline: none; /* Quitamos el contorno al hacer clic en el botón */
+  color: white; /* Color del texto del botón */
+  background-color: inherit; /* Color de fondo del botón igual al de la barra de navegación */
+  cursor: pointer; /* Cambiamos el cursor al pasar sobre el botón */
+}
+
+.dropbtn:hover {
+  background-color: #555; /* Cambiamos el color de fondo al pasar el mouse sobre el botón principal */
+}
+
 h1 {
   color: red;
   text-align: center;
@@ -179,6 +232,7 @@ input[type="submit"]:hover {
 .search-container {
   width: 90%;
   position: fixed;
+  margin-top: 40px;
 }
 
 #searchInput {

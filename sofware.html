@@ -8,22 +8,65 @@
     <link rel="stylesheet" href="estilos-proyectos/sofware.css" />
   </head>
   <body>
-    
+
+    <div class="search-container">
+      <input type="text"  id="searchInput" autofocus placeholder="Buscar..." oninput="handleInput()">
+      <button onclick="search()">Buscar</button>
+      <span class="clear-search" onclick="clearSearch()">X</span>
+    </div><br><br><br><br>
+
+
+
 <!-- Agrega este bloque de código para el campo de búsqueda -->
-<div class="search-container">
-  <input type="text"  id="searchInput" autofocus placeholder="Buscar..." oninput="handleInput()">
-  <button onclick="search()">Buscar</button>
-  <span class="clear-search" onclick="clearSearch()">X</span>
-</div><br><br><br><br>
 
 
 
 <div class="corner-text">TECH</div>
-
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Ejercicios</button>
+    <div class="dropdown-content">
+      <a href="juegos-programacion/juego6.html">Ejercicio 1</a>
+      <a href="juegos-programacion/juego7.html">Ejercicio 2</a>
+      <a href="juegos-programacion/juego8.html">Ejercicio 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Temas</button>
+    <div class="dropdown-content">
+      <a href="#">Tema 1</a>
+      <a href="#">Tema 2</a>
+      <a href="#">Tema 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Práctica</button>
+    <div class="dropdown-content">
+      <a href="#">Ejercicio 1</a>
+      <a href="#">Ejercicio 2</a>
+      <a href="#">Ejercicio 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Más</button>
+    <div class="dropdown-content">
+      <a href="#">Opción 1</a>
+      <a href="#">Opción 2</a>
+      <a href="#">Opción 3</a>
+    </div>
+  </div>
+</div>
 
 
     <h1>Aprendiendo programación</h1><br>
+
+    
+
     <h1>Introducción</h1><br>
+
+
+    
+    
 
     <div class="video-section"><!--  -->
       <video controls  >

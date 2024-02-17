@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Preguntas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 30px;
+      }
+      #question {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .option {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        background-color: black;
+      }
+      .option:hover {
+        background-color: #45a049;
+      }
+      #answer {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      #submit,
+      #showOptions {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #submit:hover,
+      #showOptions:hover,
+      .option:active {
+        background-color: #0056b3;
+      }
+
+      .inicio {
+        position: fixed;
+        font-size: 20px;
+        color: red;
+        background-color: black;
+        /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+        bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+        left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../sofware.html">
+      <button class="inicio">Atras</button>
+    </a>
+    <div class="container">
+      <h1>Juego de Preguntas sobre JavaScript</h1>
+      <div id="question"></div>
+      <input type="text" id="answer" placeholder="Ingrese su respuesta" />
+      <div class="options" id="options"></div>
+      <button id="submit">Enviar</button>
+      <button id="showOptions">Ver Opciones</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script>
+      const preguntas = [
+        {
+          pregunta:
+            "El tipo de datos que representa una colección ordenada de elementos se llama _____",
+          respuesta: "Array",
+        },
+        {
+          pregunta:
+            "El método utilizado para agregar un elemento al final de un array es _____()",
+          respuesta: "push",
+        },
+        {
+          pregunta:
+            "¿Cuál de las siguientes NO es una estructura de control de flujo en JavaScript? _____",
+          respuesta: "case",
+        },
+        {
+          pregunta:
+            "La función utilizada para imprimir mensajes en la consola en JavaScript es _____()",
+          respuesta: "console.log",
+        },
+        {
+          pregunta:
+            "El operador de comparación estricta en JavaScript es _____",
+          respuesta: "===",
+        },
+      ];
+
+      let indicePreguntaActual = 0;
+      let opcionesMostradas = false;
+
+      const questionElement = document.getElementById("question");
+      const answerInput = document.getElementById("answer");
+      const optionsElement = document.getElementById("options");
+      const submitButton = document.getElementById("submit");
+      const showOptionsButton = document.getElementById("showOptions");
+
+      function mostrarPregunta() {
+        const preguntaActual = preguntas[indicePreguntaActual];
+        questionElement.textContent = preguntaActual.pregunta;
+        optionsElement.innerHTML = ""; // Limpiar las opciones
+      }
+
+      function mostrarOpciones() {
+        if (!opcionesMostradas) {
+          const preguntaActual = preguntas[indicePreguntaActual];
+          const opciones = preguntas.map((p) => p.respuesta); // Obtener todas las respuestas
+          opciones.splice(indicePreguntaActual, 1); // Quitar la respuesta actual
+          shuffle(opciones); // Mezclar las opciones
+          opciones.splice(4); // Quitar las opciones adicionales si hay más de 4
+
+          opciones.push(preguntaActual.respuesta); // Agregar la respuesta actual al final
+          shuffle(opciones); // Mezclar nuevamente para cambiar la posición de la respuesta actual
+
+          opciones.forEach((opcion, index) => {
+            const opcionButton = document.createElement("button");
+            opcionButton.textContent = opcion;
+            opcionButton.className = "option";
+            opcionButton.onclick = () => seleccionarOpcion(opcion);
+            optionsElement.appendChild(opcionButton);
+          });
+
+          opcionesMostradas = true;
+        } else {
+          optionsElement.innerHTML = ""; // Limpiar las opciones
+          opcionesMostradas = false;
+        }
+      }
+
+      function seleccionarOpcion(opcionSeleccionada) {
+        answerInput.value = opcionSeleccionada;
+      }
+
+      function verificarRespuesta() {
+        const respuestaUsuario = answerInput.value.trim();
+        const preguntaActual = preguntas[indicePreguntaActual];
+
+        answerInput.value = ""; // Limpiar el campo de respuesta
+
+        if (
+          respuestaUsuario.toLowerCase() ===
+          preguntaActual.respuesta.toLowerCase()
+        ) {
+          swal("¡Correcto!", "¡Respuesta correcta!", "success").then(() => {
+            indicePreguntaActual++;
+            opcionesMostradas = false; // Restablecer el estado para mostrar opciones
+            if (indicePreguntaActual < preguntas.length) {
+              mostrarPregunta(); // Mostrar la siguiente pregunta
+            } else {
+              terminarJuego();
+            }
+          });
+        } else {
+          swal("¡Incorrecto!", "Vuelve a intentarlo", "error");
+        }
+      }
+
+      function terminarJuego() {
+        swal(
+          "¡Felicidades!",
+          "Has respondido todas las preguntas correctamente",
+          "success"
+        );
+        // Aquí podrías agregar más acciones al finalizar el juego, como mostrar puntajes, etc.
+      }
+
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      submitButton.addEventListener("click", verificarRespuesta);
+      showOptionsButton.addEventListener("click", mostrarOpciones);
+      mostrarPregunta(); // Mostrar la primera pregunta al cargar la página
+    </script>
+  </body>
+</html>

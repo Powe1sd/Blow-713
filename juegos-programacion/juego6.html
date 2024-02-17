@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Preguntas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 30px;
+      }
+      #question {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .options {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .option {
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .option:hover {
+        background-color: #45a049;
+      }
+      #downloadLink {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: none;
+      }
+      #downloadLink:hover {
+        background-color: #0056b3;
+      }
+
+      .inicio {
+        position: fixed;
+        font-size: 20px;
+        color: red;
+        background-color: black;
+        /* Ajusta esta cantidad para cambiar la distancia desde abajo */
+        bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
+        left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+        cursor: pointer;
+      }
+
+      .correct-answer {
+        background-color: #4caf50; /* Verde */
+      }
+
+      .incorrect-answer {
+        background-color: #f44336; /* Rojo */
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../sofware.html">
+      <button class="inicio">Atras</button>
+    </a>
+    <div class="container">
+      <h1>Juego de Preguntas sobre JavaScript</h1>
+      <div id="question"></div>
+      <div class="options" id="options"></div>
+    </div>
+    <a id="downloadLink" download="preguntas_y_respuestas.txt" href="#"
+      >Descargar Preguntas y Respuestas</a
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blob.js/2.1.2/Blob.js"></script>
+    <script>
+      const preguntas = [
+        {
+          pregunta:
+            "¿Cuál es el tipo de datos que representa una colección ordenada de elementos?",
+          opciones: ["Array", "Object", "String", "Number"],
+          respuesta: "Array",
+        },
+        {
+          pregunta:
+            "¿Qué método se utiliza para agregar un elemento al final de un array?",
+          opciones: ["push()", "pop()", "shift()", "unshift()"],
+          respuesta: "push()",
+        },
+        {
+          pregunta:
+            "¿Cuál de las siguientes NO es una estructura de control de flujo en JavaScript?",
+          opciones: ["if", "for", "while", "case"],
+          respuesta: "case",
+        },
+        {
+          pregunta:
+            "¿Qué función se utiliza para imprimir mensajes en la consola en JavaScript?",
+          opciones: ["console.log()", "print()", "log()", "println()"],
+          respuesta: "console.log()",
+        },
+        {
+          pregunta:
+            "¿Cuál es el operador de comparación estricta en JavaScript?",
+          opciones: ["==", "===", "!=", "!=="],
+          respuesta: "===",
+        },
+      ];
+
+      let indicePreguntaActual = 0;
+
+      function mostrarPregunta() {
+        const elementoPregunta = document.getElementById("question");
+        const elementoOpciones = document.getElementById("options");
+        const preguntaActual = preguntas[indicePreguntaActual];
+
+        elementoPregunta.textContent = preguntaActual.pregunta;
+        elementoOpciones.innerHTML = "";
+
+        preguntaActual.opciones.forEach((opcion, index) => {
+          const botonOpcion = document.createElement("button");
+          botonOpcion.textContent = opcion;
+          botonOpcion.className = "option";
+          botonOpcion.onclick = () => verificarRespuesta(opcion, botonOpcion);
+          elementoOpciones.appendChild(botonOpcion);
+        });
+      }
+
+      function verificarRespuesta(respuestaSeleccionada, boton) {
+        const preguntaActual = preguntas[indicePreguntaActual];
+
+        if (respuestaSeleccionada === preguntaActual.respuesta) {
+          boton.classList.add("correct-answer");
+          indicePreguntaActual++;
+          if (indicePreguntaActual < preguntas.length) {
+            setTimeout(mostrarPregunta, 1000); // Mostrar la siguiente pregunta después de 1 segundo
+          } else {
+            terminarJuego();
+          }
+        } else {
+          swal("Incorrecto", "¡Vuelve a intentarlo!", "error");
+        }
+      }
+
+      function terminarJuego() {
+        const enlaceDescarga = document.getElementById("downloadLink");
+        enlaceDescarga.style.display = "block";
+        const contenedor = document.querySelector(".container");
+
+        swal(
+          "¡Felicidades!",
+          "Has respondido todas las preguntas correctamente",
+          "success"
+        );
+
+        contenedor.innerHTML =
+          "<h2>¡Felicidades! Has respondido todas las preguntas correctamente</h2>";
+      }
+
+      window.onload = mostrarPregunta;
+    </script>
+  </body>
+</html>
