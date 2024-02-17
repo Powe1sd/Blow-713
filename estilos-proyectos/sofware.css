@@ -69,6 +69,19 @@ body {
   background-color: black; /* Cambiamos el color de fondo al pasar el mouse sobre el botón principal */
 }
 
+@media only screen and (max-width: 600px) {
+  .dropbtn {
+    font-size: 20px; /* Reducimos el tamaño de fuente para dispositivos móviles */
+    margin-top: 15px; /* Ajustamos el margen superior */
+  }
+  .dropdown-content {
+    min-width: 180px; /* Reducimos el ancho mínimo de los submenús */
+  }
+  .dropdown-content a {
+    padding: 10px 15px; /* Reducimos el espaciado interno de los enlaces */
+  }
+}
+
 h1 {
   color: red;
   text-align: center;
