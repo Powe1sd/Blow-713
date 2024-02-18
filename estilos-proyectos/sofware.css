@@ -23,7 +23,7 @@ body {
   display: flex;
   height: 55px;
   justify-content: center; /* Para centrar los elementos horizontalmente */
-  background-color: #333;
+  background-color: black;
 }
 
 .dropdown {

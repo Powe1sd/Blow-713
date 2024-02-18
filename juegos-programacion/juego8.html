@@ -168,38 +168,71 @@
       function seleccionarOpcion(opcionSeleccionada) {
         answerInput.value = opcionSeleccionada;
       }
-
       function verificarRespuesta() {
         const respuestaUsuario = answerInput.value.trim();
         const preguntaActual = preguntas[indicePreguntaActual];
-
-        answerInput.value = ""; // Limpiar el campo de respuesta
 
         if (
           respuestaUsuario.toLowerCase() ===
           preguntaActual.respuesta.toLowerCase()
         ) {
-          swal("¡Correcto!", "¡Respuesta correcta!", "success").then(() => {
+          swal({
+            title: "¡Correcto!",
+            text: "¡Respuesta correcta!",
+            icon: "success",
+            buttons: false,
+          });
+          setTimeout(() => {
+            swal.close();
             indicePreguntaActual++;
-            opcionesMostradas = false; // Restablecer el estado para mostrar opciones
             if (indicePreguntaActual < preguntas.length) {
-              mostrarPregunta(); // Mostrar la siguiente pregunta
+              mostrarPregunta();
+              answerInput.value = ""; // Limpiar el campo de texto
             } else {
               terminarJuego();
             }
-          });
+          }, 1500);
         } else {
-          swal("¡Incorrecto!", "Vuelve a intentarlo", "error");
+          swal({
+            title: "¡Incorrecto!",
+            text: "Vuelve a intentarlo",
+            icon: "error",
+            buttons: false, // Desactivar el botón de aceptar
+          });
+          // Limpiar el campo de texto cuando la respuesta es incorrecta
+          answerInput.value = "";
+          setTimeout(() => {
+            swal.close(); // Cerrar automáticamente la alerta después de 1.5 segundos
+          }, 1500);
         }
       }
 
       function terminarJuego() {
-        swal(
-          "¡Felicidades!",
-          "Has respondido todas las preguntas correctamente",
-          "success"
-        );
-        // Aquí podrías agregar más acciones al finalizar el juego, como mostrar puntajes, etc.
+        swal({
+          title: "¡Felicidades!",
+          text: "Has respondido todas las preguntas correctamente",
+          icon: "success",
+          buttons: {
+            comenzarDeNuevo: {
+              text: "Comenzar de Nuevo",
+              value: "comenzarDeNuevo",
+            },
+            siguienteModulo: {
+              text: "Pasar al Siguiente Módulo",
+              value: "siguienteModulo",
+            },
+          },
+        }).then((value) => {
+          if (value === "comenzarDeNuevo") {
+            // Reiniciar el juego
+            indicePreguntaActual = 0;
+            shuffleArray(preguntas);
+            mostrarPregunta();
+          } else if (value === "siguienteModulo") {
+            // Redireccionar al siguiente módulo
+            window.location.href = "juego9.html";
+          }
+        });
       }
 
       function shuffle(array) {
@@ -208,6 +241,18 @@
           [array[i], array[j]] = [array[j], array[i]];
         }
       }
+
+      /* Funcion para mezclar todas las preguntas */
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      shuffleArray(preguntas);
+      // Mezclar las preguntas antes de empezar el juego
 
       submitButton.addEventListener("click", verificarRespuesta);
       showOptionsButton.addEventListener("click", mostrarOpciones);

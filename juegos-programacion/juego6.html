@@ -149,22 +149,47 @@
           elementoOpciones.appendChild(botonOpcion);
         });
       }
-
       function verificarRespuesta(respuestaSeleccionada, boton) {
         const preguntaActual = preguntas[indicePreguntaActual];
 
         if (respuestaSeleccionada === preguntaActual.respuesta) {
           boton.classList.add("correct-answer");
-          indicePreguntaActual++;
-          if (indicePreguntaActual < preguntas.length) {
-            setTimeout(mostrarPregunta, 1000); // Mostrar la siguiente pregunta después de 1 segundo
-          } else {
-            terminarJuego();
-          }
+          swal("Correcto", "¡Respuesta correcta!", "success", {
+            buttons: false,
+            timer: 1500,
+          });
+          setTimeout(() => {
+            boton.style.display = "none"; // Oculta el botón de la respuesta correcta
+            indicePreguntaActual++;
+            if (indicePreguntaActual < preguntas.length) {
+              mostrarPregunta(); // Mostrar la siguiente pregunta
+            } else {
+              terminarJuego();
+            }
+          }, 1500); // Espera 1.5 segundos antes de pasar a la siguiente pregunta
         } else {
-          swal("Incorrecto", "¡Vuelve a intentarlo!", "error");
+          boton.classList.add("incorrect-answer");
+          setTimeout(() => {
+            boton.classList.remove("incorrect-answer");
+            boton.style.display = "none"; // Oculta el botón de la respuesta incorrecta
+          }, 1500); // Espera 1.5 segundos antes de ocultar el botón
+          swal("Incorrecto", "¡Vuelve a intentarlo!", "error", {
+            buttons: false, // Desactiva los botones de la alerta
+            timer: 1500, // Cierra automáticamente el mensaje después de 1.5 segundos
+          });
         }
       }
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      shuffleArray(preguntas);
+      // Mezclar las preguntas antes de empezar el juego
 
       function terminarJuego() {
         const enlaceDescarga = document.getElementById("downloadLink");

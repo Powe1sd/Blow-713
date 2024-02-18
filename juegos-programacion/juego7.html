@@ -8,6 +8,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-Qo8P/2bb7BSeZ5u7YhL8r+bknW+FfmfMxCjswXlCaDuxet2hByz4PDPNNo+v17TDkF48HbmJqGh1z0QR1AtB6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style>
       body {
         font-family: "Arial", sans-serif;
@@ -69,7 +77,10 @@
       <div id="question"></div>
       <input type="text" id="answer" placeholder="Completar" />
       <button id="submit">Enviar</button>
-      <button id="showAnswer">Mostrar Respuesta</button>
+
+      <button id="showAnswer">
+        <i class="fas fa-question"></i>
+      </button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -102,6 +113,17 @@
         },
       ];
 
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Mezclar las preguntas antes de empezar el juego
+      shuffleArray(preguntas);
+
       let indicePreguntaActual = 0;
 
       const questionElement = document.getElementById("question");
@@ -123,16 +145,31 @@
           respuestaUsuario.toLowerCase() ===
           preguntaActual.respuesta.toLowerCase()
         ) {
-          swal("¡Correcto!", "¡Respuesta correcta!", "success").then(() => {
+          swal({
+            title: "¡Correcto!",
+            text: "¡Respuesta correcta!",
+            icon: "success",
+            buttons: false, // Desactiva los botones de la alerta
+          });
+          setTimeout(() => {
+            swal.close(); // Cierra automáticamente el mensaje después de 1.5 segundos
             indicePreguntaActual++;
             if (indicePreguntaActual < preguntas.length) {
               mostrarPregunta(); // Mostrar la siguiente pregunta
             } else {
               terminarJuego();
             }
-          });
+          }, 1500); // Espera 1.5 segundos antes de pasar a la siguiente pregunta
         } else {
-          swal("¡Incorrecto!", "Vuelve a intentarlo", "error");
+          swal({
+            title: "¡Incorrecto!",
+            text: "Vuelve a intentarlo",
+            icon: "error",
+            buttons: false, // Desactiva los botones de la alerta
+          });
+          setTimeout(() => {
+            swal.close(); // Cierra automáticamente el mensaje después de 1.5 segundos
+          }, 1500); // Espera 1.5 segundos antes de cerrar el mensaje de error
         }
       }
 
@@ -141,13 +178,43 @@
         swal("Respuesta", preguntaActual.respuesta, "info");
       }
 
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      shuffleArray(preguntas);
+      // Mezclar las preguntas antes de empezar el juego
+
       function terminarJuego() {
-        swal(
-          "¡Felicidades!",
-          "Has respondido todas las preguntas correctamente",
-          "success"
-        );
-        // Aquí podrías agregar más acciones al finalizar el juego, como mostrar puntajes, etc.
+        swal({
+          title: "¡Felicidades!",
+          text: "Has respondido todas las preguntas correctamente",
+          icon: "success",
+          buttons: {
+            comenzarDeNuevo: {
+              text: "Comenzar de Nuevo",
+              value: "comenzarDeNuevo",
+            },
+            siguienteModulo: {
+              text: "Pasar al Siguiente Módulo",
+              value: "siguienteModulo",
+            },
+          },
+        }).then((value) => {
+          if (value === "comenzarDeNuevo") {
+            // Reiniciar el juego
+            indicePreguntaActual = 0;
+            shuffleArray(preguntas);
+            mostrarPregunta();
+          } else if (value === "siguienteModulo") {
+            // Redireccionar al siguiente módulo
+            window.location.href = "juego8.html";
+          }
+        });
       }
 
       submitButton.addEventListener("click", verificarRespuesta);
