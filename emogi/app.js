@@ -21,7 +21,7 @@ function handleMove(event) {
   const offsetX = boundingBox.left + boundingBox.width / 2;
   const offsetY = boundingBox.top + boundingBox.height / 2;
 
-  const eyeMovementRange = 10; // Rango de movimiento de los ojos
+  const eyeMovementRange = 18; // Rango de movimiento de los ojos
 
   pupils.forEach((pupil) => {
     const pupilBoundingBox = pupil.getBoundingClientRect();

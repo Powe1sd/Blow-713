@@ -66,6 +66,47 @@ body {
   border-radius: 50px/20px; /* Darle una forma más redondeada */
 }
 
+/* Estilos para las orejas */
+/* Estilos para las orejas */
+
+/* Estilos para las cejas */
+.eyebrow {
+  width: 40px;
+  height: 10px;
+  background-color: #000;
+  position: absolute;
+  top: 20px; /* Ajusta según sea necesario */
+}
+
+.leftEyebrow {
+  left: 50px; /* Ajusta según sea necesario */
+  transform: rotate(20deg); /* Ajusta según sea necesario */
+}
+
+.rightEyebrow {
+  right: 50px; /* Ajusta según sea necesario */
+  transform: rotate(-20deg); /* Ajusta según sea necesario */
+}
+
+/* Estilos para las pestañas */
+.eyelash {
+  width: 15px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 10px; /* Ajusta según sea necesario */
+}
+
+.leftEyelash {
+  left: 30px; /* Ajusta según sea necesario */
+  transform: rotate(30deg); /* Ajusta según sea necesario */
+}
+
+.rightEyelash {
+  right: 30px; /* Ajusta según sea necesario */
+  transform: rotate(-30deg); /* Ajusta según sea necesario */
+}
+
 .inicio {
   position: fixed;
   font-size: 20px;
