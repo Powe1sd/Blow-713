@@ -1,4 +1,7 @@
-document.addEventListener("mousemove", function (event) {
+document.addEventListener("mousemove", handleMove);
+document.addEventListener("touchmove", handleMove);
+
+function handleMove(event) {
   const face = document.getElementById("face");
   const eyes = document.querySelector(".eyes");
   const pupils = document.querySelectorAll(".pupil");
@@ -58,4 +61,4 @@ document.addEventListener("mousemove", function (event) {
 
   eyes.style.transition = "transform 0.2s ease"; // Aplicar una transición suave
   eyes.style.transform = `translate(${eyeMovementX}px, ${eyeMovementY}px)`; // Mover los ojos
-});
+}
