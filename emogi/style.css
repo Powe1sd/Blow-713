@@ -1,10 +1,11 @@
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: blue; /* Color de fondo amarillo claro */
+  transition: background-color 0.5s;
 }
 
 .face {
@@ -37,9 +38,9 @@ body {
 }
 
 .pupil {
-  width: 24px;
+  width: 30px;
   /*Reducireltamañodeliris*/
-  height: 20%;
+  height: 25%;
   /*Reducireltamañodeliris*/
   border-radius: 50%;
   background-color: red;
@@ -55,15 +56,31 @@ body {
 }
 
 .mouth {
-  width: 60px; /* Ancho de la boca */
-  height: 20px; /* Altura de la boca */
+  width: 120px; /* Ancho de la boca */
+  height: 60px; /* Altura de la boca */
   background-color: transparent;
-  border: 5px solid black; /* Borde de la boca */
+  border: 3px solid black; /* Borde de la boca */
   position: absolute;
-  bottom: 30%; /* Posición vertical de la boca */
+  bottom: 10%; /* Posición vertical de la boca */
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 50px/20px; /* Darle una forma más redondeada */
+  border-radius: 0 0 50px 50px; /* Darle una forma más redondeada */
+  overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+}
+
+.mouth::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom,
+    #ffdaab,
+    #ffdaab 60%,
+    transparent 100%
+  ); /* Gradiente para simular la boca */
+  border-radius: 50%;
+  bottom: 0;
 }
 
 /* Estilos para las orejas */

@@ -1,26 +1,33 @@
-document.addEventListener("mousemove", handleMove);
-document.addEventListener("touchmove", handleMove, { passive: false }); // Agregamos { passive: false } para poder prevenir el scroll
+document.addEventListener("mousemove", handleMouseMove);
+document.addEventListener("touchmove", handleTouchMove, { passive: false });
 
-function handleMove(event) {
-  event.preventDefault(); // Prevenir el comportamiento predeterminado del evento táctil (scroll)
-
+function handleMouseMove(event) {
   const face = document.getElementById("face");
   const eyes = document.querySelector(".eyes");
   const pupils = document.querySelectorAll(".pupil");
-  let mouseX, mouseY;
+  let mouseX = event.clientX;
+  let mouseY = event.clientY;
 
-  if (event.type === "touchmove") {
-    mouseX = event.touches[0].clientX;
-    mouseY = event.touches[0].clientY;
-  } else {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-  }
+  moveEyes(face, eyes, pupils, mouseX, mouseY);
+  changeBackgroundColor(mouseX, mouseY);
+}
 
+function handleTouchMove(event) {
+  event.preventDefault(); // Prevenir el comportamiento predeterminado del evento táctil (scroll)
+  const face = document.getElementById("face");
+  const eyes = document.querySelector(".eyes");
+  const pupils = document.querySelectorAll(".pupil");
+  let mouseX = event.touches[0].clientX;
+  let mouseY = event.touches[0].clientY;
+
+  moveEyes(face, eyes, pupils, mouseX, mouseY);
+  changeBackgroundColor(mouseX, mouseY);
+}
+
+function moveEyes(face, eyes, pupils, mouseX, mouseY) {
   const boundingBox = face.getBoundingClientRect();
   const offsetX = boundingBox.left + boundingBox.width / 2;
   const offsetY = boundingBox.top + boundingBox.height / 2;
-
   const eyeMovementRange = 18; // Rango de movimiento de los ojos
 
   pupils.forEach((pupil) => {
@@ -57,4 +64,23 @@ function handleMove(event) {
 
   eyes.style.transition = "transform 0.2s ease"; // Aplicar una transición suave
   eyes.style.transform = `translate(${eyeMovementX}px, ${eyeMovementY}px)`; // Mover los ojos
+}
+
+function changeBackgroundColor(mouseX, mouseY) {
+  const { innerWidth, innerHeight } = window;
+  const horizontalMidpoint = innerWidth / 2;
+  const verticalMidpoint = innerHeight / 2;
+  let color;
+
+  if (mouseX < horizontalMidpoint && mouseY < verticalMidpoint) {
+    color = "red";
+  } else if (mouseX >= horizontalMidpoint && mouseY < verticalMidpoint) {
+    color = "blue";
+  } else if (mouseX < horizontalMidpoint && mouseY >= verticalMidpoint) {
+    color = "green";
+  } else {
+    color = "yellow";
+  }
+
+  document.body.style.backgroundColor = color;
 }
