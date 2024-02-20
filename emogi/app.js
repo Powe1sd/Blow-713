@@ -77,7 +77,7 @@ function changeBackgroundColor(mouseX, mouseY) {
   } else if (mouseX >= horizontalMidpoint && mouseY < verticalMidpoint) {
     color = "black";
   } else if (mouseX < horizontalMidpoint && mouseY >= verticalMidpoint) {
-    color = "green";
+    color = "blue";
   } else {
     color = "yellow";
   }
