@@ -52,56 +52,59 @@ function handleTouchMove(event) {
   // Agregar vibración en dispositivos móviles
   navigator.vibrate(50); // Vibrar durante 50 milisegundos
 }
-
 function moveEyes(face, eyes, pupils, mouseX, mouseY) {
   const boundingBox = face.getBoundingClientRect();
-  const offsetX = boundingBox.left + boundingBox.width / 2;
-  const offsetY = boundingBox.top + boundingBox.height / 2;
-  const eyeMovementRange = 18; // Rango de movimiento de los ojos
+  const faceCenterX = boundingBox.left + boundingBox.width / 2;
+  const faceCenterY = boundingBox.top + boundingBox.height / 2;
+  const eyeMovementRange = 33; // Aumentamos el rango de movimiento de los ojos
+  const pupilMovementRange = 27; // Aumentamos el rango de movimiento de las pupilas
 
-  // Calcular el ángulo relativo al centro del rostro
-  const deltaX = mouseX - offsetX;
-  const deltaY = mouseY - offsetY;
+  // Calcular el ángulo y la distancia del ratón respecto al centro del rostro
+  const deltaX = mouseX - faceCenterX;
+  const deltaY = mouseY - faceCenterY;
+  const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
   const angle = Math.atan2(deltaY, deltaX);
 
-  // Calcular el movimiento de los ojos basado en el ángulo
-  const eyeMovementX = Math.cos(angle) * eyeMovementRange;
-  const eyeMovementY = Math.sin(angle) * eyeMovementRange;
+  // Mover los ojos basados en el ángulo y la distancia
+  const eyeMovementX = Math.cos(angle) * Math.min(distance, eyeMovementRange);
+  const eyeMovementY = Math.sin(angle) * Math.min(distance, eyeMovementRange);
+
+  // Limitar el movimiento vertical de los ojos cuando están hacia arriba
+  const verticalLimit = Math.abs(deltaY) > eyeMovementRange ? 0.5 : 1;
 
   // Mover los ojos
   eyes.style.transition = "transform 0.2s ease";
-  eyes.style.transform = `translate(${eyeMovementX}px, ${eyeMovementY}px)`;
+  eyes.style.transform = `translate(${eyeMovementX}px, ${
+    eyeMovementY * verticalLimit
+  }px)`;
 
   pupils.forEach((pupil) => {
     const pupilBoundingBox = pupil.getBoundingClientRect();
-    const pupilOffsetX = pupilBoundingBox.left + pupilBoundingBox.width / 2;
-    const pupilOffsetY = pupilBoundingBox.top + pupilBoundingBox.height / 2;
-    const pupilDeltaX = mouseX - pupilOffsetX;
-    const pupilDeltaY = mouseY - pupilOffsetY;
-    const pupilAngle = Math.atan2(pupilDeltaY, pupilDeltaX);
+    const eyeBoundingBox = eyes.getBoundingClientRect();
 
-    // Calcular el ángulo relativo al centro del ojo
-    const relativeAngle = pupilAngle - angle;
+    // Calcular el centro de la pupila respecto al ojo
+    const pupilCenterX =
+      pupilBoundingBox.left + pupilBoundingBox.width / 2 - eyeBoundingBox.left;
+    const pupilCenterY =
+      pupilBoundingBox.top + pupilBoundingBox.height / 2 - eyeBoundingBox.top;
 
-    // Calcular la distancia del ratón al centro del ojo
-    const pupilDistance = Math.min(
-      Math.sqrt(pupilDeltaX * pupilDeltaX + pupilDeltaY * pupilDeltaY),
-      boundingBox.width / 4
+    // Calcular el ángulo y la distancia del ratón respecto al centro de la pupila
+    const pupilDeltaX = mouseX - pupilCenterX;
+    const pupilDeltaY = mouseY - pupilCenterY;
+    const pupilDistance = Math.sqrt(
+      pupilDeltaX * pupilDeltaX + pupilDeltaY * pupilDeltaY
     );
 
-    // Calcular el movimiento de la pupila
-    const pupilMovementX = Math.cos(relativeAngle) * pupilDistance;
-    const pupilMovementY = Math.sin(relativeAngle) * pupilDistance;
+    // Calcular el movimiento de la pupila dentro de los límites del ojo
+    const pupilAngle = Math.atan2(pupilDeltaY, pupilDeltaX);
+    const pupilMovementX =
+      Math.cos(pupilAngle) * Math.min(pupilDistance, pupilMovementRange);
+    const pupilMovementY =
+      Math.sin(pupilAngle) * Math.min(pupilDistance, pupilMovementRange);
 
     // Aplicar el movimiento limitando al rango del ojo
     pupil.style.transition = "transform 0.2s ease";
-    pupil.style.transform = `translate(${Math.min(
-      Math.max(pupilMovementX, -eyeMovementRange),
-      eyeMovementRange
-    )}px, ${Math.min(
-      Math.max(pupilMovementY, -eyeMovementRange),
-      eyeMovementRange
-    )}px)`;
+    pupil.style.transform = `translate(${pupilMovementX}px, ${pupilMovementY}px)`;
   });
 }
 
