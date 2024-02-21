@@ -1,7 +1,7 @@
 /* ESTILOS DE MI LIBRO */
 
 body {
-  background-color: #154360;
+  background-color: white;
   margin: 0;
   padding: 0;
 }
@@ -53,6 +53,10 @@ body {
 .whatsapp-btn:hover {
   transform: scale(1.1);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 
 .btnini {
@@ -134,7 +138,7 @@ p {
 }
 
 .parrafo {
-  color: white;
+  color: black;
   font-size: 24px;
   font-family: "Times New Roman", Times, serif;
   text-align: justify;
