@@ -7,8 +7,10 @@
     <style>
       body {
         background-color: azure;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
       }
-
       .module {
         width: 200px;
         height: 200px;
@@ -29,18 +31,25 @@
       }
       .module p {
         position: absolute; /* Posiciona el texto absolutamente dentro del módulo */
-        bottom: -48px; /* Ajusta la posición del texto verticalmente */
+        bottom: -68px; /* Ajusta la posición del texto verticalmente */
         width: 100%; /* Asegura que el texto ocupe todo el ancho del módulo */
-        margin: 0; /* Elimina el margen predeterminado */
+        margin-top: 100px;
         font-family: "Times New Roman", Times, serif;
         font-size: 25px;
       }
-      .clear {
-        clear: left; /* Limpiar elementos flotantes a la izquierda */
-      }
-      /* Añadir margen superior a los últimos tres módulos */
+
       .last-modules {
         margin-top: 90px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .module {
+          width: 100%; /* Para mostrar un módulo por fila en dispositivos móviles */
+        }
+
+        .last-modules {
+          width: 100%; /* También se muestra en una columna en dispositivos móviles */
+        }
       }
 
       .practica {
@@ -49,6 +58,15 @@
         font-family: "Times New Roman", Times, serif;
         font-size: 40px;
         color: blue;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .module {
+          width: calc(40% - 30px);
+          margin-top: 60px;
+        }
       }
     </style>
   </head>
@@ -75,7 +93,6 @@
       <img src="../Modulos-imagenes/organos.jpeg" alt="Imagen 5" />
       <p>ORGANOS</p>
     </a>
-    <div class="clear"></div>
     <a href="pagina6.html" class="module last-modules">
       <img src="../Modulos-imagenes/pronombres.png" alt="Imagen 6" />
       <p>PRONOMBRES</p>

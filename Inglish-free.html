@@ -31,11 +31,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Modulos ingles</title>
+      </head>
+      <body>
+
+
         <style>
           body {
             background-color: azure;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
           }
-    
           .module {
             width: 200px;
             height: 200px;
@@ -56,18 +62,25 @@
           }
           .module p {
             position: absolute; /* Posiciona el texto absolutamente dentro del módulo */
-            bottom: -48px; /* Ajusta la posición del texto verticalmente */
+            bottom: -68px; /* Ajusta la posición del texto verticalmente */
             width: 100%; /* Asegura que el texto ocupe todo el ancho del módulo */
-            margin: 0; /* Elimina el margen predeterminado */
+            margin-top: 100px;
             font-family: "Times New Roman", Times, serif;
             font-size: 25px;
           }
-          .clear {
-            clear: left; /* Limpiar elementos flotantes a la izquierda */
-          }
-          /* Añadir margen superior a los últimos tres módulos */
+    
           .last-modules {
             margin-top: 90px;
+          }
+    
+          @media only screen and (max-width: 600px) {
+            .module {
+              width: 100%; /* Para mostrar un módulo por fila en dispositivos móviles */
+            }
+    
+            .last-modules {
+              width: 100%; /* También se muestra en una columna en dispositivos móviles */
+            }
           }
     
           .practica {
@@ -76,10 +89,18 @@
             font-family: "Times New Roman", Times, serif;
             font-size: 40px;
             color: blue;
+            width: 100%;
+            margin-bottom: 20px;
+          }
+    
+          @media (max-width: 768px) {
+            .module {
+              width: calc(40% - 30px);
+              margin-top: 60px;
+            }
           }
         </style>
-      </head>
-      <body>
+
 
 
     
@@ -178,48 +199,53 @@
 
         <h1 class="practica">PRÁCTICA</h1>
 
+        <a href="modulos-ingles-redondo/pagina1.html" class="module">
+          <img src="Modulos-imagenes/alfabeto.png" alt="Imagen 1" />
+          <p>ALFABETO</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina2.html" class="module">
+          <img src="Modulos-imagenes/cumplidos.jpeg" alt="Imagen 2" />
+          <p>CUMPLIDOS</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina4.html" class="module">
+          <img src="Modulos-imagenes/colores.jpeg" alt="Imagen 3" />
+          <p>COLORES</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina5.html" class="module">
+          <img src="Modulos-imagenes/Numeros.jpeg" alt="Imagen 4" />
+          <p>NÚMEROS</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina6.html" class="module">
+          <img src="Modulos-imagenes/organos.jpeg" alt="Imagen 5" />
+          <p>ORGANOS</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina7.html" class="module last-modules">
+          <img src="Modulos-imagenes/pronombres.png" alt="Imagen 6" />
+          <p>PRONOMBRES</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina8.html" class="module last-modules">
+          <img src="Modulos-imagenes/familia.jpeg" alt="Imagen 7" />
+          <p>FAMILIA</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina9.html" class="module last-modules">
+          <img src="Modulos-imagenes/semana.jpeg" alt="Imagen 8" />
+          <p>SEMANA</p>
+        </a>
+        <a href="modulos-ingles-redondo/pagina10.html" class="module last-modules">
+          <img src="Modulos-imagenes/meses.png" alt="Imagen 8" />
+          <p>MESES</p>
+        </a>
+        <a href="modulos-ingles-redondo/11.html" class="module last-modules">
+          <img src="Modulos-imagenes/tiempo.jpeg" alt="Imagen 8" />
+          <p>TIEMPO</p>
+        </a>
+    
 
-  <a href="modulos-ingles-redondo/pagina1.html" class="module">
-    <img src="../Modulos-imagenes/alfabeto.png" alt="Imagen 1" />
-    <p>ALFABETO</p>
-  </a>
-  <a href="modulos-ingles-redondo/pagina2.html" class="module">
-    <img src="../Modulos-imagenes/cumplidos.jpeg" alt="Imagen 2" />
-    <p>CUMPLIDOS</p>
-  </a>
-  <a href="modulos-ingles-redondo/pagina4.html" class="module">
-    <img src="../Modulos-imagenes/colores.jpeg" alt="Imagen 3" />
-    <p>COLORES</p>
-  </a>
-  <a href="modulos-ingles-redondo/pagina5.html" class="module">
-    <img src="../Modulos-imagenes/Numeros.jpeg" alt="Imagen 4" />
-    <p>NÚMEROS</p>
-  </a>
-  <a href="modulos-ingles-redondo/pagina6.html" class="module">
-    <img src="../Modulos-imagenes/organos.jpeg" alt="Imagen 5" />
-    <p>ORGANOS</p>
-  </a>
-  <div class="clear"></div>
-  <a href="modulos-ingles-redondo/pagina7.html" class="module last-modules">
-    <img src="../Modulos-imagenes/pronombres.png" alt="Imagen 6" />
-    <p>PRONOMBRES</p>
-  </a>
-  <a href="modulos-ingles-redondo/pagina8.html" class="module last-modules">
-    <img src="../Modulos-imagenes/familia.jpeg" alt="Imagen 7" />
-    <p>FAMILIA</p>
-  </a>
-  <a href="modulos-ingles-redondo/pagina9.html" class="module last-modules">
-    <img src="../Modulos-imagenes/semana.jpeg" alt="Imagen 8" />
-    <p>SEMANA</p>
-  </a>
-  <a href="modulos-ingles-redondo/pagina10.html" class="module last-modules">
-    <img src="../Modulos-imagenes/meses.png" alt="Imagen 8" />
-    <p>MESES</p>
-  </a>
-  <a href="modulos-ingles-redondo/11.html" class="module last-modules">
-    <img src="../Modulos-imagenes/tiempo.jpeg" alt="Imagen 8" />
-    <p>TIEMPO</p>
-  </a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
