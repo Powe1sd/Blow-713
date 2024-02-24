@@ -94,6 +94,17 @@
       <button id="showOptions">Ver Opciones</button>
     </div>
 
+    <!-- Validacio de texto de audio -->
+    <audio id="victorySound">
+      <source src="/ganste-perd/ganaste.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <audio id="defeatSound">
+      <source src="/ganste-perd/perdiste.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script>
       const preguntas = [
@@ -250,6 +261,7 @@
             icon: "success",
             buttons: false,
           });
+          document.getElementById("victorySound").play(); // Reproduce el sonido de victoria
           setTimeout(() => {
             swal.close();
             indicePreguntaActual++;
@@ -267,6 +279,7 @@
             icon: "error",
             buttons: false, // Desactivar el botón de aceptar
           });
+          document.getElementById("defeatSound").play(); // Reproduce el sonido de derrota
           // Limpiar el campo de texto cuando la respuesta es incorrecta
           answerInput.value = "";
           setTimeout(() => {
@@ -274,7 +287,6 @@
           }, 1500);
         }
       }
-
       function terminarJuego() {
         swal({
           title: "¡Felicidades!",

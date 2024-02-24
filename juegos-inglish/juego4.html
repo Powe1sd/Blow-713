@@ -101,6 +101,17 @@
       </table>
     </div>
 
+    <!-- Validacio de texto de audio -->
+    <audio id="victorySound">
+      <source src="/ganste-perd/ganaste.MP3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <audio id="defeatSound">
+      <source src="/ganste-perd/perdiste.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
     <script>
       const fruits = [
         { word: "apple", translation: "Manzana" },
@@ -203,6 +214,7 @@
             confirmButtonText: "OK",
           }).then((result) => {
             if (result.isConfirmed) {
+              document.getElementById("victorySound").play(); // Reproduce el sonido de victoria
               moveToNextGame();
             }
           });
@@ -217,6 +229,7 @@
               confirmButtonText: "OK",
             }).then((result) => {
               if (result.isConfirmed) {
+                document.getElementById("defeatSound").play(); // Reproduce el sonido de derrota
                 setupGame();
               }
             });
@@ -227,6 +240,7 @@
               text: "Sigue intentando.",
               confirmButtonText: "OK",
             });
+            document.getElementById("defeatSound").play(); // Reproduce el sonido de derrota
           }
         }
       }

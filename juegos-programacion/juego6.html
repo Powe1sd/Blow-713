@@ -95,6 +95,17 @@
       >Descargar Preguntas y Respuestas</a
     >
 
+    <!-- Validacio de texto de audio -->
+    <audio id="victorySound">
+      <source src="/ganste-perd/ganaste.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <audio id="defeatSound">
+      <source src="/ganste-perd/perdiste.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Blob.js/2.1.2/Blob.js"></script>
     <script>
@@ -325,25 +336,27 @@
             buttons: false,
             timer: 1500,
           });
+          document.getElementById("victorySound").play(); // Reproduce el sonido de victoria
           setTimeout(() => {
-            boton.style.display = "none"; // Oculta el botón de la respuesta correcta
+            boton.style.display = "none";
             indicePreguntaActual++;
             if (indicePreguntaActual < preguntas.length) {
-              mostrarPregunta(); // Mostrar la siguiente pregunta
+              mostrarPregunta();
             } else {
               terminarJuego();
             }
-          }, 1500); // Espera 1.5 segundos antes de pasar a la siguiente pregunta
+          }, 1500);
         } else {
           boton.classList.add("incorrect-answer");
           setTimeout(() => {
             boton.classList.remove("incorrect-answer");
-            boton.style.display = "none"; // Oculta el botón de la respuesta incorrecta
-          }, 1500); // Espera 1.5 segundos antes de ocultar el botón
+            boton.style.display = "none";
+          }, 1500);
           swal("Incorrecto", "¡Vuelve a intentarlo!", "error", {
-            buttons: false, // Desactiva los botones de la alerta
-            timer: 1500, // Cierra automáticamente el mensaje después de 1.5 segundos
+            buttons: false,
+            timer: 1500,
           });
+          document.getElementById("defeatSound").play(); // Reproduce el sonido de derrota
         }
       }
 

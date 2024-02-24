@@ -8,6 +8,25 @@ body {
   -webkit-animation: starExplosion 5s infinite alternate;
 }
 
+.barra-horizontal {
+  display: flex;
+  background-color: #333; /* Color de fondo de la barra */
+  color: white; /* Color del texto */
+  padding: 10px; /* Espacio interno de la barra */
+  align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.barra-horizontal img {
+  width: 100px; /* Tamaño de la imagen */
+  height: auto; /* Para mantener la proporción */
+  margin-left: 10px; /* Espacio entre la imagen y el título */
+}
+
+.inicio2 {
+  font-size: 24px; /* Tamaño del título */
+  margin-right: 10px; /* Espacio entre el título y la imagen */
+}
+
 @keyframes starExplosion {
   0% {
     background-color: whitesmoke; /* Azul claro */

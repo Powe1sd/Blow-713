@@ -83,6 +83,17 @@
       </button>
     </div>
 
+    <!-- Validacio de texto de audio -->
+    <audio id="victorySound">
+      <source src="/ganste-perd/ganaste.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <audio id="defeatSound">
+      <source src="/ganste-perd/perdiste.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script>
       const preguntas = [
@@ -96,7 +107,7 @@
             "El método utilizado para agregar un elemento al final de un array es _____()",
           respuesta: "push",
         },
-       
+
         {
           pregunta:
             "La función utilizada para imprimir mensajes en la consola en JavaScript es _____()",
@@ -243,9 +254,6 @@
           pregunta: "¿Cuál es el resultado de '20' - '5' en JavaScript?",
           respuesta: "15",
         },
-      
-      
-      
       ];
 
       function shuffleArray(array) {
@@ -271,7 +279,6 @@
         questionElement.textContent = preguntaActual.pregunta;
         answerInput.value = ""; // Limpiar el campo de respuesta
       }
-
       function verificarRespuesta() {
         const respuestaUsuario = answerInput.value.trim();
         const preguntaActual = preguntas[indicePreguntaActual];
@@ -284,27 +291,29 @@
             title: "¡Correcto!",
             text: "¡Respuesta correcta!",
             icon: "success",
-            buttons: false, // Desactiva los botones de la alerta
+            buttons: false,
           });
+          document.getElementById("victorySound").play(); // Reproduce el sonido de victoria
           setTimeout(() => {
-            swal.close(); // Cierra automáticamente el mensaje después de 1.5 segundos
+            swal.close();
             indicePreguntaActual++;
             if (indicePreguntaActual < preguntas.length) {
-              mostrarPregunta(); // Mostrar la siguiente pregunta
+              mostrarPregunta();
             } else {
               terminarJuego();
             }
-          }, 1500); // Espera 1.5 segundos antes de pasar a la siguiente pregunta
+          }, 1500);
         } else {
           swal({
             title: "¡Incorrecto!",
             text: "Vuelve a intentarlo",
             icon: "error",
-            buttons: false, // Desactiva los botones de la alerta
+            buttons: false,
           });
+          document.getElementById("defeatSound").play(); // Reproduce el sonido de derrota
           setTimeout(() => {
-            swal.close(); // Cierra automáticamente el mensaje después de 1.5 segundos
-          }, 1500); // Espera 1.5 segundos antes de cerrar el mensaje de error
+            swal.close();
+          }, 1500);
         }
       }
 
