@@ -100,11 +100,39 @@
               margin-top: 60px;
             }
           }
-        </style>
+
+           /* Estilos para el botón fijo */
+      .fixed-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999; /* Asegura que esté por encima de otros elementos */
+        background-color: #007bff; /* Color de fondo */
+        color: white; /* Color del texto */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 10px 20px; /* Espaciado interno */
+        cursor: pointer; /* Cursor al pasar por encima */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+      }
+
+      .fixed-button:hover {
+        background-color: #0056b3; /* Color de fondo al pasar por encima */
+      }
 
 
+      .fixed-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
 
     
+        </style>
+    
+    <button id="playButton" class="fixed-button play"><i class="fas fa-play"></i> Reproducir Todos</button>
+
+
 
     <video controls>
       <source src="Curso-ingles/Curso-ingles.mp4" type="video/mp4" />
@@ -480,9 +508,49 @@
         </ul>
       </div>
 
-
-        
-
+      <script>
+        var audios = document.querySelectorAll('audio');
+        var playButton = document.getElementById('playButton');
+        var currentIndex = 0;
+        var reproduciendo = false;
+    
+        function reproducirAudios() {
+          reproduciendo = true;
+          audios[currentIndex].play();
+          audios[currentIndex].addEventListener('ended', reproducirSiguiente);
+          playButton.innerHTML = '<i class="fas fa-pause"></i> Pausar Todos';
+        }
+    
+        function reproducirSiguiente() {
+          currentIndex++;
+          if (currentIndex < audios.length) {
+            audios[currentIndex - 1].removeEventListener('ended', reproducirSiguiente);
+            audios[currentIndex].play();
+            audios[currentIndex].addEventListener('ended', reproducirSiguiente);
+          } else {
+            detenerAudios();
+          }
+        }
+    
+        function detenerAudios() {
+          reproduciendo = false;
+          audios.forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+          });
+          playButton.innerHTML = '<i class="fas fa-play"></i> Reproducir Todos';
+          currentIndex = 0;
+        }
+    
+        playButton.addEventListener('click', function() {
+          if (!reproduciendo) {
+            reproducirAudios();
+          } else {
+            detenerAudios();
+          }
+        });
+      </script>
+    
 
 </body>
 </html>
