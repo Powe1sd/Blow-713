@@ -2,28 +2,32 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.2" />
+
     <link rel="icon" href="logo/logo-color.png" type="image/x-icon" />
     <link rel="stylesheet" href="styleingles.css" />
     <script src="questioninglis.js"></script>
     <script src="codigoacces.js"></script>
     <script src="solicitarcodigo.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-   
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
     <title>Aprendiendo Inglés</title>
   </head>
   <body>
-
-   <a href="index.html">
+    <a href="index.html">
       <button class="inicio">INICIO</button>
     </a>
     <br /><br />
     <h2 class="free">Versión free :)</h2>
-    
-
 
     <!DOCTYPE html>
     <html lang="en">
@@ -33,8 +37,6 @@
         <title>Modulos ingles</title>
       </head>
       <body>
-
-
         <style>
           body {
             background-color: azure;
@@ -68,21 +70,21 @@
             font-family: "Times New Roman", Times, serif;
             font-size: 20px;
           }
-    
+
           .last-modules {
             margin-top: 90px;
           }
-    
+
           @media only screen and (max-width: 600px) {
             .module {
               width: 100%; /* Para mostrar un módulo por fila en dispositivos móviles */
             }
-    
+
             .last-modules {
               width: 100%; /* También se muestra en una columna en dispositivos móviles */
             }
           }
-    
+
           .practica {
             text-align: center;
             background-color: black;
@@ -92,7 +94,7 @@
             width: 100%;
             margin-bottom: 20px;
           }
-    
+
           @media (max-width: 768px) {
             .module {
               width: calc(40% - 30px);
@@ -100,136 +102,200 @@
             }
           }
 
-           /* Estilos para el botón fijo */
-      .fixed-button {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 9999; /* Asegura que esté por encima de otros elementos */
-        background-color: #007bff; /* Color de fondo */
-        color: white; /* Color del texto */
-        border: none; /* Sin borde */
-        border-radius: 5px; /* Bordes redondeados */
-        padding: 10px 20px; /* Espaciado interno */
-        cursor: pointer; /* Cursor al pasar por encima */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
-      }
+          /* Estilos para el botón fijo */
+          .fixed-button {
+            position: fixed;
+            top: 10px;
+            margin-top: 40px;
+            right: 30px;
+            z-index: 9999; /* Asegura que esté por encima de otros elementos */
+            background-color: #007bff; /* Color de fondo */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px 20px; /* Espaciado interno */
+            cursor: pointer; /* Cursor al pasar por encima */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+          }
 
-      .fixed-button:hover {
-        background-color: #0056b3; /* Color de fondo al pasar por encima */
-      }
+          .fixed-button:hover {
+            background-color: #0056b3; /* Color de fondo al pasar por encima */
+          }
 
+          .fixed-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+          }
 
-      .fixed-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-    }
+          .playing {
+            color: blue;
+          }
 
-    .playing {
-      color: blue;
-
-    }
-    
-    
+          .text[lang="es"] {
+            color: red; /* Cambiar el color del texto en español a rojo */
+          }
         </style>
-    
 
-    <button id="playButton" class="fixed-button play"><i class="fas fa-play"></i> Reproducir Todos</button>
+        <button id="playButton" class="fixed-button play">
+          <i class="fas fa-play"></i> Reproducir Todos
+        </button>
 
+        <video controls>
+          <source src="Curso-ingles/Curso-ingles.mp4" type="video/mp4" />
+          <!-- Agrega aquí formatos adicionales del video si lo deseas -->
+          Tu navegador no admite el elemento de video.</video
+        ><br /><br />
 
+        <div class="corner-text">TECH</div>
 
-    <video controls>
-      <source src="Curso-ingles/Curso-ingles.mp4" type="video/mp4" />
-      <!-- Agrega aquí formatos adicionales del video si lo deseas -->
-      Tu navegador no admite el elemento de video.
-    </video><br><br>
+        <!-- Seccion de categorias -->
+        <div class="category-section">
+          <div class="category-dropdown">
+            <button class="dropbtn">Escucha</button>
+            <div class="dropdown-content">
+              <a href="#pronombres" onclick="solicitarCodigo8(event)"
+                >Pronombres</a
+              >
+              <a href="#saludos" onclick="solicitarCodigo8(event)"
+                >Saludos basicos</a
+              >
+              <a href="#fres" onclick="solicitarCodigo8(event)"
+                >Frases de Presentación:</a
+              >
+              <a href="#pruntas" onclick="solicitarCodigo8(event)"
+                >Preguntas básicas</a
+              >
+              <a href="#reuestas" onclick="solicitarCodigo8(event)"
+                >Respuestas Sencillas:</a
+              >
+              <a href="#prente" onclick="solicitarCodigo8(event)"
+                >Presente Simple - Verbos Básicos:</a
+              >
+              <a href="#exesiones" onclick="solicitarCodigo8(event)"
+                >Expresiones Cotidianas:</a
+              >
+              <a href="#deedidas" onclick="solicitarCodigo8(event)"
+                >Despedidas:</a
+              >
+              <a href="#pabras" onclick="solicitarCodigo8(event)"
+                >Palabras Comunes:</a
+              >
+              <a href="#fres-cortas" onclick="solicitarCodigo8(event)"
+                >Frases Cortas:</a
+              >
+              <a href="#fres-tecnologia" onclick="solicitarCodigo8(event)"
+                >Frases de tecnología</a
+              >
+              <a href="#fres-deportes" onclick="solicitarCodigo8(event)"
+                >Frases de deportes</a
+              >
+              <a href="#fres-comida" onclick="solicitarCodigo8(event)"
+                >Frases de comida</a
+              >
+              <a href="#fres-colores" onclick="solicitarCodigo8(event)"
+                >Frases de colores</a
+              >
+              <a href="#fres-universo" onclick="solicitarCodigo8(event)"
+                >Frases del universo</a
+              >
+              <a href="#fres-vida" onclick="solicitarCodigo8(event)"
+                >Frases sobre la vida</a
+              >
+              <a href="#fres-ciencia" onclick="solicitarCodigo8(event)"
+                >Frases sobre la ciencia</a
+              >
+              <a href="#fres-tierra" onclick="solicitarCodigo8(event)"
+                >Frases de la tierra</a
+              >
+              <a href="#fses-plantas" onclick="solicitarCodigo8(event)"
+                >Frases sobre las plantas</a
+              >
+              <a href="#fras-biologia" onclick="solicitarCodigo8(event)"
+                >Frases de la biologia</a
+              >
+              <a href="#fres-matematicas" onclick="solicitarCodigo8(event)"
+                >Frases de matemáticas</a
+              >
+              <a href="#fras-filosofia" onclick="solicitarCodigo8(event)"
+                >frases sobre filosofía</a
+              >
+              <a href="#fres-economia" onclick="solicitarCodigo8(event)"
+                >Frases de economía</a
+              >
+              <a href="#fres-sostenible" onclick="solicitarCodigo8(event)"
+                >frases sobre economía sostenible</a
+              >
+              <a href="#fras-renovables" onclick="solicitarCodigo8(event)"
+                >Energias renovables</a
+              >
+              <a href="#fras-literatura" onclick="solicitarCodigo8(event)"
+                >Frases de literatura</a
+              >
+              <a href="#fras-arte" onclick="solicitarCodigo8(event)"
+                >Frases de arte</a
+              >
+              <a href="#fras-música" onclick="solicitarCodigo8(event)"
+                >Frases de música</a
+              >
+              <a href="#frases-viajes" onclick="solicitarCodigo8(event)"
+                >Frases de viajes</a
+              >
+              <a href="#fraseeducación" onclick="solicitarCodigo8(event)"
+                >Frases de educación</a
+              >
+              <a href="#fraseambiente" onclick="solicitarCodigo8(event)"
+                >Frases de medio ambiente</a
+              >
+              <a href="#frasebienestar" onclick="solicitarCodigo8(event)"
+                >Frases de salud y bienestar</a
+              >
+              <a href="#fras-cultura" onclick="solicitarCodigo8(event)"
+                >Frases de cultura</a
+              >
+              <a href="#frasederechos humanos" onclick="solicitarCodigo8(event)"
+                >Frases de derechos humanos</a
+              >
+              <a href="#fras-innovación" onclick="solicitarCodigo8(event)"
+                >Frases de innovación</a
+              >
+              <a
+                href="https://www.facebook.com/?locale=es_LA"
+                onclick="solicitarCodigo8(event)"
+                >Facebook</a
+              >
+            </div>
+          </div>
 
-    <div class="corner-text">TECH</div>
+          <div class="category-dropdown">
+            <button class="dropbtn">Videos</button>
+            <div class="dropdown-content">
+              <a href="#video1" onclick="solicitarCodigo8(event)">Video 1</a>
+              <a href="#video2" onclick="solicitarCodigo8(event)">Video 2</a>
+              <a href="#video3" onclick="solicitarCodigo8(event)">Video 3 </a>
+              <a href="#video4" onclick="solicitarCodigo8(event)">Video 4 </a>
+              <a href="#video5" onclick="solicitarCodigo8(event)">Video 5 </a>
+              <a href="#video6" onclick="solicitarCodigo8(event)">Video 6 </a>
+              <a href="#video7" onclick="solicitarCodigo8(event)">Video 7 </a>
+              <a href="#video8" onclick="solicitarCodigo8(event)">Video 8 </a>
+              <a href="#video9" onclick="solicitarCodigo8(event)">Video 9 </a>
+              <a href="#video1" onclick="solicitarCodigo8(event)">Video 10 </a>
+            </div>
+          </div>
 
+          <div class="category-dropdown">
+            <button class="dropbtn">Juegos-en-ingles</button>
+            <div class="dropdown-content">
+              <a href="juegos-inglish/juego3.html">Juego 3</a>
+              <a href="juegos-inglish/juego4.html">Juego 4</a>
+            </div>
+          </div>
+        </div>
 
-
-    
-<!-- Seccion de categorias -->
-<div class="category-section">
-  <div class="category-dropdown">
-    <button class="dropbtn">Escucha</button>
-    <div class="dropdown-content">
-      <a href="#pronombres"onclick="solicitarCodigo8(event)">Pronombres</a>
-      <a href="#saludos"onclick="solicitarCodigo8(event)">Saludos basicos</a>
-      <a href="#fres"onclick="solicitarCodigo8(event)">Frases de Presentación:</a>
-      <a href="#pruntas"onclick="solicitarCodigo8(event)">Preguntas básicas</a>
-      <a href="#reuestas"onclick="solicitarCodigo8(event)">Respuestas Sencillas:</a>
-      <a href="#prente"onclick="solicitarCodigo8(event)">Presente Simple - Verbos Básicos:</a>
-      <a href="#exesiones"onclick="solicitarCodigo8(event)">Expresiones Cotidianas:</a>
-      <a href="#deedidas"onclick="solicitarCodigo8(event)">Despedidas:</a>
-      <a href="#pabras"onclick="solicitarCodigo8(event)">Palabras Comunes:</a>
-      <a href="#fres-cortas"onclick="solicitarCodigo8(event)">Frases Cortas:</a>
-      <a href="#fres-tecnologia"onclick="solicitarCodigo8(event)">Frases de tecnología</a>
-      <a href="#fres-deportes"onclick="solicitarCodigo8(event)">Frases de deportes</a>
-      <a href="#fres-comida"onclick="solicitarCodigo8(event)">Frases de comida</a>
-      <a href="#fres-colores"onclick="solicitarCodigo8(event)">Frases de colores</a>
-      <a href="#fres-universo"onclick="solicitarCodigo8(event)">Frases del universo</a>
-      <a href="#fres-vida"onclick="solicitarCodigo8(event)">Frases sobre la vida</a>
-      <a href="#fres-ciencia"onclick="solicitarCodigo8(event)">Frases sobre la ciencia</a>
-      <a href="#fres-tierra"onclick="solicitarCodigo8(event)">Frases de la tierra</a>
-      <a href="#fses-plantas"onclick="solicitarCodigo8(event)">Frases sobre las plantas</a>
-      <a href="#fras-biologia"onclick="solicitarCodigo8(event)">Frases de la biologia</a>
-      <a href="#fres-matematicas"onclick="solicitarCodigo8(event)">Frases de matemáticas</a>
-      <a href="#fras-filosofia"onclick="solicitarCodigo8(event)">frases sobre filosofía</a>
-      <a href="#fres-economia"onclick="solicitarCodigo8(event)">Frases de economía</a>
-      <a href="#fres-sostenible"onclick="solicitarCodigo8(event)">frases sobre economía sostenible</a>
-      <a href="#fras-renovables"onclick="solicitarCodigo8(event)">Energias renovables</a>
-      <a href="#fras-literatura"onclick="solicitarCodigo8(event)">Frases de literatura</a>
-      <a href="#fras-arte"onclick="solicitarCodigo8(event)">Frases de arte</a>
-      <a href="#fras-música"onclick="solicitarCodigo8(event)">Frases de música</a>
-      <a href="#frases-viajes"onclick="solicitarCodigo8(event)">Frases de viajes</a>
-      <a href="#fraseeducación"onclick="solicitarCodigo8(event)">Frases de educación</a>
-      <a href="#fraseambiente"onclick="solicitarCodigo8(event)">Frases de medio ambiente</a>
-      <a href="#frasebienestar"onclick="solicitarCodigo8(event)">Frases de salud y bienestar</a>
-      <a href="#fras-cultura"onclick="solicitarCodigo8(event)">Frases de cultura</a>
-      <a href="#frasederechos humanos"onclick="solicitarCodigo8(event)">Frases de derechos humanos</a>
-      <a href="#fras-innovación"onclick="solicitarCodigo8(event)">Frases de innovación</a>
-      <a href="https://www.facebook.com/?locale=es_LA"onclick="solicitarCodigo8(event)">Facebook</a>
-
-  
-    </div>
-  </div>
-
-  <div class="category-dropdown">
-    <button class="dropbtn">Videos</button>
-    <div class="dropdown-content">
-      <a href="#video1" onclick="solicitarCodigo8(event)">Video 1</a>
-      <a href="#video2"onclick="solicitarCodigo8(event)">Video 2</a>
-      <a href="#video3"onclick="solicitarCodigo8(event)">Video 3 </a>
-      <a href="#video4"onclick="solicitarCodigo8(event)">Video 4 </a>
-      <a href="#video5"onclick="solicitarCodigo8(event)">Video 5 </a>
-      <a href="#video6"onclick="solicitarCodigo8(event)">Video 6 </a>
-      <a href="#video7"onclick="solicitarCodigo8(event)">Video 7 </a>
-      <a href="#video8"onclick="solicitarCodigo8(event)">Video 8 </a>
-      <a href="#video9"onclick="solicitarCodigo8(event)">Video 9 </a>
-      <a href="#video1" onclick="solicitarCodigo8(event)">Video 10 </a>
-
-
-    </div>
-  </div>
-
-  <div class="category-dropdown">
-    <button class="dropbtn">Juegos-en-ingles</button>
-    <div class="dropdown-content">
-      <a href="juegos-inglish/juego3.html">Juego 3</a>
-      <a href="juegos-inglish/juego4.html">Juego 4</a>
-    
-    </div>
-  </div>
-</div>
-
-
-<h3>Nota:
-  Si estás utilizando un teléfono móvil, gira la pantalla horizontalmente.
-  
-  </h3>
-
+        <h3>
+          Nota: Si estás utilizando un teléfono móvil, gira la pantalla
+          horizontalmente.
+        </h3>
 
         <h1 class="practica">PRÁCTICA</h1>
 
@@ -253,19 +319,31 @@
           <img src="Modulos-imagenes/organos.jpeg" alt="Imagen 5" />
           <p>ORGANOS</p>
         </a>
-        <a href="modulos-ingles-redondo/pagina7.html" class="module last-modules">
+        <a
+          href="modulos-ingles-redondo/pagina7.html"
+          class="module last-modules"
+        >
           <img src="Modulos-imagenes/pronombres.png" alt="Imagen 6" />
           <p>PRONOMBRES</p>
         </a>
-        <a href="modulos-ingles-redondo/pagina8.html" class="module last-modules">
+        <a
+          href="modulos-ingles-redondo/pagina8.html"
+          class="module last-modules"
+        >
           <img src="Modulos-imagenes/familia.jpeg" alt="Imagen 7" />
           <p>FAMILIA</p>
         </a>
-        <a href="modulos-ingles-redondo/pagina9.html" class="module last-modules">
+        <a
+          href="modulos-ingles-redondo/pagina9.html"
+          class="module last-modules"
+        >
           <img src="Modulos-imagenes/semana.jpeg" alt="Imagen 8" />
           <p>SEMANA</p>
         </a>
-        <a href="modulos-ingles-redondo/pagina10.html" class="module last-modules">
+        <a
+          href="modulos-ingles-redondo/pagina10.html"
+          class="module last-modules"
+        >
           <img src="Modulos-imagenes/meses.png" alt="Imagen 8" />
           <p>MESES</p>
         </a>
@@ -273,306 +351,382 @@
           <img src="Modulos-imagenes/tiempo.jpeg" alt="Imagen 8" />
           <p>TIEMPO</p>
         </a>
-    
 
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
+        <h1 class="practica">PRÁCTICA</h1>
 
+        <button class="boton-venta-cafe" onclick="solicitarCodigo4(event)">
+          <i class="fas fa-gem"></i>Curso completo
+        </button>
 
-        
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="fixed-bottom p-3">
+          <a
+            href="https://api.whatsapp.com/send?phone=3052076713"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-btn"
+          >
+            <i class="fab fa-whatsapp"></i> CONTACTO.
+          </a>
+        </div>
 
+        <div class="section">
+          <h2 id="pronombres">Pronombres Personales:</h2>
+          <ul>
+            <li class="pronoun">
+              <span class="text" lang="en"
+                >I <span style="color: red">(yo)</span></span
+              >
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/I.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
+            <li class="pronoun">
+              <span class="text" lang="en"
+                >You <span style="color: red">(tú, usted)</span></span
+              >
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/you.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
+          </ul>
+        </div>
 
+        <div class="section">
+          <h2 id="saludos">Saludos Básicos:</h2>
+          <ul>
+            <li class="pronoun">
+              <span class="text"
+                >Hello <span style="color: red">(Hola)</span></span
+              >
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/hello.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
+            <li class="pronoun">
+              Good morning! (<span style="color: red">¡Buenos días!</span>)
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/good-morning.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-<h1 class="practica">PRÁCTICA</h1>
+            <!-- Agrega los demás elementos similares si es necesario -->
+          </ul>
+        </div>
 
+        <div class="section">
+          <h2 id="frases">Frases de Presentación:</h2>
+          <ul>
+            <li class="pronoun">
+              Allow me to introduce myself. (<span style="color: red"
+                >Permítame presentarme.</span
+              >)
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/permiteme-presentarme.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-  <button class="boton-venta-cafe" onclick="solicitarCodigo4(event)"><i class="fas fa-gem"></i>Curso completo</button>
+            <li class="pronoun">
+              Hi, my name is [tu nombre]. (<span style="color: red"
+                >Hola, mi nombre es [tu nombre].</span
+              >)
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/mi-name-is.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
+            <li class="pronoun">
+              It's a pleasure to meet you.
+              <span style="color: red">(Es un placer conocerte.)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/es-un-placer conocerte.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-  <div class="fixed-bottom p-3">
-    <a
-      href="https://api.whatsapp.com/send?phone=3052076713"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="whatsapp-btn"
-    >
-      <i class="fab fa-whatsapp"></i> CONTACTO.
-    </a>
-  </div>
+            <li class="pronoun">
+              Good morning! <span style="color: red">(¡Buenos días!)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/good-morning.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
+            <li class="pronoun">
+              Good afternoon! <span style="color: red">(¡Buenas tardes!)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/good-afternog.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
+            <li class="pronoun">
+              Good evening! <span style="color: red">(¡Buenas noches!)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/good-evering.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
+          </ul>
+        </div>
 
+        <div class="section">
+          <h2 id="frases">Frases de Presentación:</h2>
+          <ul>
+            <li class="pronoun">
+              Allow me to introduce myself.
+              <span style="color: red">(Permítame presentarme.)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/permiteme-presentarme.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-    <div class="section">
-      <h2 id="pronombres">Pronombres Personales:</h2>
-      <ul>
-        <li class="pronoun">
-          <span class="text">I (yo)</span>
-          <div class="divider"></div>
-          <audio controls class="audio">
-            <source src="audios-ingles/I.mp3" type="audio/mp3" />
-            Tu navegador no soporta el elemento de audio.
-          </audio>
-        </li>
+            <li class="pronoun">
+              Let me introduce you to my friend.
+              <span style="color: red"
+                >(Permíteme presentarte a mi amigo/a.)</span
+              >
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/permiteme-presentarme.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-        <li class="pronoun">
-          <span class="text">You (tú, usted)</span>
-          <div class="divider"></div>
-          <audio controls class="audio">
-            <source src="audios-ingles/you.mp3" type="audio/mp3" />
-            Tu navegador no soporta el elemento de audio.
-          </audio>
-        </li>
-      </ul>
-    </div>
+            <li class="pronoun">
+              May I present Mr./Ms. [apellido]?
+              <span style="color: red"
+                >(¿Puedo presentar al Sr./Sra. [apellido]?)</span
+              >
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/puedo-presentarme.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-    <div class="section">
-      
-      <!-- Frases de texto **************************************************** -->
+            <li class="pronoun">
+              This is [tu nombre].
+              <span style="color: red">(Este es [tu nombre].)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/este es.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-      <h2 id="saludos">Saludos Básicos:</h2>
-<!-- Frases de texto **************************************************** -->
+            <li class="pronoun">
+              I'd like you to meet [nombre de otra persona].
+              <span style="color: red"
+                >(Me gustaría que conocieras a [nombre de otra persona].)</span
+              >
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/me-gustaria-conocieras.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-      <!-- empieza -->
-      <ul>
-        <li class="pronoun">
-          <span class="text">Hello (Hola)</span>
-          <div class="divider"></div>
-          <audio controls class="audio">
-            <source src="audios-ingles/hello.mp3" type="audio/mp3" />
-            Tu navegador no soporta el elemento de audio.
-          </audio>
-        </li>
-        <!-- Termina -->
+            <li class="pronoun">
+              Have you met [nombre]?
+              <span style="color: red">(¿Has conocido a [nombre]?)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/has-conocido.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-        <li class="pronoun">
-          Good morning! ((¡Buenos días!))
-          <div class="divider"></div>
-          <audio controls class="audio">
-            <source src="audios-ingles/good-morning.mp3" type="audio/mp3" />
-            Tu navegador no soporta el elemento de audio.
-          </audio>
-        </li>
+            <li class="pronoun">
+              Nice to see you again.
+              <span style="color: red">(Gusto en verte de nuevo.)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/gusto-en-verte.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-        <li class="pronoun">
-          Good afternoon! (¡Buenas tardes!)
-          <div class="divider"></div>
-          <audio controls class="audio">
-            <source src="audios-ingles/good-afternog.mp3" type="audio/mp3" />
-            Tu navegador no soporta el elemento de audio.
-          </audio>
-        </li>
+            <li class="pronoun">
+              How do you do?
+              <span style="color: red">(¿Cómo estás?) [formal]</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source src="audios-ingles/como-estas.mp3" type="audio/mp3" />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-        <li class="pronoun">
-          Good evening! (¡Buenas noches!)
-          <div class="divider"></div>
-          <audio controls class="audio">
-            <source src="audios-ingles/good-evering.mp3" type="audio/mp3" />
-            Tu navegador no soporta el elemento de audio.
-          </audio>
-        </li>
-      </ul>
-    </div>
+            <li class="pronoun">
+              What brings you here?
+              <span style="color: red">(¿Qué te trae por aquí?)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/que-te-trae-aqui.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-    <div class="section">
-      <div class="section">
+            <li class="pronoun">
+              It's been a while.
+              <span style="color: red">(Ha pasado un tiempo.)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/a-pasado-mucho-tiempo.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
+            <li class="pronoun">
+              I hope you're doing well.
+              <span style="color: red">(Espero que estés bien.)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/esperos-que-estes-bien.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
 
-        <!-- Frases de texto **************************************************** -->
-        <h2 id="frases">Frases de Presentación:</h2>
-        <!-- Frases de texto **************************************************** -->
+            <li class="pronoun">
+              Thanks for coming.
+              <span style="color: red">(Gracias por venir.)</span>
+              <div class="divider"></div>
+              <audio controls class="audio">
+                <source
+                  src="audios-ingles/gracias-por-venir.mp3"
+                  type="audio/mp3"
+                />
+                Tu navegador no soporta el elemento de audio.
+              </audio>
+            </li>
+          </ul>
+        </div>
 
-        
-        <ul>
-          <li class="pronoun">
-            Allow me to introduce myself. (Permítame presentarme.)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/permiteme-presentarme.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            Hi, my name is [tu nombre]. (Hola, mi nombre es [tu nombre].)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/mi-name-is.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            It's a pleasure to meet you. (Es un placer conocerte.)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/es-un-placer conocerte.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            Let me introduce you to my friend. (Permíteme presentarte a mi amigo/a.)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/permiteme-presentarme.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            May I present Mr./Ms. [apellido]? (¿Puedo presentar al Sr./Sra. [apellido]?)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/puedo-presentarme.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            This is [tu nombre]. (Este es [tu nombre].)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/este es.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            I'd like you to meet [nombre de otra persona]. (Me gustaría que conocieras a [nombre de otra persona].)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/me-gustaria-conocieras.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            Have you met [nombre]? (¿Has conocido a [nombre]?)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/has-conocido.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            Nice to see you again. (Gusto en verte de nuevo.)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/gusto-en-verte.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            How do you do? (¿Cómo estás?) [formal]
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/como-estas.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            What brings you here? (¿Qué te trae por aquí?)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/que-te-trae-aqui.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            It's been a while. (Ha pasado un tiempo.)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/a-pasado-mucho-tiempo.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            I hope you're doing well. (Espero que estés bien.)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/esperos-que-estes-bien.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-      
-          <li class="pronoun">
-            Thanks for coming. (Gracias por venir.)
-            <div class="divider"></div>
-            <audio controls class="audio">
-              <source src="audios-ingles/gracias-por-venir.mp3" type="audio/mp3" />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </li>
-        </ul>
-      </div>
-     
+        <script>
+          var audios = document.querySelectorAll("audio");
+          var playButton = document.getElementById("playButton");
+          var currentIndex = 0;
+          var reproduciendo = false;
+          var tiemposDeReproduccion = []; // Array para almacenar los tiempos de reproducción
 
-      <script>
-        var audios = document.querySelectorAll('audio');
-        var playButton = document.getElementById('playButton');
-        var currentIndex = 0;
-        var reproduciendo = false;
-        var tiemposDeReproduccion = []; // Array para almacenar los tiempos de reproducción
-      
-        function reproducirAudios() {
-          reproduciendo = true;
-          audios[currentIndex].play();
-          audios[currentIndex].currentTime = tiemposDeReproduccion[currentIndex] || 0; // Restaurar el tiempo de reproducción
-          audios[currentIndex].addEventListener('ended', reproducirSiguiente);
-          playButton.innerHTML = '<i class="fas fa-pause"></i> Pausar Todos';
-          // Cambiar el color del texto
-          audios[currentIndex].parentNode.classList.add('playing');
-          // Desplazar el elemento al área visible
-          audios[currentIndex].parentNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      
-        function reproducirSiguiente() {
-          currentIndex++;
-          if (currentIndex < audios.length) {
-            audios[currentIndex - 1].removeEventListener('ended', reproducirSiguiente);
+          function reproducirAudios() {
+            reproduciendo = true;
             audios[currentIndex].play();
-            audios[currentIndex].currentTime = tiemposDeReproduccion[currentIndex] || 0; // Restaurar el tiempo de reproducción
-            audios[currentIndex].addEventListener('ended', reproducirSiguiente);
+            audios[currentIndex].currentTime =
+              tiemposDeReproduccion[currentIndex] || 0; // Restaurar el tiempo de reproducción
+            audios[currentIndex].addEventListener("ended", reproducirSiguiente);
+            playButton.innerHTML = '<i class="fas fa-pause"></i> Pausar Todos';
             // Cambiar el color del texto
-            audios[currentIndex].parentNode.classList.add('playing');
+            audios[currentIndex].parentNode.classList.add("playing");
             // Desplazar el elemento al área visible
-            audios[currentIndex].parentNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          } else {
-            detenerAudios();
+            audios[currentIndex].parentNode.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
           }
-        }
-      
-        function detenerAudios() {
-          reproduciendo = false;
-          audios.forEach((audio, index) => {
-            audio.pause();
-            tiemposDeReproduccion[index] = audio.currentTime; // Guardar el tiempo de reproducción
-            audio.currentTime = 0;
-            // Eliminar el color azul del texto
-            audio.parentNode.classList.remove('playing');
+
+          function reproducirSiguiente() {
+            currentIndex++;
+            if (currentIndex < audios.length) {
+              audios[currentIndex - 1].removeEventListener(
+                "ended",
+                reproducirSiguiente
+              );
+              audios[currentIndex].play();
+              audios[currentIndex].currentTime =
+                tiemposDeReproduccion[currentIndex] || 0; // Restaurar el tiempo de reproducción
+              audios[currentIndex].addEventListener(
+                "ended",
+                reproducirSiguiente
+              );
+              // Cambiar el color del texto
+              audios[currentIndex].parentNode.classList.add("playing");
+              // Desplazar el elemento al área visible
+              audios[currentIndex].parentNode.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+            } else {
+              detenerAudios();
+            }
+          }
+
+          function detenerAudios() {
+            reproduciendo = false;
+            audios.forEach((audio, index) => {
+              audio.pause();
+              tiemposDeReproduccion[index] = audio.currentTime; // Guardar el tiempo de reproducción
+              audio.currentTime = 0;
+              // Eliminar el color azul del texto
+              audio.parentNode.classList.remove("playing");
+            });
+            playButton.innerHTML =
+              '<i class="fas fa-play"></i> Reproducir Todos';
+            currentIndex = 0;
+          }
+
+          playButton.addEventListener("click", function () {
+            if (!reproduciendo) {
+              reproducirAudios();
+            } else {
+              detenerAudios();
+            }
           });
-          playButton.innerHTML = '<i class="fas fa-play"></i> Reproducir Todos';
-          currentIndex = 0;
-        }
-      
-        playButton.addEventListener('click', function() {
-          if (!reproduciendo) {
-            reproducirAudios();
-          } else {
-            detenerAudios();
-          }
-        });
-      </script>
-      
-
-     
-
-</body>
+        </script>
+      </body>
+    </html>
+  </body>
 </html>
