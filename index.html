@@ -172,15 +172,16 @@
 
     <!-- Funcion para que vibre el celular******************************************* -->
     <script>
-      // Función para vibrar el dispositivo móvil cuando se desplaza hacia arriba o hacia abajo
-      window.addEventListener('scroll', () => {
+      // Función para vibrar el dispositivo móvil
+      function vibrarDispositivo() {
           if ('vibrate' in navigator) {
               navigator.vibrate(100); // Puedes ajustar la duración de la vibración aquí
           }
-      });
-  </script>   
-
-    
+      }  
+      // Llama a la función vibrarDispositivo cuando la página se haya cargado completamente
+      window.addEventListener('load', vibrarDispositivo);
+  </script>
+      
 
     
 
