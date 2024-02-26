@@ -5,16 +5,13 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
+  .pronoun {
     zoom: 85%;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    -o-transform: scale(0.8);
+    -moz-transform: scale(0.85);
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+  }
 }
-}
-
 .pronoun {
   display: flex;
   align-items: center;
