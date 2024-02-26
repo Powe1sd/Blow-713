@@ -169,24 +169,24 @@
 
 
     <!-- Funcion para que vibre el celular******************************************* -->
-    <script>
-      // Función para hacer vibrar el dispositivo
-      function vibrarDispositivo() {
-        // Verificar si el navegador soporta la vibración
-        if ("vibrate" in navigator) {
-          // Hacer que el dispositivo vibre durante 500 milisegundos
-          navigator.vibrate(500);
-        } else {
-          // Si el navegador no soporta la vibración, mostrar un mensaje de error
-          console.log("El navegador no soporta la función de vibración.");
-        }
+   
+<script>
+  // Función para vibrar el dispositivo
+  function vibrarDispositivo() {
+      // Verificamos si el navegador soporta la API de vibración
+      if ("vibrate" in navigator) {
+          // Vibrar durante 1000 milisegundos (1 segundo)
+          navigator.vibrate(1000);
+      } else {
+          console.log("Lo siento, tu dispositivo no soporta la API de vibración.");
       }
-    
-      // Llamar a la función de vibración cuando se carga la página
-      window.onload = function() {
-        vibrarDispositivo();
-      };
-    </script>
+  }
+  
+  // Llamamos a la función para vibrar el dispositivo cuando se cargue la página
+  window.onload = function() {
+      vibrarDispositivo();
+  };
+  </script>
     
 
     
