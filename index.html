@@ -168,6 +168,27 @@
       
 
 
+    <!-- Funcion para que vibre el celular******************************************* -->
+    <script>
+      // Función para hacer vibrar el dispositivo
+      function vibrarDispositivo() {
+        // Verificar si el navegador soporta la vibración
+        if ("vibrate" in navigator) {
+          // Hacer que el dispositivo vibre durante 500 milisegundos
+          navigator.vibrate(500);
+        } else {
+          // Si el navegador no soporta la vibración, mostrar un mensaje de error
+          console.log("El navegador no soporta la función de vibración.");
+        }
+      }
+    
+      // Llamar a la función de vibración cuando se carga la página
+      window.onload = function() {
+        vibrarDispositivo();
+      };
+    </script>
+    
+
 
   </body>
 </html>
