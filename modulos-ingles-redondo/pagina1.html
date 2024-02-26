@@ -36,6 +36,7 @@
       <body>
         <style>
           body {
+            margin: auto;
             background-color: azure;
             display: flex;
             flex-wrap: wrap;
@@ -126,6 +127,23 @@
 
           .playing {
             color: blue;
+          }
+
+          .pronoun {
+            margin-bottom: 5px; /* Espacio entre elementos reducido */
+            font-size: 14px; /* Tamaño de fuente reducido */
+          }
+          .divider {
+            margin-bottom: 3px; /* Espacio entre el texto y el divisor reducido */
+          }
+
+          /* Media queries para dispositivos móviles */
+          @media screen and (max-width: 768px) {
+            .pronoun {
+              font-size: 12px; /* Reducción adicional del tamaño de fuente */
+              padding-left: 28px;
+
+            }
           }
         </style>
 
