@@ -163,30 +163,23 @@
         <p>TELEFONO: 3052076713</p>
         <p>POLÍTICA DE SEGURIDAD</p>
         <p>EMAIL: brayan324554@gmail.com</p>
+        <p id="fecha">MAS</p>    
         <p id="fecha">@2023</p>    
-    </div>
+
+      </div>
       
 
 
     <!-- Funcion para que vibre el celular******************************************* -->
-   
-<script>
-  // Función para vibrar el dispositivo
-  function vibrarDispositivo() {
-      // Verificamos si el navegador soporta la API de vibración
-      if ("vibrate" in navigator) {
-          // Vibrar durante 1000 milisegundos (1 segundo)
-          navigator.vibrate(1000);
-      } else {
-          console.log("Lo siento, tu dispositivo no soporta la API de vibración.");
-      }
-  }
-  
-  // Llamamos a la función para vibrar el dispositivo cuando se cargue la página
-  window.onload = function() {
-      vibrarDispositivo();
-  };
-  </script>
+    <script>
+      // Función para vibrar el dispositivo móvil cuando se desplaza hacia arriba o hacia abajo
+      window.addEventListener('scroll', () => {
+          if ('vibrate' in navigator) {
+              navigator.vibrate(100); // Puedes ajustar la duración de la vibración aquí
+          }
+      });
+  </script>   
+
     
 
     
