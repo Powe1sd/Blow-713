@@ -4,6 +4,8 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+
+/* ZOOM PARA PANTALLAS PEQUEÑAS */
 @media (max-width: 768px) {
   .pronoun {
     zoom: 85%;
@@ -14,6 +16,9 @@ body {
     -o-transform: scale(0.85);
 }
 }
+
+
+
 .pronoun {
   display: flex;
   align-items: center;
