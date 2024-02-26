@@ -35,10 +35,19 @@ function solicitarCodigo(event) {
           icon: "success",
         }).then(() => {
           window.location.replace("universo.html");
+          // Reproducir audio de éxito
+          document.getElementById("audio-success").play();
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
-        swal("Código incorrecto", "No tienes acceso a esta página.", "error");
+        swal(
+          "Código incorrecto",
+          "No tienes acceso a esta página.",
+          "error"
+        ).then(() => {
+          // Reproducir audio de error
+          document.getElementById("audio-error").play();
+        });
       }
     }
   });
@@ -83,10 +92,19 @@ function solicitarCodigo3(event) {
           icon: "success",
         }).then(() => {
           window.location.replace("index2.html");
+          // Reproducir audio de éxito
+          document.getElementById("audio-success").play();
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
-        swal("Código incorrecto", "No tienes acceso a esta página.", "error");
+        swal(
+          "Código incorrecto",
+          "No tienes acceso a esta página.",
+          "error"
+        ).then(() => {
+          // Reproducir audio de error
+          document.getElementById("audio-error").play();
+        });
       }
     }
   });
@@ -142,10 +160,19 @@ function solicitarCodigo4(event) {
           window.location.replace(
             "https://tempssll.github.io/videos-blow-713/"
           );
+          // Reproducir audio de éxito
+          document.getElementById("audio-success").play();
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
-        swal("Código incorrecto", "No tienes acceso a esta página.", "error");
+        swal(
+          "Código incorrecto",
+          "No tienes acceso a esta página.",
+          "error"
+        ).then(() => {
+          // Reproducir audio de error
+          document.getElementById("audio-error").play();
+        });
       }
     }
   });
@@ -187,10 +214,19 @@ function solicitarCodigo6(event) {
         // Si es correcto, redirige al usuario a la página correspondiente
         swal("Código correcto", "¡Bienvenido al libro!", "success").then(() => {
           window.location.replace("libro.html");
+          // Reproducir audio de éxito
+          document.getElementById("audio-success").play();
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
-        swal("Código incorrecto", "No tienes acceso a esta página.", "error");
+        swal(
+          "Código incorrecto",
+          "No tienes acceso a esta página.",
+          "error"
+        ).then(() => {
+          // Reproducir audio de error
+          document.getElementById("audio-error").play();
+        });
       }
     }
   });
@@ -234,10 +270,19 @@ function solicitarCodigo8(event) {
           window.location.replace(
             "https://tempssll.github.io/videos-blow-713/"
           );
+          // Reproducir audio de éxito
+          document.getElementById("audio-success").play();
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error
-        swal("Código incorrecto", "No tienes acceso a esta página.", "error");
+        swal(
+          "Código incorrecto",
+          "No tienes acceso a esta página.",
+          "error"
+        ).then(() => {
+          // Reproducir audio de error
+          document.getElementById("audio-error").play();
+        });
       }
     }
   });
