@@ -1,3 +1,4 @@
+//Venta de cafe
 function solicitarCodigo(event) {
   swal({
     title: "Seguro que quieres continuar",
@@ -31,23 +32,26 @@ function solicitarCodigo(event) {
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
         // Si es correcto, redirige al usuario a la página correspondiente
-        swal("Código correcto. ¡Bienvenido al viaje al Universo!", {
+        swal({
+          title: "Código correcto. ¡Bienvenido al universo  !",
           icon: "success",
+          timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
         }).then(() => {
           window.location.replace("universo.html");
-          // Reproducir audio de éxito
-          document.getElementById("audio-success").play();
         });
+        // Reproducir audio de éxito
+        document.getElementById("audio-success").play();
       } else {
-        // Si es incorrecto, muestra un mensaje de error
-        swal(
-          "Código incorrecto",
-          "No tienes acceso a esta página.",
-          "error"
-        ).then(() => {
-          // Reproducir audio de error
-          document.getElementById("audio-error").play();
+        // Si es incorrecto, muestra un mensaje de error sin botón "OK"
+        swal({
+          title: "Código incorrecto",
+          text: "No tienes acceso a esta página.",
+          icon: "error",
+          buttons: false, // No muestra botones
+          timer: 1000, // Tiempo en milisegundos antes de que la alerta de error se cierre automáticamente (en este caso, 3 segundos)
         });
+        // Reproducir audio de error
+        document.getElementById("audio-error").play();
       }
     }
   });
@@ -88,23 +92,26 @@ function solicitarCodigo3(event) {
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
         // Si es correcto, redirige al usuario a la página correspondiente
-        swal("Código correcto. ¡Bienvenido a COY COFFE !", {
+        swal({
+          title: "Código correcto. ¡Bienvenido a COY COFFE !",
           icon: "success",
+          timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
         }).then(() => {
           window.location.replace("index2.html");
-          // Reproducir audio de éxito
-          document.getElementById("audio-success").play();
         });
+        // Reproducir audio de éxito
+        document.getElementById("audio-success").play();
       } else {
-        // Si es incorrecto, muestra un mensaje de error
-        swal(
-          "Código incorrecto",
-          "No tienes acceso a esta página.",
-          "error"
-        ).then(() => {
-          // Reproducir audio de error
-          document.getElementById("audio-error").play();
+        // Si es incorrecto, muestra un mensaje de error sin botón "OK"
+        swal({
+          title: "Código incorrecto",
+          text: "No tienes acceso a esta página.",
+          icon: "error",
+          buttons: false, // No muestra botones
+          timer: 1000, // Tiempo en milisegundos antes de que la alerta de error se cierre automáticamente (en este caso, 3 segundos)
         });
+        // Reproducir audio de error
+        document.getElementById("audio-error").play();
       }
     }
   });
@@ -112,29 +119,22 @@ function solicitarCodigo3(event) {
 }
 
 /* ingles */
-
 function solicitarCodigo4(event) {
   swal({
-    title: "Bienvenido",
-    text: "Gracias por visitar nuestro sitio web",
-    icon: "success",
-    button: "Entendido",
-  });
-
-  swal({
     title: "Súper descuento",
-    text: "Solicita tu código de ingreso para poder tener el curso completo, o escribe al número 3052076713 ",
+    text: "Solicita tu código de ingreso para poder tener el curso completo, o escribe al número 3052076713",
     content: {
       element: "input",
       attributes: {
         placeholder: "Ingresa el código",
-        type: "password", // Cambiar el tipo de campo a "password"
+        type: "password",
+        id: "codigo-ingreso",
       },
     },
     buttons: {
       cancel: true,
       confirm: {
-        text: "Continuar",
+        text: "Ingresar",
         value: true,
         visible: true,
         className: "btn-primary",
@@ -143,36 +143,38 @@ function solicitarCodigo4(event) {
     },
     closeOnClickOutside: false,
     closeOnEsc: false,
-    textColor: "black", // Cambia el color del texto a rojo
+    timer: 5000, // Tiempo en milisegundos antes de que la alerta se cierre automáticamente (en este caso, 5 segundos)
   }).then((confirm) => {
     if (confirm) {
-      var codigoIngresado = document.querySelector(
-        ".swal-content__input"
-      ).value; // Obtener el valor del input
+      var codigoIngresado = document.getElementById("codigo-ingreso").value;
       var codigosPermitidos = ["8020w"]; // Array con los códigos permitidos
 
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
         // Si es correcto, redirige al usuario a la página correspondiente
-        swal("Código correcto. ¡Bienvenido al curso de inglés!", {
+        swal({
+          title: "Código correcto",
+          text: "¡Bienvenidos !",
           icon: "success",
+          timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
         }).then(() => {
           window.location.replace(
             "https://tempssll.github.io/videos-blow-713/"
           );
-          // Reproducir audio de éxito
-          document.getElementById("audio-success").play();
         });
       } else {
-        // Si es incorrecto, muestra un mensaje de error
-        swal(
-          "Código incorrecto",
-          "No tienes acceso a esta página.",
-          "error"
-        ).then(() => {
-          // Reproducir audio de error
-          document.getElementById("audio-error").play();
+        // Si es incorrecto, muestra un mensaje de error sin botón "OK"
+        swal({
+          title: "Código incorrecto",
+          text: "No tienes acceso a esta página.",
+          icon: "error",
+          timer: 1000, // Tiempo en milisegundos antes de que la alerta de error se cierre automáticamente (en este caso, 3 segundos)
+          buttons: false, // No muestra botones
+          closeOnClickOutside: false, // No permite cerrar haciendo clic fuera de la alerta
+          closeOnEsc: false, // No permite cerrar pulsando la tecla Esc
         });
+        // Reproducir audio de error
+        document.getElementById("audio-error").play();
       }
     }
   });
@@ -204,6 +206,7 @@ function solicitarCodigo6(event) {
     },
     closeOnClickOutside: false,
     closeOnEsc: false,
+    timer: 5000, // Tiempo en milisegundos antes de que la alerta se cierre automáticamente (en este caso, 5 segundos)
   }).then((confirm) => {
     if (confirm) {
       var codigoIngresado = document.getElementById("codigo-ingreso").value;
@@ -212,21 +215,27 @@ function solicitarCodigo6(event) {
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
         // Si es correcto, redirige al usuario a la página correspondiente
-        swal("Código correcto", "¡Bienvenido al libro!", "success").then(() => {
+        swal({
+          title: "Código correcto",
+          text: "¡Bienvenido al libro!",
+          icon: "success",
+          timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
+        }).then(() => {
           window.location.replace("libro.html");
-          // Reproducir audio de éxito
-          document.getElementById("audio-success").play();
         });
       } else {
-        // Si es incorrecto, muestra un mensaje de error
-        swal(
-          "Código incorrecto",
-          "No tienes acceso a esta página.",
-          "error"
-        ).then(() => {
-          // Reproducir audio de error
-          document.getElementById("audio-error").play();
+        // Si es incorrecto, muestra un mensaje de error sin botón "OK"
+        swal({
+          title: "Código incorrecto",
+          text: "No tienes acceso a esta página.",
+          icon: "error",
+          timer: 1000, // Tiempo en milisegundos antes de que la alerta de error se cierre automáticamente (en este caso, 3 segundos)
+          buttons: false, // No muestra botones
+          closeOnClickOutside: false, // No permite cerrar haciendo clic fuera de la alerta
+          closeOnEsc: false, // No permite cerrar pulsando la tecla Esc
         });
+        // Reproducir audio de error
+        document.getElementById("audio-error").play();
       }
     }
   });
@@ -237,7 +246,7 @@ function solicitarCodigo6(event) {
 function solicitarCodigo8(event) {
   swal({
     title: "Súper descuento",
-    text: "Ingresa el código para acceder al curso",
+    text: "Ingresa el código para acceder.",
     content: {
       element: "input",
       attributes: {
@@ -258,6 +267,7 @@ function solicitarCodigo8(event) {
     },
     closeOnClickOutside: false,
     closeOnEsc: false,
+    timer: 5000, // Tiempo en milisegundos antes de que la alerta se cierre automáticamente (en este caso, 5 segundos)
   }).then((confirm) => {
     if (confirm) {
       var codigoIngresado = document.getElementById("codigo-ingreso").value;
@@ -266,23 +276,29 @@ function solicitarCodigo8(event) {
       // Verifica si el código ingresado está en el array de códigos permitidos
       if (codigosPermitidos.includes(codigoIngresado)) {
         // Si es correcto, redirige al usuario a la página correspondiente
-        swal("Código correcto", "¡Bienvenido al libro!", "success").then(() => {
+        swal({
+          title: "Código correcto",
+          text: "¡Bienvenidos !",
+          icon: "success",
+          timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
+        }).then(() => {
           window.location.replace(
             "https://tempssll.github.io/videos-blow-713/"
           );
-          // Reproducir audio de éxito
-          document.getElementById("audio-success").play();
         });
       } else {
-        // Si es incorrecto, muestra un mensaje de error
-        swal(
-          "Código incorrecto",
-          "No tienes acceso a esta página.",
-          "error"
-        ).then(() => {
-          // Reproducir audio de error
-          document.getElementById("audio-error").play();
+        // Si es incorrecto, muestra un mensaje de error sin botón "OK"
+        swal({
+          title: "Código incorrecto",
+          text: "No tienes acceso a esta página.",
+          icon: "error",
+          timer: 1000, // Tiempo en milisegundos antes de que la alerta de error se cierre automáticamente (en este caso, 3 segundos)
+          buttons: false, // No muestra botones
+          closeOnClickOutside: false, // No permite cerrar haciendo clic fuera de la alerta
+          closeOnEsc: false, // No permite cerrar pulsando la tecla Esc
         });
+        // Reproducir audio de error
+        document.getElementById("audio-error").play();
       }
     }
   });
