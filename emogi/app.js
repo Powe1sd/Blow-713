@@ -58,6 +58,7 @@ function moveEyes(face, eyes, pupils, mouseX, mouseY) {
   const faceCenterY = boundingBox.top + boundingBox.height / 2;
   const eyeMovementRange = 33; // Aumentamos el rango de movimiento de los ojos
   const pupilMovementRange = 27; // Aumentamos el rango de movimiento de las pupilas
+  const pupilCenterRange = 10; // Definimos un rango para el centro del ojo
 
   // Calcular el ángulo y la distancia del ratón respecto al centro del rostro
   const deltaX = mouseX - faceCenterX;
@@ -97,32 +98,47 @@ function moveEyes(face, eyes, pupils, mouseX, mouseY) {
 
     // Calcular el movimiento de la pupila dentro de los límites del ojo
     const pupilAngle = Math.atan2(pupilDeltaY, pupilDeltaX);
-    const pupilMovementX =
+    let pupilMovementX =
       Math.cos(pupilAngle) * Math.min(pupilDistance, pupilMovementRange);
-    const pupilMovementY =
+    let pupilMovementY =
       Math.sin(pupilAngle) * Math.min(pupilDistance, pupilMovementRange);
+
+    // Limitar el movimiento de la pupila cuando está cerca del centro del ojo
+    const pupilCenterDistance = Math.sqrt(
+      pupilCenterX * pupilCenterX + pupilCenterY * pupilCenterY
+    );
+    if (pupilCenterDistance < pupilCenterRange) {
+      pupilMovementX *= pupilCenterDistance / pupilCenterRange;
+      pupilMovementY *= pupilCenterDistance / pupilCenterRange;
+    }
 
     // Aplicar el movimiento limitando al rango del ojo
     pupil.style.transition = "transform 0.2s ease";
     pupil.style.transform = `translate(${pupilMovementX}px, ${pupilMovementY}px)`;
   });
 }
-
 function changeBackgroundColor(mouseX, mouseY) {
-  const { innerWidth, innerHeight } = window;
-  const horizontalMidpoint = innerWidth / 2;
-  const verticalMidpoint = innerHeight / 2;
+  const face = document.getElementById("face");
+  const boundingBox = face.getBoundingClientRect();
+  const faceCenterX = boundingBox.left + boundingBox.width / 2;
+  const faceCenterY = boundingBox.top + boundingBox.height / 2;
+
   let color;
 
-  if (mouseX < horizontalMidpoint && mouseY < verticalMidpoint) {
+  if (mouseX < faceCenterX && mouseY < faceCenterY) {
     color = "red";
-  } else if (mouseX >= horizontalMidpoint && mouseY < verticalMidpoint) {
+  } else if (mouseX >= faceCenterX && mouseY < faceCenterY) {
     color = "black";
-  } else if (mouseX < horizontalMidpoint && mouseY >= verticalMidpoint) {
+  } else if (mouseX < faceCenterX && mouseY >= faceCenterY) {
     color = "blue";
   } else {
     color = "yellow";
   }
 
   document.body.style.backgroundColor = color;
+
+  // Llamar a moveEyes() con la posición actual del ratón en relación con el rostro
+  const eyes = document.querySelector(".eyes");
+  const pupils = document.querySelectorAll(".pupil");
+  moveEyes(face, eyes, pupils, mouseX, mouseY);
 }
