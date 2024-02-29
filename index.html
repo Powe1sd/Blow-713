@@ -178,39 +178,29 @@
       </div>
       
 
+      <script>
+        // Función para vibrar el dispositivo móvil
+        function vibrarDispositivo() {
+            if ('vibrate' in navigator) {
+                // Cambia el valor 50 a la duración deseada en milisegundos
+                navigator.vibrate(50);
+            }
+        }
 
-    <!-- Funcion para que vibre el celular******************************************* -->
-    <script>
-      // Función para vibrar el dispositivo móvil cuando se desplaza hacia arriba o hacia abajo
-      window.addEventListener('scroll', () => {
-          if ('vibrate' in navigator) {
-              navigator.vibrate(100); // Puedes ajustar la duración de la vibración aquí
-          }
-      });
-  </script>   
+        // Llama a la función vibrarDispositivo cuando la página se haya cargado completamente
+        window.addEventListener('load', vibrarDispositivo);
 
-<script>
-  // Función para vibrar el dispositivo móvil
-  function vibrarDispositivo() {
-      if ('vibrate' in navigator) {
-          navigator.vibrate(100); // Puedes ajustar la duración de la vibración aquí
-      }
-  }
+        // Función para vibrar el dispositivo móvil al desplazar la página hacia arriba o hacia abajo
+        function vibrarEnScroll() {
+            if ('vibrate' in navigator) {
+                // Cambia el valor 50 a la duración deseada en milisegundos
+                navigator.vibrate(50); // Puedes ajustar la duración de la vibración aquí
+            }
+        }
 
-  // Llama a la función vibrarDispositivo cuando la página se haya cargado completamente
-  window.addEventListener('load', vibrarDispositivo);
-
-  // Añade la vibración al desplazar la página tanto hacia arriba como hacia abajo
-  window.addEventListener('scroll', () => {
-      // Determina la dirección del scroll
-      let scrollDirection = window.scrollY > window.scrollY + window.scrollY ? 'up' : 'down';
-      // Si la dirección es hacia arriba o hacia abajo, activa la vibración
-      if (scrollDirection === 'up' || scrollDirection === 'down') {
-          vibrarDispositivo();
-      }
-  });
-</script>
-
+        // Añade la vibración al desplazar la página tanto hacia arriba como hacia abajo
+        window.addEventListener('scroll', vibrarEnScroll);
+    </script>
 
     
 
