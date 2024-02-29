@@ -14,6 +14,10 @@ body {
     -ms-transform: scale(0.75);
     -o-transform: scale(0.75);
   }
+
+  .pronoun {
+    font-size: 60px;
+  }
 }
 
 .pronoun {
@@ -24,6 +28,7 @@ body {
   color: black;
   text-align: justify;
 }
+
 .boton-venta-cafe {
   position: fixed;
   bottom: 50px;
