@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styleingles.css">
+    <title>Saludos</title>
+</head>
+<body>
+
+
+  
+<style>
+/* hacer que el texto se ponga e azul para la reproducción */
+.playing {
+            color: blue;
+          }
+</style>
+
+
+  
+    <button id="playButton" class="fixed-button play">
+        <i class="fas fa-play"></i> Reproducir Todos
+      </button>
+
+
+
+    <h2 id="saludos">Saludos Básicos:</h2>
+    <ul>
+      <li class="pronoun">
+        <span class="text">Hello <span style="color: red">(Hola)</span></span>
+        
+        <div class="divider"></div>
+        <audio controls class="audio">
+          <source src="audios-ingles/hello.mp3" type="audio/mp3" />
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </li>
+
+      <li class="pronoun">
+        <span class="text">Good morning <span style="color: red">Buenos diás</span></span>
+        
+        <div class="divider"></div>
+        <audio controls class="audio">
+          <source src="audios-ingles/good-morning.mp3" type="audio/mp3" />
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </li>
+
+      <!-- Agrega los demás elementos similares si es necesario -->
+    </ul>
+  </div>
+
+
+  <script>
+    var audios = document.querySelectorAll("audio");
+    var playButton = document.getElementById("playButton");
+    var currentIndex = 0;
+    var reproduciendo = false;
+    var tiemposDeReproduccion = []; // Array para almacenar los tiempos de reproducción
+
+    function reproducirAudios() {
+      reproduciendo = true;
+      playButton.innerHTML = '<i class="fas fa-pause"></i> Pausar Todos';
+      reproducirSiguiente();
+    }
+
+    function reproducirSiguiente() {
+      if (currentIndex < audios.length) {
+        var audio = audios[currentIndex];
+        audio.currentTime = tiemposDeReproduccion[currentIndex] || 0; // Restaurar el tiempo de reproducción
+        audio.play();
+        audio.addEventListener("ended", reproducirSiguiente);
+        // Resaltar solo el texto correspondiente al audio actual
+        resaltarTexto(audio.parentNode);
+        // Desplazar el elemento al área visible
+        audio.parentNode.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+        reproducirSiguiente();
+      }
+    }
+
+    function detenerAudios() {
+      reproduciendo = false;
+      audios.forEach((audio, index) => {
+        audio.pause();
+        tiemposDeReproduccion[index] = audio.currentTime; // Guardar el tiempo de reproducción
+        audio.currentTime = 0;
+        // Eliminar el color azul del texto
+        audio.parentNode.classList.remove("playing");
+      });
+      playButton.innerHTML =
+        '<i class="fas fa-play"></i> Reproducir Todos';
+    }
+
+    function resaltarTexto(elemento) {
+      // Eliminar la clase "playing" de todos los elementos de audio
+      audios.forEach((audio) => {
+        audio.parentNode.classList.remove("playing");
+      });
+      // Resaltar solo el elemento actual
+      elemento.classList.add("playing");
+    }
+
+    playButton.addEventListener("click", function () {
+      if (!reproduciendo) {
+        reproducirAudios();
+      } else {
+        detenerAudios();
+      }
+    });
+  </script>
+
+
+
+
+
+
+</body>
+</html>
