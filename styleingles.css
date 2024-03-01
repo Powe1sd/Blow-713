@@ -5,20 +5,6 @@ body {
 }
 
 /* ZOOM PARA PANTALLAS PEQUEÑAS */
-@media (max-width: 768px) {
-  .pronoun {
-    zoom: 82%;
-    -moz-transform: scale(0.85);
-    -webkit-transform: scale(0.85);
-    transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    -o-transform: scale(0.85);
-  }
-
-  .pronoun {
-    font-size: 60px;
-  }
-}
 
 /* Estilos para el boton */
 /* Estilos para el botón fijo */
