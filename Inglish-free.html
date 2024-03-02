@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" href="logo/logo-color.png" type="image/x-icon" />
@@ -112,6 +111,32 @@
       .text[lang="es"] {
         color: red; /* Cambiar el color del texto en español a rojo */
       }
+
+      @media (max-width: 768px) {
+        /* Estilos para dispositivos con un ancho máximo de 768px, como tablets y móviles */
+        .module {
+          width: calc(
+            33.33% - 20px
+          ); /* Calculamos el ancho de cada módulo para que haya tres en una fila */
+          margin: 34px 10px; /* Agregamos margen para separar los módulos y también un margen superior para bajarlos */
+          float: none; /* Eliminamos el float para que los módulos se apilen verticalmente */
+          text-align: center; /* Centramos el texto debajo de las imágenes */
+        }
+        .last-modules {
+          clear: both; /* Limpiamos el float para que los últimos módulos no se superpongan */
+        }
+      }
+
+
+        @media only screen and (max-width: 768px) {
+    /* Estilos para dispositivos con un ancho máximo de 768px, como dispositivos móviles */
+    .section {
+      width:  87%;/* Ancho de la sección al 90% */
+      margin: 0 auto; /* Centra la sección horizontalmente */
+    }
+  }
+
+
     </style>
 
     <button id="playButton" class="fixed-button play">
