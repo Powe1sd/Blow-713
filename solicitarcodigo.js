@@ -122,17 +122,23 @@ function solicitarCodigo3(event) {
 function solicitarCodigo4(event) {
   swal({
     title: "Súper descuento",
-    text: "Solicita tu código de ingreso para poder tener el curso completo, o escribe al número 3052076713",
+    text: "Solicita tu código de ingreso para poder tener el curso completo, o escribe al número 3052076713, PAGO ÚNICO",
     content: {
       element: "input",
       attributes: {
         placeholder: "Ingresa el código",
         type: "password",
         id: "codigo-ingreso",
+        oninput: "vibrarDispositivo()", // Llamada a la función vibrarDispositivo() cuando se introduce texto
       },
     },
     buttons: {
-      cancel: true,
+      cancel: {
+        text: "Cancelar",
+        visible: true,
+        className: "btn-secondary",
+        closeModal: true,
+      },
       confirm: {
         text: "Ingresar",
         value: true,
@@ -143,7 +149,6 @@ function solicitarCodigo4(event) {
     },
     closeOnClickOutside: false,
     closeOnEsc: false,
-    timer: 5000, // Tiempo en milisegundos antes de que la alerta se cierre automáticamente (en este caso, 5 segundos)
   }).then((confirm) => {
     if (confirm) {
       var codigoIngresado = document.getElementById("codigo-ingreso").value;
@@ -168,10 +173,11 @@ function solicitarCodigo4(event) {
           title: "Código incorrecto",
           text: "No tienes acceso a esta página.",
           icon: "error",
-          timer: 1000, // Tiempo en milisegundos antes de que la alerta de error se cierre automáticamente (en este caso, 3 segundos)
           buttons: false, // No muestra botones
           closeOnClickOutside: false, // No permite cerrar haciendo clic fuera de la alerta
           closeOnEsc: false, // No permite cerrar pulsando la tecla Esc
+          closeModal: true, // Cierra automáticamente después de mostrarse
+          timer: 3000,
         });
         // Reproducir audio de error
         document.getElementById("audio-error").play();
@@ -179,6 +185,14 @@ function solicitarCodigo4(event) {
     }
   });
   event.preventDefault(); // Evita que el enlace realice su acción predeterminada
+}
+
+function vibrarDispositivo() {
+  // Comprueba si el dispositivo admite la API de vibración
+  if ("vibrate" in navigator) {
+    // Hace que el dispositivo vibre durante 100 milisegundos
+    navigator.vibrate(100);
+  }
 }
 
 /* Libro */

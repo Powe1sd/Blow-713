@@ -4,6 +4,15 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.swal-text {
+  color: red;
+  font-size: 24px; /* Color del texto */
+}
+
+.custom-swal-text {
+  color: red; /* Cambia el color del texto a rojo */
+}
+
 /* ZOOM PARA PANTALLAS PEQUEÑAS */
 
 /* Estilos para el boton */
