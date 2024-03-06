@@ -5,180 +5,15 @@ body {
 }
 /* COMENTARIOS */
 /* Import Google Font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-footer {
-  text-align: center;
-  padding: 3px;
-  background-color: #fd7d1c;
-  color: white;
-}
 a {
   color: white;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10px;
-  min-height: 100vh;
-  background: #fd7d1c;
-}
-.container {
-  max-width: 690px;
-  width: 100%;
-  padding: 30px;
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
-}
-.wrapper {
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.wrapper .text-input {
-  display: flex;
-  border-bottom: 1px solid #ccc;
-}
-.text-input .to-text {
-  border-radius: 0px;
-  border-left: 1px solid #ccc;
-}
-.text-input textarea {
-  height: 250px;
-  width: 100%;
-  border: none;
-  outline: none;
-  resize: none;
-  background: none;
-  font-size: 18px;
-  padding: 10px 15px;
-  border-radius: 5px;
-}
-.text-input textarea::placeholder {
-  color: #b7b6b6;
-}
-.controls,
-li,
-.icons,
-.icons i {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.controls {
-  list-style: none;
-  padding: 12px 15px;
-}
-.controls .row .icons {
-  width: 38%;
-}
-.controls .row .icons i {
-  width: 50px;
-  color: #adadad;
-  font-size: 14px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  justify-content: center;
-}
-.controls .row.from .icons {
-  padding-right: 15px;
-  border-right: 1px solid #ccc;
-}
-.controls .row.to .icons {
-  padding-left: 15px;
-  border-left: 1px solid #ccc;
-}
-.controls .row select {
-  color: #333;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  background: none;
-  padding-left: 5px;
-}
-.text-input textarea::-webkit-scrollbar {
-  width: 4px;
-}
-.controls .row select::-webkit-scrollbar {
-  width: 8px;
-}
-.text-input textarea::-webkit-scrollbar-track,
-.controls .row select::-webkit-scrollbar-track {
-  background: #fff;
-}
-.text-input textarea::-webkit-scrollbar-thumb {
-  background: #ddd;
-  border-radius: 8px;
-}
-.controls .row select::-webkit-scrollbar-thumb {
-  background: #999;
-  border-radius: 8px;
-  border-right: 2px solid #ffffff;
-}
-.controls .exchange {
-  color: #adadad;
-  cursor: pointer;
-  font-size: 16px;
-  transition: transform 0.2s ease;
-}
-.controls i:active {
-  transform: scale(0.9);
-}
-.container button {
-  width: 100%;
-  padding: 14px;
-  outline: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 20px;
-  font-size: 17px;
-  border-radius: 5px;
-  background: #1c80bb;
-}
-
-@media (max-width: 660px) {
-  .container {
-    padding: 20px;
-  }
-  .wrapper .text-input {
-    flex-direction: column;
-  }
-  .text-input .to-text {
-    border-left: 0px;
-    border-top: 1px solid #ccc;
-  }
-  .text-input textarea {
-    height: 200px;
-  }
-  .controls .row .icons {
-    display: none;
-  }
-  .container button {
-    padding: 13px;
-    font-size: 16px;
-  }
-  .controls .row select {
-    font-size: 16px;
-  }
-  .controls .exchange {
-    font-size: 14px;
-  }
-}
-
-/* ******************* */
+/*TEXTO DE LOS SWAL ALERT */
 .swal-text {
   color: red;
-  font-size: 24px; /* Color del texto */
+  font-size: 14px; /* Color del texto */
 }
 
 .custom-swal-text {
@@ -194,14 +29,26 @@ li,
   top: 10px;
   margin-top: 40px;
   right: 30px;
-  z-index: 9999; /* Asegura que esté por encima de otros elementos */
-  background-color: #007bff; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno */
-  cursor: pointer; /* Cursor al pasar por encima */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  z-index: 9999;
+  /*Aseguraqueestéporencimadeotroselementos*/
+  background-color: #007bff;
+  /*Colordefondo*/
+  color: white;
+  /*Colordeltexto*/
+  border: none;
+  /*Sinborde*/
+  border-radius: 5px;
+  /*Bordesredondeados*/
+  padding: 10px 20px;
+  /*Espaciadointerno*/
+  cursor: pointer;
+  /*Cursoralpasarporencima*/
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .fixed-button:hover {
