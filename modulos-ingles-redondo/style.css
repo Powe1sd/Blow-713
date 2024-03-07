@@ -6,7 +6,7 @@ body {
 
 @media (max-width: 768px) {
   .pronoun {
-    zoom: 95%;
+    zoom: 80%;
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     transform: scale(0.95);
