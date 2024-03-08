@@ -4,6 +4,40 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.redirectButton {
+  position: fixed;
+  bottom: 60px; /* Distancia desde la parte inferior */
+  right: 10px; /* Distancia desde la parte derecha */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 10px 20px; /* Ajuste del relleno del botón */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Añade esquinas redondeadas */
+  text-decoration: none; /* Elimina la subrayado del texto */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.redirectButton:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar por encima */
+}
+
+.goBackButton {
+  position: fixed;
+  bottom: 60px; /* Distancia desde la parte inferior */
+  left: 10px; /* Distancia desde la parte izquierda */
+  background-color: #dc3545; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 10px 20px; /* Ajuste del relleno del botón */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Añade esquinas redondeadas */
+  text-decoration: none; /* Elimina la subrayado del texto */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.goBackButton:hover {
+  background-color: #c82333; /* Cambia el color de fondo al pasar por encima */
+}
+
 @media (max-width: 768px) {
   .pronoun {
     zoom: 80%;
