@@ -15,6 +15,7 @@ body {
   border-radius: 5px; /* Añade esquinas redondeadas */
   text-decoration: none; /* Elimina la subrayado del texto */
   cursor: pointer; /* Cambia el cursor al pasar por encima */
+  z-index: 1;
 }
 
 .redirectButton:hover {
@@ -32,6 +33,7 @@ body {
   border-radius: 5px; /* Añade esquinas redondeadas */
   text-decoration: none; /* Elimina la subrayado del texto */
   cursor: pointer; /* Cambia el cursor al pasar por encima */
+  z-index: 1;
 }
 
 .goBackButton:hover {
@@ -205,6 +207,7 @@ video {
   padding: 20px;
   font-family: Arial, sans-serif;
   font-size: 30px;
+  z-index: 1;
 }
 
 .section {
@@ -269,6 +272,7 @@ a:hover {
   bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
   left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
   cursor: pointer;
+  z-index: 1;
 }
 
 .videos {
