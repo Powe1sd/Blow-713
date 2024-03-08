@@ -195,8 +195,9 @@ video {
   background-color: blue;
   color: white;
   animation: luciernaga 2s ease-in-out infinite;
-  -webkit-animation: luciernaga 2s ease-in-out infinite;
+
 }
+
 
 .corner-text {
   position: fixed;
