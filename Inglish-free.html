@@ -69,7 +69,7 @@
 
       .practica {
         text-align: center;
-        background-color: black;
+        background-color: whitesmoke;
         font-family: "Times New Roman", Times, serif;
         font-size: 40px;
         margin-top: 120px;
@@ -143,6 +143,57 @@
   }
 
       }
+
+/* BOTON DE DESPLIEGUE*************************************************** */
+    #toggleButton {
+    position: absolute;
+    top: 225px; /* Ajusta la distancia desde arriba según lo desees */
+    left: 10px; /* Ajusta la distancia desde la izquierda según lo desees */
+    z-index: 9999; /* Para asegurar que esté por encima del contenido */
+        width: 20%;
+        height: 7%;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        border: 1px solid red;
+
+  }
+
+#seccionAMostrar {
+    display: none; /* Para ocultar la sección por defecto */
+}
+
+/* ************************************************************************************ */
+
+/* Estilos para dispositivos móviles */
+
+#seccionAMostrar {
+    display: flex; /* Utiliza flexbox */
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en dispositivos móviles */
+}
+
+
+/* Estilos específicos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    #seccionAMostrar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .module {
+        flex: 1 0 calc(40% - 20px); /* Establece que las secciones ocupen el 50% del ancho disponible con un margen de 10px */
+        margin-top : 25px; /* Añade un margen entre las secciones */
+
+    }
+}
+
+
+
+
+
+
+
+
     </style>
 
 
@@ -317,8 +368,14 @@
 
     </div>
   
-    <h1 class="practica">PRÁCTICA</h1>
 
+
+    <button id="toggleButton">MODULO 1</button>
+
+
+    <div id="seccionAMostrar">
+
+    
     <a href="modulos-ingles-redondo/pagina1.html" class="module">
       <img src="Modulos-imagenes/alfabeto.png" alt="Imagen 1" />
       <p>ALFABETO</p>
@@ -443,10 +500,11 @@
 
     <a href="modulos-ingles-redondo/partescomputer.html" class="module last-modules">
       <img src="Modulos-imagenes/COMPUTER.jpg" alt="Imagen 8" />
-      <p>PARTES DE UN COMPUTADOR</p>
+      <p>COMPUTADOR</p>
     </a>
 
 
+  </div>
 
 
     
@@ -814,6 +872,30 @@
         }
       });
     </script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var toggleButton = document.getElementById("toggleButton");
+    var seccionAMostrar = document.getElementById("seccionAMostrar");
+
+    toggleButton.addEventListener("click", function() {
+        if (seccionAMostrar.style.display === "none" || seccionAMostrar.style.display === "") {
+            seccionAMostrar.style.display = "flex";
+        } else {
+            seccionAMostrar.style.display = "none";
+        }
+    });
+
+    // Oculta la sección al cargar la página
+    seccionAMostrar.style.display = "none";
+});
+
+
+
+
+</script>
+
 
 
   </body>
