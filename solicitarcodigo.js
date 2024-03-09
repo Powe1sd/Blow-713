@@ -318,7 +318,7 @@ function solicitarCodigo13(event) {
 }
 
 //SALUD  MENTAL
-function solicitarCodigo14(event) {
+function solicitarCodigo18(event) {
   swal({
     title: "Súper descuento",
     text: "Ingresa el código para acceder",
@@ -357,7 +357,9 @@ function solicitarCodigo14(event) {
           icon: "success",
           timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
         }).then(() => {
-          window.location.replace("saludmental.html");
+          window.location.replace(
+            "https://tempssll.github.io/videos-blow-713/saludmental.html"
+          );
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error sin botón "OK"
