@@ -25,6 +25,7 @@
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
+        border: 1px solid gold;
       }
 
       .paragraph-container:hover {
@@ -33,7 +34,7 @@
       }
 
       .paragraph-container p {
-        margin: 0 0 10px;
+        margin-bottom: 10px;
         font-size: 16px;
         line-height: 1.6;
       }
@@ -78,61 +79,79 @@
         left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
         cursor: pointer;
       }
+
+      .inglish {
+        font-family: "Times New Roman", Times, serif;
+        color: blue;
+      }
+
+      .español {
+        font-family: "Times New Roman", Times, serif;
+        color: red;
+      }
+
+      .tecnologia {
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+        background-color: black;
+      }
     </style>
   </head>
   <body>
-    <a href="Inglish-free.html">
+    <a href="../Inglish-free.html">
       <button class="inicio">INICIO</button>
     </a>
 
+    <h1 class="tecnologia">Sistemas Informáticos</h1>
+
     <div id="textContainer">
       <div class="paragraph-container" id="englishText">
-        <h2>English</h2>
+        <h2 class="inglish">English</h2>
         <p data-start="0">
-          Technology is rapidly transforming the way we live, work, and
-          communicate.
+          Computer systems encompass both hardware and software components
+          designed to perform various computing tasks efficiently.
         </p>
 
-        <p data-start="5">
-          From the development of artificial intelligence to virtual reality,
-          technology is constantly evolving, presenting new opportunities and
-          challenges.
+        <p data-start="7">
+          Hardware components include physical devices like processors, memory
+          units, storage devices, input/output devices, and networking
+          equipment.
         </p>
 
-        <p data-start="16">
-          With each advancement, questions arise about privacy, ethics, and the
-          impact on our society. As we move into an increasingly technological
-          future, it's crucial to reflect on how we can use technology
-          responsibly to enhance our lives and the world around us.
+        <p data-start="18">
+          Software components comprise programs and applications that instruct
+          the hardware to execute specific functions. Operating systems,
+          utilities, and applications are examples of software components.
         </p>
       </div>
 
       <div class="paragraph-container" id="spanishText">
-        <h2>Español</h2>
+        <h2 class="español">Español</h2>
         <p data-start="0">
-          La tecnología está transformando rápidamente la forma en que vivimos,
-          trabajamos y nos comunicamos.
+          Los sistemas informáticos abarcan tanto componentes de hardware como
+          de software diseñados para realizar diversas tareas de cómputo de
+          manera eficiente.
         </p>
 
-        <p data-start="5">
-          Desde el desarrollo de la inteligencia artificial hasta la realidad
-          virtual, la tecnología está en constante evolución, presentando nuevas
-          oportunidades y desafíos.
+        <p data-start="7">
+          Los componentes de hardware incluyen dispositivos físicos como
+          procesadores, unidades de memoria, dispositivos de almacenamiento,
+          dispositivos de entrada/salida y equipos de redes.
         </p>
 
-        <p data-start="16">
-          Con cada avance, surgen preguntas sobre privacidad, ética y el impacto
-          en nuestra sociedad. A medida que avanzamos hacia un futuro cada vez
-          más tecnológico, es crucial reflexionar sobre cómo podemos usar la
-          tecnología de manera responsable para mejorar nuestras vidas y el
-          mundo que nos rodea.
+        <p data-start="18">
+          Los componentes de software comprenden programas y aplicaciones que
+          instruyen al hardware para ejecutar funciones específicas. Sistemas
+          operativos, utilidades y aplicaciones son ejemplos de componentes de
+          software.
         </p>
       </div>
     </div>
 
     <div id="audioContainer">
       <audio id="audio" controls>
-        <source src="audio-1.mp3" type="audio/mpeg" />
+        <source src="audios/texto3.mp3" type="audio/mpeg" />
         Tu navegador no soporta el elemento de audio.
       </audio>
     </div>
