@@ -53,8 +53,8 @@ const planetData = [
   {
     name: "Mercury",
     texture: "planetas/mercurio.jpeg",
-    radius: 0.5,
-    distance: 5,
+    radius: 0.8,
+    distance: 3,
     speed: 0.02,
   },
   {
