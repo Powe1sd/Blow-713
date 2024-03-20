@@ -78,29 +78,24 @@
 
       /* Estilos para el botón fijo */
       .fixed-button {
-        position: fixed;
-        top: 10px;
-        margin-top: 40px;
-        right: 30px;
-        z-index: 9999; /* Asegura que esté por encima de otros elementos */
-        background-color: #007bff; /* Color de fondo */
-        color: white; /* Color del texto */
-        border: none; /* Sin borde */
-        border-radius: 5px; /* Bordes redondeados */
-        padding: 10px 20px; /* Espaciado interno */
-        cursor: pointer; /* Cursor al pasar por encima */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
-      }
+    position: fixed;
+    top: 50%;
+    right: 10%; /* Ajusta este valor según sea necesario */
+    transform: translate(0, -50%); /* Centra verticalmente el botón */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cursor al pasar por encima */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+}
 
-      .fixed-button:hover {
-        background-color: #0056b3; /* Color de fondo al pasar por encima */
-      }
+.fixed-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar por encima */
+}
 
-      .fixed-button {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-      }
 
       .playing {
         color: blue;
@@ -128,7 +123,7 @@
       @media only screen and (max-width: 768px) {
         /* Estilos para dispositivos con un ancho máximo de 768px, como dispositivos móviles */
         .section {
-          width: 67%; /* Ancho de la sección al 90% */
+          width: 70%; /* Ancho de la sección al 90% */
           margin: 0 auto; /* Centra la sección horizontalmente */
         }
 
