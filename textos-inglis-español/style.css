@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
 }
+
 /* BOTON */
 .redirectButton {
   position: fixed;
@@ -102,7 +103,8 @@ body {
 .tecnologia {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  color: #003366;
+  color: white;
+  background-color: black;
 }
 #audioContainer {
   text-align: center;
