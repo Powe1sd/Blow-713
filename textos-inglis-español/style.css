@@ -106,13 +106,14 @@ body {
   color: white;
   background-color: black;
 }
+
 #audioContainer {
   text-align: center;
   margin-top: 20px;
 }
 
 #audio {
-  background-color: #0056b3; /* Azul */
+  background-color: blue;
   color: #ffffff;
   border: none;
   border-radius: 25px;
@@ -124,4 +125,14 @@ body {
 
 #audio:hover {
   background-color: #003366; /* Azul oscuro */
+}
+
+@media (max-width: 768px) {
+  #audio {
+    position: fixed; /* Cambiar a posición fija en dispositivos móviles */
+    top: 8px; /* Ajustar la distancia desde la parte superior */
+    right: 100px; /* Ajustar la distancia desde la derecha */
+    width: 30%;
+    margin-top: 70px;
+  }
 }
