@@ -1,0 +1,106 @@
+/* Estilos personalizados */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para las camisas */
+/* Estilos personalizados */
+.card {
+  border: 1px solid #000;
+}
+
+.card-img-top {
+  height: 330px; /* Ajusta la altura de las imágenes según tus necesidades */
+  object-fit: cover;
+}
+
+.shirts {
+  text-align: center;
+}
+
+/* *************+++ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar .toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50%;
+}
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+.navbar {
+  background-color: #007bff; /* Azul Bootstrap */
+  color: #fff;
+  position: relative;
+}
+.list-unstyled {
+  padding: 0;
+}
+.list-unstyled li {
+  padding: 10px;
+}
+.list-unstyled li a {
+  color: #fff;
+  text-decoration: none;
+}
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+.submenu.active {
+  display: block;
+}
+/* Estilos para la categoría en la esquina superior derecha */
+.category-toggle {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+}
+/* Estilos para las opciones de categoría */
+.category-options {
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  background-color: #007bff;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+}
+.category-options.active {
+  display: block;
+}
+.category-options a {
+  display: block;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.category-options a:hover {
+  background-color: #0056b3;
+}

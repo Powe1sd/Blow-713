@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barra Lateral Desplegable</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <span class="navbar-brand mb-0 h1">Ropa Styles</span>
+      <!-- Agregamos el botón para la categoría -->
+      <span class="category-toggle" onclick="toggleCategory()"
+        >Categoría ▼</span
+      >
+      <!-- Opciones de categoría -->
+      <div class="category-options" id="category-options">
+        <a href="#">Categoría 1</a>
+        <a href="#">Categoría 2</a>
+        <a href="#">Categoría 3</a>
+      </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+      <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+      <!-- Aquí puedes poner el contenido de tu barra lateral -->
+      <ul class="list-unstyled">
+        <li><a href="#">Opción 1</a></li>
+        <li><a href="#">Opción 2</a></li>
+        <li><a href="#">Opción 3</a></li>
+        <li>
+          <a href="#" onclick="toggleSubmenu()">Categorías</a>
+          <ul class="submenu" id="submenu">
+            <li><a href="#">Categoría 1</a></li>
+            <li><a href="#">Categoría 2</a></li>
+            <li><a href="#">Categoría 3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <br /><br />
+
+    <!-- Seccion IMG -->
+
+    <div class="categorySection">
+      <h2 class="shirts">Camisas</h2>
+      <div class="row productSection" id="shirtsProducts">
+        <!-- Aquí se mostrarán las camisas -->
+      </div>
+    </div><br /><br />
+
+    <div class="categorySection">
+        <h2 class="shirts">Gorras</h2>
+        <div class="row productSection" id="gorrasProducts">
+          <!-- Aquí se mostrarán las camisas -->
+        </div>
+  
+
+
+
+    <script src="appr.js"></script>
+  </body>
+</html>
