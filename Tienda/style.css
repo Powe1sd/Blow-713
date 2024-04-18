@@ -10,6 +10,9 @@ body {
 /* Estilos para tarjetas */
 /* Estilos para tarjetas */
 /* Estilos para tarjetas */
+/* Estilos para tarjetas */
+/* Estilos para tarjetas */
+/* Estilos para tarjetas */
 .card {
   border: 1px solid #000;
 }
@@ -27,7 +30,21 @@ body {
     height: auto; /* Ajustar altura automáticamente */
     max-width: 100%; /* Ancho máximo de la imagen */
   }
+
+  /* Ajuste de estilos para los nombres de los productos */
+  .card-title {
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Espacio entre el título y el texto */
+  }
+
+  /* Ajuste de estilos para los precios de los productos */
+  .card-text {
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: #007bff; /* Color azul */
+  }
 }
+
 
 .shirts {
   text-align: center;

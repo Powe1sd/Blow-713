@@ -36,22 +36,22 @@ const camisas = [
 ];
 
 const gorras = [
-  { id: 201, name: "Gorra Negra", price: "20.00", image: "gorras/gorra1.jpeg" },
+  { id: 201, name: "Gorra Negra", price: "20.000", image: "gorras/gorra1.jpeg" },
   {
     id: 202,
     name: "Gorra Verde clara",
     price: "25.00",
     image: "gorras/gorra2.jpeg",
   },
-  { id: 203, name: "Gorra Roja", price: "18.00", image: "gorras/gorra3.jpeg" },
+  { id: 203, name: "Gorra Roja", price: "18.000", image: "gorras/gorra3.jpeg" },
   {
     id: 201,
     name: "Gorra Blanca",
-    price: "20.00",
+    price: "20.000",
     image: "gorras/gorra4.jpeg",
   },
-  { id: 202, name: "Gorra Gris", price: "25.00", image: "gorras/gorra5.jpeg" },
-  { id: 203, name: "Gorra Negra", price: "18.00", image: "gorras/gorra6.jpeg" },
+  { id: 202, name: "Gorra Gris", price: "25.000", image: "gorras/gorra5.jpeg" },
+  { id: 203, name: "Gorra Negra", price: "18.000", image: "gorras/gorra6.jpeg" },
 ];
 
 // Función para mostrar los productos
