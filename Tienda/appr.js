@@ -55,6 +55,7 @@ const gorras = [
 ];
 
 // Función para mostrar los productos
+// Función para mostrar los productos
 function showProducts() {
   const shirtsProducts = document.getElementById("shirtsProducts");
   const gorrasProducts = document.getElementById("gorrasProducts");
@@ -72,12 +73,9 @@ function showProducts() {
         </div>
       `;
   });
-}
-/* gorras */
-// Función para mostrar los productos de gorras
-// Mostrar gorras
-gorras.forEach((producto) => {
-  gorrasProducts.innerHTML += `
+
+  gorras.forEach((producto) => {
+    gorrasProducts.innerHTML += `
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
             <div class="image-container" onclick="expandImage(this)">
@@ -90,7 +88,8 @@ gorras.forEach((producto) => {
           </div>
         </div>
       `;
-});
+  });
+}
 
 // Función para mostrar los productos de gorras
 

@@ -7,20 +7,40 @@ body {
 
 /* Estilos para las camisas */
 /* Estilos personalizados */
+/* Estilos para tarjetas */
+/* Estilos para tarjetas */
+/* Estilos para tarjetas */
 .card {
   border: 1px solid #000;
 }
 
-.card-img-top {
-  height: 330px; /* Ajusta la altura de las imágenes según tus necesidades */
-  object-fit: cover;
+/* Ajuste de diseño para dispositivos móviles */
+@media (max-width: 767.98px) {
+  .col-lg-4,
+  .col-md-6 {
+    flex: 0 0 33.333%; /* Dividir en tres columnas en dispositivos móviles */
+    max-width: 33.333%; /* Máximo ancho de cada tarjeta en dispositivos móviles */
+  }
+  
+  /* Ajuste de altura de la imagen para dispositivos móviles */
+  .card-img-top {
+    height: auto; /* Ajustar altura automáticamente */
+    max-width: 100%; /* Ancho máximo de la imagen */
+  }
 }
 
 .shirts {
   text-align: center;
 }
 
+/* Estilos generales para las imágenes */
+
+/* Estilos específicos para dispositivos móviles */
+/* Estilos personalizados para las imágenes */
+
 /* *************+++ */
+
+/* Estilos específicos para dispositivos móviles */
 
 .sidebar {
   position: fixed;
