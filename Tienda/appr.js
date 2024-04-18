@@ -36,7 +36,12 @@ const camisas = [
 ];
 
 const gorras = [
-  { id: 201, name: "Gorra Negra", price: "20.000", image: "gorras/gorra1.jpeg" },
+  {
+    id: 201,
+    name: "Gorra Negra",
+    price: "20.000",
+    image: "gorras/gorra1.jpeg",
+  },
   {
     id: 202,
     name: "Gorra Verde clara",
@@ -51,11 +56,13 @@ const gorras = [
     image: "gorras/gorra4.jpeg",
   },
   { id: 202, name: "Gorra Gris", price: "25.000", image: "gorras/gorra5.jpeg" },
-  { id: 203, name: "Gorra Negra", price: "18.000", image: "gorras/gorra6.jpeg" },
+  {
+    id: 203,
+    name: "Gorra Negra",
+    price: "18.000",
+    image: "gorras/gorra6.jpeg",
+  },
 ];
-
-// Función para mostrar los productos
-// Función para mostrar los productos
 function showProducts() {
   const shirtsProducts = document.getElementById("shirtsProducts");
   const gorrasProducts = document.getElementById("gorrasProducts");
@@ -64,7 +71,9 @@ function showProducts() {
     shirtsProducts.innerHTML += `
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <img class="card-img-top" src="${producto.image}" alt="${producto.name}">
+            <div class="image-container" onclick="expandImage(this)">
+              <img class="card-img-top" src="${producto.image}" alt="${producto.name}">
+            </div>
             <div class="card-body">
               <h4 class="card-title">${producto.name}</h4>
               <p class="card-text">Precio: $${producto.price}</p>
@@ -91,6 +100,9 @@ function showProducts() {
   });
 }
 
+// Función para mostrar los productos
+// Función para mostrar los productos
+
 // Función para mostrar los productos de gorras
 
 // Función para mostrar u ocultar las opciones de categoría
@@ -101,3 +113,13 @@ function toggleCategory() {
 
 // Mostrar los productos al cargar la página
 window.onload = showProducts;
+
+// Función para expandir las imágenes al hacer clic
+// Función para expandir y contraer la imagen al hacer clic
+// Función para expandir y contraer la imagen al hacer clic
+function expandImage(imageElement) {
+  // Obtener el contenedor de la imagen
+  var imageContainer = imageElement.parentNode;
+  // Agregar la clase 'expanded' al contenedor de la imagen
+  imageContainer.classList.toggle("expanded");
+}
