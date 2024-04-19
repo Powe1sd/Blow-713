@@ -115,11 +115,55 @@ function toggleCategory() {
 window.onload = showProducts;
 
 // Función para expandir las imágenes al hacer clic
-// Función para expandir y contraer la imagen al hacer clic
-// Función para expandir y contraer la imagen al hacer clic
-function expandImage(imageElement) {
-  // Obtener el contenedor de la imagen
-  var imageContainer = imageElement.parentNode;
-  // Agregar la clase 'expanded' al contenedor de la imagen
+function expandImage(imageContainer) {
+  // Verificar si la imagen está expandida
+  const isExpanded = imageContainer.classList.contains("expanded");
+
+  // Cambiar el tamaño de la imagen al hacer clic
   imageContainer.classList.toggle("expanded");
+
+  if (!isExpanded) {
+    // Crear el botón de cierre solo si la imagen se está expandiendo
+    const closeButton = document.createElement("button");
+    closeButton.innerHTML = "&times;"; // Utilizar una X como contenido del botón
+    closeButton.classList.add("close-button");
+
+    // Establecer estilos para el botón de cierre
+    closeButton.style.position = "absolute";
+    closeButton.style.top = "10px"; // Ajustar la posición vertical según sea necesario
+    closeButton.style.right = "10px"; // Ajustar la posición horizontal según sea necesario
+    closeButton.style.background = "transparent";
+    closeButton.style.border = "none";
+    closeButton.style.color = "#fff";
+    closeButton.style.fontSize = "24px";
+    closeButton.style.cursor = "pointer";
+
+    // Agregar un evento de clic al botón de cierre para contraer la imagen
+    closeButton.addEventListener("click", function (event) {
+      // Evitar que el evento de clic se propague al contenedor de la imagen
+      event.stopPropagation();
+
+      imageContainer.classList.remove("expanded");
+      closeButton.remove(); // Remover el botón de cierre después de contraer la imagen
+    });
+
+    // Agregar el botón de cierre al contenedor de la imagen expandida
+    imageContainer.appendChild(closeButton);
+
+    // Guardar una referencia al botón de cierre para poder eliminarlo más tarde
+    imageContainer.closeButton = closeButton;
+  }
+
+  // Agregar un event listener al documento para contraer la imagen cuando se haga clic fuera de ella
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".expanded")) {
+      imageContainer.classList.remove("expanded");
+      if (imageContainer.closeButton) {
+        imageContainer.closeButton.remove(); // Eliminar el botón de cierre si existe
+        imageContainer.closeButton = null; // Limpiar la referencia al botón de cierre
+      }
+    }
+  });
 }
+
+/* Efecto zoom */

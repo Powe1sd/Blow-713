@@ -3,7 +3,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
 }
+
+/* Estilo para la imagen expandida */
 
 /* Estilos para las camisas */
 /* Estilos personalizados */
@@ -145,6 +148,12 @@ body {
 /* Estilo para la imagen expandida */
 /* Estilo para la imagen expandida */
 /* CSS para la imagen expandida */
+
+.image-container.expanded img {
+  max-width: 30%; /* Puedes ajustar el tamaño según lo desees */
+  max-height: auto; /* Para mantener la proporción de la imagen */
+}
+
 .image-container.expanded {
   position: fixed;
   top: 0;
@@ -157,40 +166,28 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.image-container.expanded img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-/* CSS para el efecto de zoom */
-.image-container:hover img {
-  transform: scale(1.5);
-  /*Escalalaimagenal110%*/
-  transition: transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-}
-
+/* Estilo para la imagen expandida */
 /* CSS para el efecto de zoom en dispositivos móviles */
+/* Estilo para la imagen expandida */
+/* Estilo para la imagen expandida */
+.image-container.expanded img {
+  max-width: 30%; /* Puedes ajustar el tamaño según lo desees */
+  max-height: auto; /* Para mantener la proporción de la imagen */
+}
+
+/* Estilo para el efecto de zoom en la imagen */
+.image-container:not(.expanded):hover img {
+  transform: scale(1.5); /* Escala la imagen al pasar el ratón sobre ella */
+  transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Estilo para el efecto de zoom en dispositivos móviles */
 @media (hover: none) and (pointer: coarse) {
   .image-container img {
     transition: transform 0.3s ease; /* Agrega una transición suave */
   }
 
-  .image-container:active img {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-
+  .image-container:not(.expanded):hover img {
+    transform: scale(1.1); /* Escala la imagen al pasar el ratón sobre ella */
   }
 }
-
