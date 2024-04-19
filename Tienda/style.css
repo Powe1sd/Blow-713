@@ -6,16 +6,6 @@ body {
   overflow-x: hidden; /* Oculta el desbordamiento horizontal */
 }
 
-/* Estilo para la imagen expandida */
-
-/* Estilos para las camisas */
-/* Estilos personalizados */
-/* Estilos para tarjetas */
-/* Estilos para tarjetas */
-/* Estilos para tarjetas */
-/* Estilos para tarjetas */
-/* Estilos para tarjetas */
-/* Estilos para tarjetas */
 .card {
   border: 1px solid #000;
 }
@@ -30,26 +20,46 @@ body {
 
   /* Ajuste de altura de la imagen para dispositivos móviles */
   .card-img-top {
-    height: auto; /* Ajustar altura automáticamente */
-    max-width: 100%; /* Ancho máximo de la imagen */
+    width: 100%; /* Establece el ancho al 100% para que todas las imágenes se ajusten al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
+
+  .card-body {
+    display: flex; /* Utilizar el modelo de caja flexible */
+    flex-direction: column; /* Apilar los elementos verticalmente dentro del cuerpo de la tarjeta */
+    padding: 20px; /* Ajustar el relleno según sea necesario */
+    
   }
 
   /* Ajuste de estilos para los nombres de los productos */
+
   .card-title {
-    font-size: 16px; /* Tamaño de fuente */
-    margin-bottom: 5px; /* Espacio entre el título y el texto */
+    margin-bottom: 0; /* Eliminar el margen inferior para que el nombre esté pegado al precio */
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+  
+  
   }
 
-  /* Ajuste de estilos para los precios de los productos */
+  /* Estilos para el precio del producto */
   .card-text {
-    font-size: 14px; /* Tamaño de fuente */
     font-weight: bold; /* Negrita */
-    color: #007bff; /* Color azul */
+    color: black; /* Color azul */
+    margin-top: auto; /* Empujar el precio hacia abajo para alinearlo en la parte inferior */
+    font-size: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
   }
+ 
 }
 
 .shirts {
   text-align: center;
+  background-color: #000;
+  color: white;
+
 }
 
 /* Estilos generales para las imágenes */
@@ -69,6 +79,7 @@ body {
   height: 100%;
   background-color: #333;
   transition: all 0.3s ease;
+
 }
 .sidebar.active {
   left: 0;
@@ -88,6 +99,7 @@ body {
 .content {
   margin-left: 250px;
   padding: 20px;
+
 }
 .navbar {
   background-color: #007bff; /* Azul Bootstrap */
@@ -150,9 +162,20 @@ body {
 /* CSS para la imagen expandida */
 
 .image-container.expanded img {
-  max-width: 30%; /* Puedes ajustar el tamaño según lo desees */
+  max-width: 40%; /* Puedes ajustar el tamaño según lo desees */
   max-height: auto; /* Para mantener la proporción de la imagen */
 }
+
+/* Estilos para la imagen expandida en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .image-container.expanded img {
+    width: 90%;
+    max-width: 40%; /* Ajusta el tamaño según lo desees */
+    max-height: auto; /* Para mantener la proporción de la imagen */
+  }
+}
+
+/* Estilo para la imagen expandida en dispositivos móviles */
 
 .image-container.expanded {
   position: fixed;

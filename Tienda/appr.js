@@ -29,10 +29,10 @@ const camisas = [
     price: "22.000",
     image: "camisas/cami2.webp",
   },
-  { id: 104, name: "Camisas", price: "32.000", image: "camisas/cami3.jpeg" },
+  { id: 104, name: "Camisas", price: "32.000", image: "camisas/cami1.webp" },
   { id: 105, name: "Camisas", price: "28.000", image: "camisas/cami4.jpeg" },
   { id: 106, name: "Camisas", price: "45.000", image: "camisas/cami5.jpeg" },
-  { id: 106, name: "Camisas", price: "45.000", image: "camisas/cami6.jpeg" },
+  { id: 106, name: "Camisas", price: "45.000", image: "camisas/cami3.jpeg" },
 ];
 
 const gorras = [
@@ -167,3 +167,14 @@ function expandImage(imageContainer) {
 }
 
 /* Efecto zoom */
+window.onload = function() {
+  showProducts();
+  applyCardBorders();
+};
+
+function applyCardBorders() {
+  var cards = document.querySelectorAll(".card");
+  cards.forEach(function(card) {
+    card.style.border = "1px solid #000";
+  });
+}
