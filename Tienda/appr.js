@@ -1,13 +1,3 @@
-function toggleSidebar() {
-  var sidebar = document.getElementById("sidebar");
-  sidebar.classList.toggle("active");
-}
-
-function toggleSubmenu() {
-  var submenu = document.getElementById("submenu");
-  submenu.classList.toggle("active");
-}
-
 // Función para mostrar u ocultar las opciones de categoría
 function toggleCategory() {
   var categoryOptions = document.getElementById("category-options");
@@ -99,18 +89,6 @@ function showProducts() {
       `;
   });
 }
-
-// Función para mostrar los productos
-// Función para mostrar los productos
-
-// Función para mostrar los productos de gorras
-
-// Función para mostrar u ocultar las opciones de categoría
-function toggleCategory() {
-  var categoryOptions = document.getElementById("category-options");
-  categoryOptions.classList.toggle("active");
-}
-
 // Mostrar los productos al cargar la página
 window.onload = showProducts;
 
@@ -178,3 +156,34 @@ function applyCardBorders() {
     card.style.border = "1px solid #000";
   });
 }
+
+
+// Función para mostrar los productos
+// Función para mostrar u ocultar las opciones de categoría
+function toggleCategory() {
+  var categoryOptions = document.getElementById('category-options');
+  var categoryToggle = document.querySelector('.category-toggle');
+  
+  // Toggle class 'active' en las opciones de categorías
+  categoryOptions.classList.toggle('active');
+  
+  // Si las opciones de categorías están activas, agregar un controlador de eventos para cerrarlas al hacer clic en cualquier parte del documento
+  if (categoryOptions.classList.contains('active')) {
+    document.addEventListener('click', closeCategoryOptions);
+  } else {
+    // Si las opciones de categorías están inactivas, eliminar el controlador de eventos
+    document.removeEventListener('click', closeCategoryOptions);
+  }
+  
+  // Función para cerrar las opciones de categorías si el clic ocurre fuera de ellas o en el botón de toggle
+  function closeCategoryOptions(event) {
+    var target = event.target;
+    if (!categoryOptions.contains(target) && target !== categoryToggle) {
+      categoryOptions.classList.remove('active');
+      document.removeEventListener('click', closeCategoryOptions);
+    }
+  }
+}
+
+
+
