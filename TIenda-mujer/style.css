@@ -1,0 +1,245 @@
+/* Estilos personalizados */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+  max-width: 100%;
+}
+
+.category-toggle {
+  position: fixed;
+  top: 20px;
+  font-size: 50px;
+  right: 60px;
+  cursor: pointer;
+  color: black;
+  font-size: 36px;
+  z-index: 1;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.card {
+  border: 2px solid #000;
+  width: 100%;
+}
+
+/* Texto para camisas precio pc */
+
+.card-title {
+  margin-bottom: 0; /* Eliminar el margen inferior para que el nombre esté pegado al precio */
+  font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
+  color: red;
+}
+
+/* Estilos para el precio del producto */
+.card-text {
+  font-weight: bold; /* Negrita */
+  color: black; /* Color azul */
+  margin-top: auto; /* Empujar el precio hacia abajo para alinearlo en la parte inferior */
+  font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.card-img-top {
+  width: 100%; /* Establece el ancho al 100% para que todas las imágenes se ajusten al contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.card-body {
+  display: flex; /* Utilizar el modelo de caja flexible */
+  flex-direction: column; /* Apilar los elementos verticalmente dentro del cuerpo de la tarjeta */
+  padding: 20px; /* Ajustar el relleno según sea necesario */
+}
+
+/****************** Ajuste de diseño para dispositivos móviles */
+@media (max-width: 767.98px) {
+  .col-lg-4,
+  .col-md-6 {
+    flex: 0 0 33.333%; /* Dividir en tres columnas en dispositivos móviles */
+    max-width: 33.333%; /* Máximo ancho de cada tarjeta en dispositivos móviles */
+  }
+
+  /* Ajuste de altura de la imagen para dispositivos móviles */
+  .card-img-top {
+    width: 100%; /* Establece el ancho al 100% para que todas las imágenes se ajusten al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  .card-body {
+    display: flex; /* Utilizar el modelo de caja flexible */
+    flex-direction: column; /* Apilar los elementos verticalmente dentro del cuerpo de la tarjeta */
+    padding: 20px; /* Ajustar el relleno según sea necesario */
+  }
+
+  /* Ajuste de estilos para los nombres de los productos */
+
+  .card-title {
+    margin-bottom: 0; /* Eliminar el margen inferior para que el nombre esté pegado al precio */
+    font-size: 12px;
+    font-family: "Times New Roman", Times, serif;
+    color: black;
+  }
+
+  /* Estilos para el precio del producto */
+  .card-text {
+    font-weight: bold; /* Negrita */
+    color: black; /* Color azul */
+    margin-top: auto; /* Empujar el precio hacia abajo para alinearlo en la parte inferior */
+    font-size: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+  .category-toggle {
+    position: fixed;
+    top: 20px;
+    font-size: 50px;
+    right: 60px;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    z-index: 1;
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+.shirts {
+  text-align: center;
+  background-color: #000;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Estilos generales para las imágenes */
+
+/* Estilos específicos para dispositivos móviles */
+/* Estilos personalizados para las imágenes */
+
+/* *************+++ */
+
+/* Estilos específicos para dispositivos móviles */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+.sidebar.active {
+  left: 0;
+}
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  position: fixed;
+}
+.navbar {
+  background-color: #007bff; /* Azul Bootstrap */
+  color: #fff;
+  position: fixed;
+}
+.list-unstyled {
+  padding: 0;
+}
+.list-unstyled li {
+  padding: 10px;
+}
+.list-unstyled li a {
+  color: black;
+  text-decoration: none;
+}
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+.submenu.active {
+  display: block;
+}
+/* Estilos para la categoría en la esquina superior derecha */
+
+/* Estilos para las opciones de categoría */
+.category-options {
+  position: fixed;
+  top: 50px;
+  right: 60px;
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  z-index: 1;
+}
+.category-options.active {
+  display: block;
+}
+.category-options a {
+  display: block;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.category-options a:hover {
+  background-color: white;
+}
+
+/* Estilo para la imagen expandida */
+/* Estilo para la imagen expandida */
+/* Estilo para la imagen expandida */
+/* CSS para la imagen expandida */
+
+.image-container.expanded img {
+  max-width: 10%; /* Puedes ajustar el tamaño según lo desees */
+  max-height: auto; /* Para mantener la proporción de la imagen */
+}
+
+/* Estilos para la imagen expandida en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .image-container.expanded img {
+    width: 110%;
+    max-width: 90%; /* Ajusta el tamaño según lo desees */
+    max-height: auto; /* Para mantener la proporción de la imagen */
+  }
+}
+
+/* Estilo para la imagen expandida en dispositivos móviles */
+
+.image-container.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Estilo para la imagen expandida */
+/* CSS para el efecto de zoom en dispositivos móviles */
+/* Estilo para la imagen expandida */
+/* Estilo para la imagen expandida */
+.image-container.expanded img {
+  max-width: 20%; /* Puedes ajustar el tamaño según lo desees */
+  max-height: auto; /* Para mantener la proporción de la imagen */
+}
+
+/* Estilo para el efecto de zoom en la imagen */
+.image-container:not(.expanded):hover img {
+  transform: scale(1.5); /* Escala la imagen al pasar el ratón sobre ella */
+  transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Estilo para el efecto de zoom en dispositivos móviles */
+@media (hover: none) and (pointer: coarse) {
+  .image-container img {
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+  }
+
+  .image-container:not(.expanded):hover img {
+    transform: scale(1.1); /* Escala la imagen al pasar el ratón sobre ella */
+  }
+}
