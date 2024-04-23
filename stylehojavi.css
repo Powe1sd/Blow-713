@@ -1,206 +1,108 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
-  background-color: #154360;
-  margin: 0;
-  padding: 0;
-}
-
-.numero-esquina {
-  position: absolute;
-  top: 10px;
-  /*ajustalaposiciónverticalmentesegúnlonecesites*/
-  right: 10px;
-  /*ajustalaposiciónhorizontalmentesegúnlonecesites*/
-  background-color: black;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  position: fixed;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-
-/* Estilos para cambiar el color del texto de los enlaces dentro de las listas */
-ul li a {
-  color: gray; /* Cambia el color del texto de los enlaces */
-  text-decoration: none; /* Quita el subrayado de los enlaces */
-}
-
-ul li a:hover {
-  color: green; /* Cambia el color del texto de los enlaces al pasar el ratón sobre ellos */
-}
-
-.des {
-  color: black;
-  background-color: white;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 25px;
+  background-color: #f0f0f0;
 }
 
 .container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  padding: 20px;
+  flex-direction: column;
 }
 
-.left-column {
-  flex: 1;
-  text-align: center;
-}
-
+/* Estilos para la imagen de perfil */
 .profile-picture {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid white;
+  margin-bottom: 20px;
 }
 
-.right-column {
-  flex: 4;
-}
-
-.hoja {
-  text-align: center;
-  color: black;
-  font-size: 35px;
-  font-family: "Times New Roman", Times, serif;
-  background-color: #f4f4f4;
-}
-
+/* Estilos para los títulos */
 .titular {
-  color: white;
-  font-size: 20px;
-  text-align: justify;
-}
-
-.parrafo {
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
-  text-align: justify;
-}
-
-.estudios {
+  font-size: 1.5em;
+  font-weight: bold;
   text-align: center;
-  color: gold;
-  background: white;
-  font-size: 22px;
-  font-family: "Times New Roman", Times, serif;
-  text-align: justify;
+  margin-bottom: 20px;
 }
 
-.lista {
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
-  list-style-type: none;
-  padding: 0;
-}
-
-.lista2 {
-  color: white;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
-  list-style-type: disc;
-  margin-left: 20px;
-  padding: 0;
-}
-
-.profile-picture {
-  width: 180px;
-  /*Ajustaelanchodelaimagensegúntupreferencia*/
-  height: auto;
-  /*Manténlarelacióndeaspectooriginal*/
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid white;
-  position: fixed;
-
-  /*Hacequelaimagentengaunaposiciónfija*/
-  top: 20px;
-  /*Ajustalaposiciónverticaldesdelapartesuperior*/
-  left: 20px;
+/* Estilos para el video */
+.video-container {
+  display: flex;
+  justify-content: center;
 }
 
 .video3 {
-  width: 80%;
-  height: 30%;
-  background-color: black;
-  margin: 0 auto;
-  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
 }
 
+/* Estilos para los párrafos */
+.parrafo {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Estilos para las listas */
+.lista,
+.lista2 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista2 li {
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para los botones */
 .inicio {
-  position: fixed;
-  font-size: 40px;
-  color: red;
-  background-color: black;
-  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
-  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
-  left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
+/* Estilos para la sección de contacto */
 .whatsapp-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background-color: #25d366;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  -webkit-transition: transform 0.2s, box-shadow 0.2s;
-  -moz-transition: transform 0.2s, box-shadow 0.2s;
-  -ms-transition: transform 0.2s, box-shadow 0.2s;
-  -o-transition: transform 0.2s, box-shadow 0.2s;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-}
-
-.desarrollo {
-  color: gold;
-}
-
-/* Estilos para formulario de contacto */
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
+  color: white;
+  padding: 10px 20px;
   border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.form2 {
-  text-align: center;
-  font-size: 40px;
-  color: gold;
+.whatsapp-btn i {
+  margin-right: 5px;
 }
 
-/* Estilo de etiquetas y campos de entrada */
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+form {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con transparencia */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.lab {
+  color: white; /* Texto blanco */
 }
 
 input[type="text"],
@@ -209,35 +111,131 @@ textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fondo blanco con transparencia */
+  color: white; /* Texto blanco */
 }
 
-/* Estilo del botón de envío */
 input[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
+  width: 100%;
+  padding: 10px;
   border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Color azul */
+  color: white; /* Texto blanco */
   cursor: pointer;
 }
 
-/* Estilo al pasar el cursor sobre el botón */
 input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Color azul más oscuro al pasar el ratón */
+}
+
+.tabla-estudios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-estudios td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tabla-estudios tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-estudios tr:hover {
+  background-color: #ddd;
+}
+
+.tabla-estudios td:first-child {
+  font-weight: bold;
+}
+/* TABLA DESCARGAS  */
+.tabla-descargas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-descargas th,
+.tabla-descargas td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla-descargas th {
+  background-color: #f2f2f2;
+}
+
+.tabla-descargas tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-descargas tr:hover {
+  background-color: #ddd;
+}
+
+/* TABLA EXPERIENCIA */
+.tabla-experiencia {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-experiencia th,
+.tabla-experiencia td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla-experiencia th {
+  background-color: #f2f2f2;
+}
+
+.tabla-experiencia tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-experiencia tr:hover {
+  background-color: #ddd;
+}
+
+/* TABLA REFERENCIAS */
+.tabla-referencias {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-referencias th,
+.tabla-referencias td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla-referencias th {
+  background-color: #f2f2f2;
+}
+
+.tabla-referencias tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-referencias tr:hover {
+  background-color: #ddd;
 }
 
 .mensaje {
   text-align: center;
-  color: gold;
-}
-
-.inicio {
-  position: fixed;
-  font-size: 20px;
-  color: red;
-  background-color: black;
-  /* Ajusta esta cantidad para cambiar la distancia desde abajo */
-  bottom: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la parte inferior */
-  left: 20px; /* Ajusta esta cantidad para cambiar la distancia desde la izquierda */
 }
