@@ -4,6 +4,11 @@ body {
   background-color: #f0f0f0;
 }
 
+.hoja {
+  background-color: black;
+  color: white;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -238,4 +243,55 @@ input[type="submit"]:hover {
 
 .mensaje {
   text-align: center;
+}
+
+.tabla-parrafo {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-parrafo th,
+.tabla-parrafo td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla-parrafo th {
+  background-color: #f2f2f2;
+}
+
+.tabla-parrafo tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-parrafo tr:hover {
+  background-color: #ddd;
+}
+
+/* Tabla contacto */
+.tabla-contacto {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-contacto th,
+.tabla-contacto td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabla-contacto th {
+  background-color: #f2f2f2;
+}
+
+.tabla-contacto tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-contacto tr:hover {
+  background-color: #ddd;
 }
