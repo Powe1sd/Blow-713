@@ -20,7 +20,7 @@ body {
 }
 
 .card {
-  border: 2px solid #000;
+  border: 2px solid crimson;
   width: 100%;
 }
 
@@ -105,7 +105,7 @@ body {
 
 .shirts {
   text-align: center;
-  background-color: #000;
+  background-color: hotpink;
   color: white;
   font-family: "Times New Roman", Times, serif;
 }
@@ -127,6 +127,10 @@ body {
   height: 100%;
   background-color: #333;
   transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 .sidebar.active {
   left: 0;
@@ -137,7 +141,7 @@ body {
   position: fixed;
 }
 .navbar {
-  background-color: #007bff; /* Azul Bootstrap */
+  background-color: lightpink; /* Azul Bootstrap */
   color: #fff;
   position: fixed;
 }

@@ -11,18 +11,18 @@ const camisas = [
     id: 101,
     name: "Camisas",
     price: "45.000",
-    image: "camisas/cami1.webp",
+    image: "Blusas/blusa2.jpeg",
   },
   {
     id: 103,
     name: "Camisas",
     price: "22.000",
-    image: "camisas/cami2.webp",
+    image: "Blusas/blusa3.jpeg",
   },
-  { id: 104, name: "Camisas", price: "32.000", image: "camisas/cami1.webp" },
-  { id: 105, name: "Camisas", price: "28.000", image: "camisas/cami4.jpeg" },
-  { id: 106, name: "Camisas", price: "45.000", image: "camisas/cami5.jpeg" },
-  { id: 106, name: "Camisas", price: "45.000", image: "camisas/cami3.jpeg" },
+  { id: 104, name: "Camisas", price: "32.000", image: "Blusas/blusa1.jpeg" },
+  { id: 105, name: "Camisas", price: "28.000", image: "Blusas/blusa4.jpeg" },
+  { id: 106, name: "Camisas", price: "45.000", image: "Blusas/blusa5.jpeg" },
+  { id: 106, name: "Camisas", price: "45.000", image: "Blusas/blusa6.jpeg" },
 ];
 
 const gorras = [
@@ -30,27 +30,37 @@ const gorras = [
     id: 201,
     name: "Gorra Negra",
     price: "20.000",
-    image: "gorras/gorra1.jpeg",
+    image: "pantalones-mujer/OIP.jpeg",
   },
   {
     id: 202,
     name: "Gorra Verde clara",
     price: "25.00",
-    image: "gorras/gorra2.jpeg",
+    image: "pantalones-mujer/pantalon2.jpeg",
   },
-  { id: 203, name: "Gorra Roja", price: "18.000", image: "gorras/gorra3.jpeg" },
+  {
+    id: 203,
+    name: "Gorra Roja",
+    price: "18.000",
+    image: "pantalones-mujer/pantalon3.jpeg",
+  },
   {
     id: 201,
     name: "Gorra Blanca",
     price: "20.000",
-    image: "gorras/gorra4.jpeg",
+    image: "pantalones-mujer/pantalon4.jpeg",
   },
-  { id: 202, name: "Gorra Gris", price: "25.000", image: "gorras/gorra5.jpeg" },
+  {
+    id: 202,
+    name: "Gorra Gris",
+    price: "25.000",
+    image: "pantalones-mujer/pantalon5.jpeg",
+  },
   {
     id: 203,
     name: "Gorra Negra",
     price: "18.000",
-    image: "gorras/gorra6.jpeg",
+    image: "pantalones-mujer/patalon6.jpeg",
   },
 ];
 function showProducts() {
@@ -145,45 +155,41 @@ function expandImage(imageContainer) {
 }
 
 /* Efecto zoom */
-window.onload = function() {
+window.onload = function () {
   showProducts();
   applyCardBorders();
 };
 
 function applyCardBorders() {
   var cards = document.querySelectorAll(".card");
-  cards.forEach(function(card) {
+  cards.forEach(function (card) {
     card.style.border = "1px solid #000";
   });
 }
 
-
 // Función para mostrar los productos
 // Función para mostrar u ocultar las opciones de categoría
 function toggleCategory() {
-  var categoryOptions = document.getElementById('category-options');
-  var categoryToggle = document.querySelector('.category-toggle');
-  
+  var categoryOptions = document.getElementById("category-options");
+  var categoryToggle = document.querySelector(".category-toggle");
+
   // Toggle class 'active' en las opciones de categorías
-  categoryOptions.classList.toggle('active');
-  
+  categoryOptions.classList.toggle("active");
+
   // Si las opciones de categorías están activas, agregar un controlador de eventos para cerrarlas al hacer clic en cualquier parte del documento
-  if (categoryOptions.classList.contains('active')) {
-    document.addEventListener('click', closeCategoryOptions);
+  if (categoryOptions.classList.contains("active")) {
+    document.addEventListener("click", closeCategoryOptions);
   } else {
     // Si las opciones de categorías están inactivas, eliminar el controlador de eventos
-    document.removeEventListener('click', closeCategoryOptions);
+    document.removeEventListener("click", closeCategoryOptions);
   }
-  
+
   // Función para cerrar las opciones de categorías si el clic ocurre fuera de ellas o en el botón de toggle
   function closeCategoryOptions(event) {
     var target = event.target;
     if (!categoryOptions.contains(target) && target !== categoryToggle) {
-      categoryOptions.classList.remove('active');
-      document.removeEventListener('click', closeCategoryOptions);
+      categoryOptions.classList.remove("active");
+      document.removeEventListener("click", closeCategoryOptions);
     }
   }
 }
-
-
-
