@@ -8,6 +8,18 @@ body {
   -webkit-animation: starExplosion 5s infinite alternate;
 }
 
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  width: 20%; /* Puedes ajustar este valor para cambiar el tamaño del video */
+  max-width: 800px; /* Ancho máximo del video */
+  height: auto;
+}
+
 .barra-horizontal {
   display: flex;
   background-color: #333; /* Color de fondo de la barra */
@@ -301,7 +313,8 @@ details[open] {
   border: none;
   border-radius: 4px;
   font-size: 16px;
-  /*Ajustaeltamañodefuentesegúntuspreferencias*/z-index: 100;
+  /*Ajustaeltamañodefuentesegúntuspreferencias*/
+  z-index: 100;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   -webkit-transition: transform 0.2s, box-shadow 0.2s;
@@ -546,14 +559,21 @@ ul li::after {
 /* Estilos contacto */
 .contact-section {
   background-color: whitesmoke;
-  /*Fondonegro*/color: black;
-  /*Colordeltexto*/padding: 20px;
-  /*Espaciadointerno*/border-radius: 10px;
-  /*Bordesredondeados*/box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /*Sombra*/text-align: center;
-  /*Centrarelcontenido*/margin: 0 auto;
-  /*Centrarhorizontalmente*/max-width: 80%;
-   /* Ancho máximo  -webkit-border-radius: 10px;
+  /*Fondonegro*/
+  color: black;
+  /*Colordeltexto*/
+  padding: 20px;
+  /*Espaciadointerno*/
+  border-radius: 10px;
+  /*Bordesredondeados*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /*Sombra*/
+  text-align: center;
+  /*Centrarelcontenido*/
+  margin: 0 auto;
+  /*Centrarhorizontalmente*/
+  max-width: 80%;
+  /* Ancho máximo  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
