@@ -38,24 +38,28 @@
       <hr>
 
 
-      <div class="video-container">
+   <!--    <div class="video-container">
         <video controls>
             <source src="" type="video/mp4">
             Tu navegador no soporta la etiqueta de video.
         </video>
-    </div>
+    </div> -->
 
 
+    <div class="container">
+      <div class="left-column">
+          <img src="foto/foto-777.jpg" alt="Tu Foto" class="profile-picture" id="profilePicture">
+      </div>
+      <div class="right-column">
+          <!-- Contenido de la columna derecha -->
+      </div>
+  </div>
 
+  <div class="modal" id="imageModal">
+    <img src="foto/foto-777.jpg" alt="Tu Foto Completa">
+</div>
 
-      
-
-      <div class="container">
-        <div class="left-column">
-            <img src="foto/foto-brayan.jpg" alt="Tu Foto" class="profile-picture">
-        </div>
-        <div class="right-column">
-
+    
             
     
       <hr>
@@ -136,15 +140,24 @@
     <br /><br />
  <!-- BOTON DE WHATSAPP (con Bootstrap) -->    
 
- <div class="fixed-bottom p-3" style="position: fixed; right: 10px; bottom: 10px;">
-  <a href="https://api.whatsapp.com/send?phone=3052076713" target="_blank" rel="noopener noreferrer" style="font-size: 75px;">
-    <i class="fab fa-whatsapp" style="color: green;"></i>
-  </a>
-</div>
+ <a href="https://wa.me/3052076713" class="whatsapp-button" target="_blank">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+  />
+</a>
 
 
 
 
+
+
+            <!-- Enlazar Bootstrap JS y dependencias -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        
 
     <script src="https://kit.fontawesome.com/a076d05399.js"crossorigin="anonymous"></script>
 
@@ -192,6 +205,18 @@
     </div>
 
 
+    <script>
+      const profilePicture = document.getElementById('profilePicture');
+      const imageModal = document.getElementById('imageModal');
+
+      profilePicture.addEventListener('click', () => {
+          imageModal.style.display = 'flex';
+      });
+
+      imageModal.addEventListener('click', () => {
+          imageModal.style.display = 'none';
+      });
+  </script>
 
   </body>
 </html>
