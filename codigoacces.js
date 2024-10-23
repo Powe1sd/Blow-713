@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Luego, puedes utilizar SweetAlert2 y cualquier otro código JavaScript que necesites
   swal({
     title: "TECH-77",
-    text: "Hay un súper descuento para el curso de inglés antes $85.000, ahora lo puedes obtener por tan solo $69.900, PAGO UNA VEZ",
+    text: "Código de ingreso  7131, Prohibida su venta software libre. Derechos de autor Brayhan Estiven Coy Rubio",
     icon: "success",
     button: "Aceptar",
     className: "custom-swal", // Clase personalizada para la alerta
