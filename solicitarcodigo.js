@@ -163,7 +163,7 @@ function solicitarCodigo4(event) {
           icon: "success",
           timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
         }).then(() => {
-          window.location.replace("login/login.html");
+          window.location.replace("https://videos-blow-713.vercel.app/");
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error sin botón "OK"
@@ -479,9 +479,7 @@ function solicitarCodigo8(event) {
           icon: "success",
           timer: 3000, // Tiempo en milisegundos antes de que la alerta de éxito se cierre automáticamente (en este caso, 3 segundos)
         }).then(() => {
-          window.location.replace(
-            "https://tempssll.github.io/videos-blow-713/"
-          );
+          window.location.replace("https://videos-blow-713.vercel.app/");
         });
       } else {
         // Si es incorrecto, muestra un mensaje de error sin botón "OK"
