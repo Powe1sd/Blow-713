@@ -122,7 +122,7 @@ function solicitarCodigo3(event) {
 function solicitarCodigo4(event) {
   swal({
     title: "Súper descuento",
-    text: "Solicita tu código de ingreso para poder tener el curso completo, o escribe al número 3052076713, PAGO ÚNICO",
+    text: "Derechos da autor codigo 7131 Brayhan Estiven Coy Rubio",
     content: {
       element: "input",
       attributes: {
